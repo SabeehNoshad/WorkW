@@ -431,8 +431,8 @@ public class Xpaths {
  // Comments
     By commentsOption = By.xpath("//div[@id='scrollableDiv']/div/div/div/div[3]/div[2]/div[2]/div[2]");
     By commentsTextArea = By.xpath("//textarea");
-//    By comments = By.xpath("");
-//    By comments = By.xpath("");
+    By commentsleadManagerLead = By.xpath("//div[@id='section1']/div/div[3]/div/div/div/div/div/div/div/div/div/table/tbody/tr/td");
+    By commentsInLeadManager = By.xpath("//textarea");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
