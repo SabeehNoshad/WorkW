@@ -39,6 +39,7 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JToggleButton;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -51,6 +52,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
  */
 public class ApplicationNew extends javax.swing.JFrame {
 	getterMethod_Defaults defaults = new getterMethod_Defaults();
+	// background color set 
+	
 
 	// second stage when all other panels are visible and welcome is not 
    public void showPanel2AndTabbedPane() {
@@ -77,10 +80,29 @@ public class ApplicationNew extends javax.swing.JFrame {
        
    }
    public void darkmode() {
-	   jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
-	   jPanelwellcom.setBackground(new java.awt.Color(0, 0, 0));
-	   jPanelResult.setBackground(new java.awt.Color(0, 0, 0));
+	   jTabbedPane1.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelwellcom.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelResult.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelmain.setBackground(new Color(64, 64, 64));
+	   jPanelFinance.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelNew.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelHR.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanel1.setBackground(new java.awt.Color(64, 64, 64));
+	   jPanelCustomCases.setBackground(new java.awt.Color(64, 64, 64));
+	   
    }
+   public void lightMode() {
+	    jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelwellcom.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelResult.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelmain.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelFinance.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelNew.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelHR.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+	    jPanelCustomCases.setBackground(new java.awt.Color(255, 255, 255));
+	    
+	}
    // logout panel display 
    public void logOutPanel(){
          jTabbedPane1.setVisible(false);
@@ -1772,6 +1794,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
         // resignation
         jButtonResignation.addActionListener(new ActionListener() {
+        	
             @Override
             public void actionPerformed(ActionEvent e) {
             	// Call your test case methods here
@@ -2038,7 +2061,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
-
+        // -------------------------------------------------------------------------------------- Run All -------------------------------------------------------------------------------------
         jCheckBox1.setText("RunAll");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2053,7 +2076,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             }
         });
 
-        jLabelWelcom.setText("Wellcom");
+        jLabelWelcom.setText("Wellcome");
 
         jLabelDate.setText("Date");
               
@@ -2077,90 +2100,116 @@ public class ApplicationNew extends javax.swing.JFrame {
         jLabelLoop.setText("Loop");
 
         jLabelTag.setText("Tags");
+        // -----------------------------------------------------------------------------------------------dark / light mode ---------------------------------------------------------------
+        JToggleButton mode = new JToggleButton("DarkMode");
+        mode.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		   if (mode.isSelected()) {
+                       // Button is toggled (selected)
+                       
+                    	   darkmode();
+                         
+                      
+                      
+                       
+                   } else {
+                       // Button is not toggled (not selected)
+                       // You can perform additional actions if needed
+                	   lightMode();
+                   }
+        	}
+        });
 
         javax.swing.GroupLayout jPanelResultLayout = new javax.swing.GroupLayout(jPanelResult);
-        jPanelResult.setLayout(jPanelResultLayout);
         jPanelResultLayout.setHorizontalGroup(
-            jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelResultLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelResultLayout.createSequentialGroup()
-                        .addComponent(jButtonLogOut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonBack))
-                    .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabelDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelResultLayout.createSequentialGroup()
-                                .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelDateField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelResultLayout.createSequentialGroup()
-                                .addComponent(jLabelWelcom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelWelcomName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResultLayout.createSequentialGroup()
-                                .addComponent(jLabelLoop, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldLoopValue, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabelProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelResultLayout.createSequentialGroup()
-                            .addComponent(jLabelTag, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldTagValue, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(26, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResultLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonSave)
-                .addGap(62, 62, 62))
+        	jPanelResultLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanelResultLayout.createSequentialGroup()
+        			.addGap(24)
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(jPanelResultLayout.createSequentialGroup()
+        					.addComponent(jButtonLogOut)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jButtonBack))
+        				.addGroup(jPanelResultLayout.createParallelGroup(Alignment.LEADING)
+        					.addComponent(jLabelResult, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(jLabelProgress, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+        					.addGroup(jPanelResultLayout.createSequentialGroup()
+        						.addComponent(jLabelTag, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+        						.addPreferredGap(ComponentPlacement.RELATED)
+        						.addComponent(jTextFieldTagValue, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE))
+        					.addGroup(jPanelResultLayout.createParallelGroup(Alignment.TRAILING)
+        						.addGroup(jPanelResultLayout.createSequentialGroup()
+        							.addComponent(jLabelDate, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.UNRELATED)
+        							.addComponent(jLabelDateField, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        						.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(jProgressBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(jPanelResultLayout.createSequentialGroup()
+        							.addComponent(jLabelWelcom, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(jLabelWelcomName, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+        						.addGroup(jPanelResultLayout.createSequentialGroup()
+        							.addGroup(jPanelResultLayout.createParallelGroup(Alignment.LEADING)
+        								.addGroup(jPanelResultLayout.createSequentialGroup()
+        									.addComponent(jLabelLoop, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(jTextFieldLoopValue, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE))
+        								.addComponent(jLabelDetail, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE))
+        							.addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+        							.addGroup(jPanelResultLayout.createParallelGroup(Alignment.LEADING, false)
+        								.addComponent(mode, 0, 0, Short.MAX_VALUE)
+        								.addComponent(jCheckBox1, GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))))))
+        			.addContainerGap(26, Short.MAX_VALUE))
+        		.addGroup(jPanelResultLayout.createSequentialGroup()
+        			.addContainerGap(134, Short.MAX_VALUE)
+        			.addComponent(jButtonSave)
+        			.addGap(62))
         );
         jPanelResultLayout.setVerticalGroup(
-            jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResultLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelWelcom)
-                    .addComponent(jLabelWelcomName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDate)
-                    .addComponent(jLabelDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jLabelLoop)
-                    .addComponent(jTextFieldLoopValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTag)
-                    .addComponent(jTextFieldTagValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addComponent(jLabelDetail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelResult)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelProgress)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonBack)
-                    .addComponent(jButtonLogOut))
-                .addGap(14, 14, 14))
+        	jPanelResultLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanelResultLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabelWelcom)
+        				.addComponent(jLabelWelcomName, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabelDate)
+        				.addComponent(jLabelDateField, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
+        			.addGap(18)
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jCheckBox1)
+        				.addComponent(jLabelLoop)
+        				.addComponent(jTextFieldLoopValue, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanelResultLayout.createSequentialGroup()
+        					.addGroup(jPanelResultLayout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(jLabelTag)
+        						.addComponent(jTextFieldTagValue, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        					.addGap(19)
+        					.addComponent(jLabelDetail))
+        				.addComponent(mode))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jLabelResult)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jLabelProgress)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jProgressBar1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jButtonSave)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelResultLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jButtonBack)
+        				.addComponent(jButtonLogOut))
+        			.addGap(14))
         );
+        jPanelResult.setLayout(jPanelResultLayout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
