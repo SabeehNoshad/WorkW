@@ -1235,6 +1235,12 @@ public class getterMethods extends Xpaths {
    public By getcomentTextArea() {
 	   return commentsTextArea;
    }
+   public By getcomentLeadinLeadmanager() {
+	   return commentsleadManagerLead;
+   }
+   public By getcommentInLead() {
+	   return commentsInLeadManager;
+   }
     
 }
 

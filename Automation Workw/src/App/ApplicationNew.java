@@ -1127,6 +1127,54 @@ public class ApplicationNew extends javax.swing.JFrame {
              
             }
            });
+        // comment on lead under lead manager 
+        JButton JButtonLeadComent = new JButton("Lead Coment");
+        JButtonLeadComent.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	jTextArea1.setText("");
+        	// Call your test case methods here
+        	commentTest testClass1 = new commentTest();
+        	 getterMethodTextFile text = new getterMethodTextFile();
+             // Break the string into multiple lines using newline character
+                String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
+
+                // Create a new string with line breaks
+                String formattedTravelDetails = String.join("\n", lines);
+                jTextArea2.setText(formattedTravelDetails);
+            try {
+            	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+            	// boolean result =testClass1.LeadCreateTest(inputValue1);  
+            	 if (jLabelWelcomName.getText().equals("Wise Work")) {
+                     // If yes, pass additional parameters
+                     boolean result = testClass1.commentLeadManagerTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                     if (result) {
+ 		                // Test passed, change the button color to green
+                    	 JButtonLeadComent.setBackground(Color.GREEN);
+ 		            } else {
+ 		                // Test failed, change the button color to red (or any other color)
+ 		            	JButtonLeadComent.setBackground(Color.RED);
+ 		            }
+                     updateResultLabel(result);
+                 } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                 	  
+                 	  boolean result = testClass1.commentLeadManagerTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                       if (result) {
+    		                // Test passed, change the button color to green
+                    	   JButtonLeadComent.setBackground(Color.GREEN);
+    		            } else {
+    		                // Test failed, change the button color to red (or any other color)
+    		            	JButtonLeadComent.setBackground(Color.RED);
+    		            	 updateResultLabel(result);
+    		            	 
+                   }
+                   }
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+         
+        	}
+        });
         
        
 
@@ -1164,7 +1212,10 @@ public class ApplicationNew extends javax.swing.JFrame {
         						.addGroup(jPanelmainLayout.createSequentialGroup()
         							.addGap(12)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
-        								.addComponent(comment)
+        								.addGroup(jPanelmainLayout.createSequentialGroup()
+        									.addComponent(comment)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(JButtonLeadComent))
         								.addGroup(jPanelmainLayout.createSequentialGroup()
         									.addComponent(jButtonLeadMana)
         									.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -1200,8 +1251,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jButtonForms)
-        				.addComponent(comment, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(259, Short.MAX_VALUE))
+        				.addComponent(comment, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(JButtonLeadComent))
+        			.addContainerGap(248, Short.MAX_VALUE))
         );
         jPanelmain.setLayout(jPanelmainLayout);
 
