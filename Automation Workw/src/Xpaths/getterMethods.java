@@ -1241,6 +1241,107 @@ public class getterMethods extends Xpaths {
    public By getcommentInLead() {
 	   return commentsInLeadManager;
    }
+   // language selection 
+   public By getLangOption() {
+	   return languageOption;
+   }
+   public By getlangCzech () {
+	   return landCzech;
+   }
+   public By getclickOnMessenger() {
+	   return clickOnmessenger;
+   }
+   public By getclickOnMailBox() {
+	   return ClickOnMailBox;
+   }
+   public By getclickDocs() {
+	   return clickOnDocsAndArchive;
+   }
+   public By getclickOnLandD() {
+	   return clickOnLandD;
+   }
+   public By getclickOnJObBoard() {
+	   return clickonJobBoard;
+   }
+   public By getclickOnBusinessPolicy() {
+	   return clickOnBusinessPolicy;
+   }
+   public By getclickOnForms() {
+	   return clickOnForms;
+   }
+   public By getclickOnMarketplace() {
+	   return ClickOnMarketPlace;
+   }
+   public By getclickOnAuxtion() {
+	   return clickOnAuction;
+   }
+   public By getclickOnDiscussionBoard() {
+	   return clickOnDiscussionBoard;
+   }
+   public By getclickOnPages() {
+	   return clickOnPages;
+   }
+   public By getclickOnAdministration() {
+	   return ClickOnAdministration;
+   }
+   public By getclickOnOrgChart() {
+	   return clickOnOrganizationChart;
+   }
+   public By getclickOnMyTeam() {
+	   return clickOnMyTeam;
+   }
+   public By getclickOnOnDept() {
+	   return clickOnDepartments;
+   }
+   public By getclickOnCareers() {
+	   return clickOnCareers;
+   }
+   public By getclickOnResig() {
+	   return clickOnResignation;
+   }
+   public By getclickOnAttendance() {
+	   return ClickOnAttendance;
+   }
+   public By getclickOnChartsOfAccounts() {
+	   return clickOnCHartOfAccount;
+   }
+   public By getclickOnQuotation() {
+	   return clickOnQuotation;
+   }
+   public By getclickOnVoucher() {
+	   return clickOnCreateVoucher;
+   }
+   public By getclickOnvoucherList() {
+	   return clickOnVoucherList;
+   }
+   public By getclickOnLedgerRepo() {
+	   return clickOnLedgerList;
+   }
+   public By getclickOnTrailBalance() {
+	   return clickOnTrialBalance;
+   }
+   public By getclickOnPayroll() {
+	   return clickOnPayroll;
+   }
+   public By getclickOnRequisition() {
+	   return clickOnRequisition;
+   }
+   public By getclickOnAssetsAllocaiton() {
+	   return clickOnAssetsAllocation;
+   }
+   public By getclickOnCreateAssets() {
+	   return clickOnCreateAssets;
+   }
+   public By getclickOnAssetsLists() {
+	   return clickOnAssetsList;
+   }
+   public By getclickOnRequestForItems() {
+	   return clickOnRequestForItem;
+   }
+   public By getclickOnCompanies() {
+	   return clickOnCompanies;
+   }
+   
     
 }
 

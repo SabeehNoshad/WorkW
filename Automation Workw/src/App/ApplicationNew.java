@@ -39,6 +39,9 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import Localization.localizationTest;
+
 import javax.swing.JToggleButton;
 
 /*
@@ -1176,6 +1179,53 @@ public class ApplicationNew extends javax.swing.JFrame {
         	}
         });
         
+        JButtonCzeck = new JButton("Czech Lang");
+        JButtonCzeck.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		jTextArea1.setText("");
+            	// Call your test case methods here
+        		localizationTest testClass1 = new localizationTest();
+            	 getterMethodTextFile text = new getterMethodTextFile();
+                 // Break the string into multiple lines using newline character
+                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
+
+                    // Create a new string with line breaks
+                    String formattedTravelDetails = String.join("\n", lines);
+                    jTextArea2.setText(formattedTravelDetails);
+                try {
+                	
+                	// boolean result =testClass1.LeadCreateTest(inputValue1);  
+                	 if (jLabelWelcomName.getText().equals("Wise Work")) {
+                         // If yes, pass additional parameters
+                         boolean result = testClass1.localicationlangTest(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                         if (result) {
+     		                // Test passed, change the button color to green
+                        	 JButtonCzeck.setBackground(Color.GREEN);
+     		            } else {
+     		                // Test failed, change the button color to red (or any other color)
+     		            	JButtonCzeck.setBackground(Color.RED);
+     		            }
+                         updateResultLabel(result);
+                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     	  
+                     	  boolean result = testClass1.localicationlangTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                           if (result) {
+        		                // Test passed, change the button color to green
+                        	   JButtonCzeck.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	JButtonCzeck.setBackground(Color.RED);
+        		            	 updateResultLabel(result);
+        		            	 
+                       }
+                       }
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+        	}
+        });
+        
        
 
         javax.swing.GroupLayout jPanelmainLayout = new javax.swing.GroupLayout(jPanelmain);
@@ -1188,41 +1238,44 @@ public class ApplicationNew extends javax.swing.JFrame {
         					.addComponent(jLabelheadMain, GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
         				.addGroup(jPanelmainLayout.createSequentialGroup()
         					.addGap(17)
-        					.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING, false)
-        						.addComponent(jButtonCustomAp, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        						.addComponent(jButtonProject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        						.addComponent(jButtonClock, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        						.addComponent(jButtonForms, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         					.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
-        						.addGroup(jPanelmainLayout.createSequentialGroup()
-        							.addGap(11)
-        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
-        								.addComponent(jButtonWOrkBoard, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(jButtonExpenses, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        							.addGap(12)
+        						.addGroup(Alignment.TRAILING, jPanelmainLayout.createSequentialGroup()
+        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING, false)
+        								.addComponent(jButtonCustomAp, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addComponent(jButtonProject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addComponent(jButtonClock, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addComponent(jButtonForms, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addComponent(jButtonTravel)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(jButtonPost))
+        									.addGap(11)
+        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
+        										.addComponent(jButtonWOrkBoard, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        										.addComponent(jButtonExpenses, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        									.addGap(12)
+        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
+        										.addGroup(jPanelmainLayout.createSequentialGroup()
+        											.addComponent(jButtonTravel)
+        											.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(jButtonPost))
+        										.addGroup(jPanelmainLayout.createSequentialGroup()
+        											.addComponent(jButtonGroup)
+        											.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(jButtonTask))))
         								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addComponent(jButtonGroup)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(jButtonTask))))
-        						.addGroup(jPanelmainLayout.createSequentialGroup()
-        							.addGap(12)
-        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
-        								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addComponent(comment)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(JButtonLeadComent))
-        								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addComponent(jButtonLeadMana)
-        									.addPreferredGap(ComponentPlacement.UNRELATED)
-        									.addComponent(jButtonLead)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(jButtonSchedule)))))
-        					.addGap(96)))
+        									.addGap(12)
+        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
+        										.addGroup(jPanelmainLayout.createSequentialGroup()
+        											.addComponent(comment)
+        											.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(JButtonLeadComent))
+        										.addGroup(jPanelmainLayout.createSequentialGroup()
+        											.addComponent(jButtonLeadMana)
+        											.addPreferredGap(ComponentPlacement.UNRELATED)
+        											.addComponent(jButtonLead)
+        											.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(jButtonSchedule)))))
+        							.addGap(96))
+        						.addComponent(JButtonCzeck))))
         			.addContainerGap())
         );
         jPanelmainLayout.setVerticalGroup(
@@ -1253,7 +1306,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jButtonForms)
         				.addComponent(comment, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
         				.addComponent(JButtonLeadComent))
-        			.addContainerGap(248, Short.MAX_VALUE))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(JButtonCzeck)
+        			.addContainerGap(225, Short.MAX_VALUE))
         );
         jPanelmain.setLayout(jPanelmainLayout);
 
@@ -2443,4 +2498,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldLoopValue;
     private javax.swing.JTextField jTextFieldTagValue;
     private JButton comment;
+    private JButton JButtonCzeck;
 }

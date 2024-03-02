@@ -436,5 +436,38 @@ public class Xpaths {
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
+    By languageOption 			= By.xpath("//img[@alt='userSettingToggle']");
+    By landCzech				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[6]");
+    By clickOnmessenger			 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/a");
+    By ClickOnMailBox			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[4]/a/p");
+    By clickOnDocsAndArchive	 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[8]/a");
+    By clickOnLandD				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[8]/a/p");
+    By clickonJobBoard 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[15]/a/p");
+    By clickOnBusinessPolicy	 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[15]/a");
+    By clickOnForms				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[17]/a");
+    By ClickOnMarketPlace		 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
+    By clickOnAuction 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
+    By clickOnDiscussionBoard 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
+    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/div[2]");
+    By ClickOnAdministration 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnOrganizationChart = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[7]/a/p");
+    By clickOnMyTeam    		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[10]/a/p");
+    By clickOnDepartments		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[12]/a/p");
+    By clickOnCareers			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[13]/a/p");
+    By clickOnResignation		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[16]/a/p");
+    By ClickOnAttendance		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[17]/a");
+    By clickOnCHartOfAccount	= By.xpath("//a[contains(@href, '/chart-of-account')]");
+    By clickOnQuotation			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[2]/a/p");
+    By clickOnCreateVoucher		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnVoucherList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[4]/a/p");
+    By clickOnLedgerList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[5]/a/p");
+    By clickOnTrialBalance		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[6]/a/p");
+    By clickOnPayroll			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[7]/a/p");
+    By clickOnRequisition		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div/a");
+    By clickOnAssetsAllocation	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[2]/a");
+    By clickOnCreateAssets		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnAssetsList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnRequestForItem	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[5]/a/p");
+    By clickOnCompanies			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[5]/div/div[2]/div/div/div/a");
 
 }
