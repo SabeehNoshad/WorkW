@@ -1341,6 +1341,19 @@ public class getterMethods extends Xpaths {
    public By getclickOnCompanies() {
 	   return clickOnCompanies;
    }
+   // language 
+   public By getarabicLanguage() {
+	   return arabicLanguage;
+   }
+   public By gethindiLanguage() {
+	   return hindiLanguage;
+   }
+   public By getturkishLanguage() {
+	   return turkishLanguage;
+   }
+   public By geturduLanguage() {
+	   return urduLanguage;
+   }
    
     
 }
