@@ -2,6 +2,7 @@ package customApproval;
 
 import org.testng.annotations.Test;
 
+import App.ApplicationNew;
 import signin.Login_Method;
 import signin.TestBase;
 
@@ -12,27 +13,31 @@ public class customApprovalTest extends TestBase{
 	public boolean CustomApprovalCreateTest(Integer loop,String email,String Password) throws InterruptedException {
 		setUp();
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
-		driver.get(defaults.getwebUrl());
-//		Thread.sleep(2000);
-		Login_Method login = new Login_Method(driver);
-	   login.sign_in(email,Password);
-		
+		  String currentURL = "";
 
-		//	Thread.sleep(7000);
-		customApprovalMethod Cust =new customApprovalMethod(driver);
 		 try {
+				driver.get(defaults.getwebUrl());
+//				Thread.sleep(2000);
+				Login_Method login = new Login_Method(driver);
+			   login.sign_in(email,Password);
+				
+
+				//	Thread.sleep(7000);
+				customApprovalMethod Cust =new customApprovalMethod(driver);
 			 Cust.CustomApprovalRoute(loop);
 		        tearDown();
 		        return true;
-		       
 		 } catch (Exception e) {
-		 
+			 currentURL = driver.getCurrentUrl();
+			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 throw e;
+		 }
+		 finally {
 			 // Handle exceptions or log errors if createPost fails
-		        e.printStackTrace(); // Replace with appropriate logging
+		      //  e.printStackTrace(); // Replace with appropriate logging
 		        tearDown(); // Still call tearDown in case cleanup is needed
 		        return false;
-		        
-		}
+		 }
 		
 	} 
 

@@ -1254,7 +1254,8 @@ public class ApplicationNew extends javax.swing.JFrame {
     			}
         	}
         });
-        btnHindi.addActionListener(new ActionListener() {
+        // turkish language
+        btnTurkish.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1273,24 +1274,24 @@ public class ApplicationNew extends javax.swing.JFrame {
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
                 	 if (jLabelWelcomName.getText().equals("Wise Work")) {
                          // If yes, pass additional parameters
-                         boolean result = testClass1.localicationlangTest(xpaths.gethindiLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                         boolean result = testClass1.localicationlangTest(xpaths.getturkishLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
      		                // Test passed, change the button color to green
-                        	 btnHindi.setBackground(Color.GREEN);
+                        	 btnTurkish.setBackground(Color.GREEN);
      		            } else {
      		                // Test failed, change the button color to red (or any other color)
-     		            	btnHindi.setBackground(Color.RED);
+     		            	btnTurkish.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                      	  
-                     	  boolean result = testClass1.localicationlangTest(xpaths.gethindiLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                     	  boolean result = testClass1.localicationlangTest(xpaths.getturkishLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
         		                // Test passed, change the button color to green
-                        	   btnHindi.setBackground(Color.GREEN);
+                        	   btnTurkish.setBackground(Color.GREEN);
         		            } else {
         		                // Test failed, change the button color to red (or any other color)
-        		            	btnHindi.setBackground(Color.RED);
+        		            	btnTurkish.setBackground(Color.RED);
         		            	 updateResultLabel(result);
         		            	 
                        }
@@ -2582,14 +2583,14 @@ public class ApplicationNew extends javax.swing.JFrame {
     	
         if (result) {
         //	jTextArea1.setText("Pass");
-        	 updateProgressBar(10);
+        	 updateProgressBar(80);
         	 
         } else {
        // 	jTextArea1.setText("Fail");
         }
     }
     public void updateProgressBar(int value) {
-    	value = Math.min(100, Math.max(0, value));
+    	value = Math.min(100, Math.max(10, value));
 
         // Set the progress value
         jProgressBar1.setValue(value);

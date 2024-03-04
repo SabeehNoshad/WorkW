@@ -2,6 +2,7 @@ package salary;
 
 import org.testng.annotations.Test;
 
+import App.ApplicationNew;
 import signin.Login_Method;
 import signin.TestBase;
 import user.urls.testArguments.getterMethodTextFile;
@@ -13,25 +14,30 @@ public class salary_test extends TestBase {
 	public boolean createSalaryTest(String email,String password,String company) throws InterruptedException {
 		setUp();
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
-		driver.get(defaults.getwebUrl());
-//		Thread.sleep(2000);
-		Login_Method login = new Login_Method(driver);
-		login.sign_in(email,password);
-	//	Thread.sleep(10000);
-		salaryMethod salary = new salaryMethod(driver);
+		  String currentURL = "";
+
 		 try {
+			 driver.get(defaults.getwebUrl());
+//				Thread.sleep(2000);
+				Login_Method login = new Login_Method(driver);
+				login.sign_in(email,password);
+			//	Thread.sleep(10000);
+				salaryMethod salary = new salaryMethod(driver);
 			 salary.salaryModuleClick(company);
 		        tearDown();
 		        return true;
 		       
 		 } catch (Exception e) {
-		 
+			 currentURL = driver.getCurrentUrl();
+			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 throw e;
+		 }
+		 finally {
 			 // Handle exceptions or log errors if createPost fails
-		        e.printStackTrace(); // Replace with appropriate logging
+		      //  e.printStackTrace(); // Replace with appropriate logging
 		        tearDown(); // Still call tearDown in case cleanup is needed
 		        return false;
-		        
-		}
+		 }
 	
 }
 }
