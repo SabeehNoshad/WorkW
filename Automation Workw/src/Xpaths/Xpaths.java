@@ -469,5 +469,8 @@ public class Xpaths {
     By clickOnAssetsList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[3]/a/p");
     By clickOnRequestForItem	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[5]/a/p");
     By clickOnCompanies			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[5]/div/div[2]/div/div/div/a");
-
+    By urduLanguage				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[2]/p");
+    By turkishLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[5]/p");
+    By hindiLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[4]");
+    By arabicLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[3]");
 }

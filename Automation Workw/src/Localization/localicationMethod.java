@@ -37,10 +37,10 @@ public class localicationMethod extends Base_page{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public void languageSelect () throws InterruptedException {
+	public void languageSelect (By lang) throws InterruptedException {
 		  WebElement LangClick = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getLangOption()));
 		  LangClick.click();
-		  WebElement LangCzech = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getlangCzech()));
+		  WebElement LangCzech = wait.until(ExpectedConditions.visibilityOfElementLocated(lang));
 		  LangCzech.click();
 		  Thread.sleep(3000);
 		
