@@ -738,7 +738,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
                      // Create a new string with line breaks
                      String formattedTravelDetails = String.join("\n", lines);
-                     jTextArea1.setText(formattedTravelDetails);
+                     jTextArea2.setText(formattedTravelDetails);
                  try {
                  	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                  	// boolean result =testClass1.workBoardCreateAndSectionAndTodos(inputValue1);

@@ -22,4 +22,5 @@ public class expenseCreateNavBar_Test extends TestBase {
 		expense.createExpenseNavBarOption(text.getuserAmmount(),text.getuserdate(),text.getuserModuleDescription500());
 
 }
+	
 }

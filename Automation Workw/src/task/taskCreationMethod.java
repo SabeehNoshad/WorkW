@@ -86,7 +86,7 @@ public void taskCreateComposer(Integer i , String type , String priority) throws
 	//Thread.sleep(5000);
 	 WebElement taskSubmitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTaskCreateButton()));
 	 taskSubmitButton.click();
-	driver.findElement(xpaths.getTaskCreateButton()).click();
+//	 driver.findElement(xpaths.getTaskCreateButton());
 	
 }
 public void taskType () throws InterruptedException {

@@ -227,7 +227,7 @@ public class Xpaths {
     By taskDatePicker					= By.xpath("//input[@id='createTask_taskDate']");
     By taskEndDate						= By.xpath("/form[@id='createTask']/div[6]/div/div[2]/div/div/div/div[3]/input");
     By taskDatePickerClose				= By.xpath("//form[@id='createTask']");
-    By taskCreateButton					= By.cssSelector(".ant-btn-block > span");
+    By taskCreateButton					= By.xpath("//div[9]/div/div/div/div/button/span");
     By taskGroupSelectedItem			= By.xpath("//form[@id='createTask']/div[4]/div/div[2]/div/div/div[2]/span/div");
     By taskProjectSelectedItem			= By.xpath("//form[@id='createTask']/div[4]/div/div[2]/div/div/div[2]/span/div");
     By taskNavBarOpt					= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[14]/a");
