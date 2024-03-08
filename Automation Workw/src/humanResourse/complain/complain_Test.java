@@ -31,17 +31,17 @@ public class complain_Test extends TestBase {
 				compMeth.complainCreate(loop,company);
 		        // If createPost is successful, tearDown and return true
 		        tearDown();
+		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
 			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
-			 throw e;
+		        return false;
 		 }
 		 finally {
 			 // Handle exceptions or log errors if createPost fails
 		      //  e.printStackTrace(); // Replace with appropriate logging
 		        tearDown(); // Still call tearDown in case cleanup is needed
-		        return false;
-		 }
+		 		 }
 	
 		
 	} 
