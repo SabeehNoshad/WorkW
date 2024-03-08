@@ -24,7 +24,7 @@ public class travelMethod extends Base_page{
 	public void createComposer(Integer times) throws InterruptedException {
 		 WebElement travelNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTravelNavBarOpt()));
 		 travelNavBarOption.click();
-		 for (int i= 10 ; i <= times ; i++) {
+		 for (int i= 1 ; i <= times ; i++) {
 		 WebElement travelCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTravelCreateComposer()));
 		 travelCreateComposer.click();
 		 travelCreateForm(i);

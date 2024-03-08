@@ -215,7 +215,7 @@ public class Xpaths {
     // task 
     By taskFeedOption					= By.xpath("//div[@id='section1']/div/div[2]/div[2]/div/img[5]");
     By taskSubject						= By.xpath("//form[@id='createTask']/div/div/div[2]/div/div/input");
-    By taskDescription					= By.xpath("//textarea[@id='createTask_description']");
+    By taskDescription					= By.xpath("//textarea[@id='description']");
     By taskGeneralOpt					= By.xpath("//div[@id='createTask_referenceType']/label/span[2]");
     By taskProjectOpt					= By.xpath("//div[@id='createTask_referenceType']/label[2]/span[2]");
     By taskGroupOpt						= By.xpath("//div[@id='createTask_referenceType']/label[3]/span[2]");
@@ -390,7 +390,7 @@ public class Xpaths {
     By ScheduleNavbarOpt						= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[2]/a");
     By ScheduleCreateButton						= By.cssSelector(".ant-btn-square > span");
     By ScheduleSubject						= By.xpath("//form/div/div/div[2]/div/div/input");
-    By ScheduleDescriptio						= By.xpath("//div[2]/div/div/div/div/div[2]/div/div[2]/div");
+    By ScheduleDescriptio						= By.xpath("//div[2]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div");
     By SchedulememberListClick						= By.xpath("//div[9]/div/div[2]/div/div/div/input");
     By ScheduleMemberSelection						= By.xpath("//span/div/div/p");
     By ScheduleSubmittButton						= By.xpath("//div[12]/div/div/div/div/button");
@@ -448,7 +448,7 @@ public class Xpaths {
     By ClickOnMarketPlace		 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
     By clickOnAuction 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
     By clickOnDiscussionBoard 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
-    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/div[2]");
+    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[21]/a");
     By ClickOnAdministration 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[3]/a/p");
     By clickOnOrganizationChart = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[7]/a/p");
     By clickOnMyTeam    		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[10]/a/p");

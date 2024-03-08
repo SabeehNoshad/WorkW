@@ -24,7 +24,7 @@ public class formMethod extends Base_page {
 	}
 	public void formRun(Integer times) throws InterruptedException {
 		NavbarCreatebutton();
-		for (int i = 0 ; i <= times ; i ++) {
+		for (int i = 1 ; i <= times ; i ++) {
 		formRouteTextAnswer();
 		formRouteNumberAnswer();
 		formRoutepollAnswer();
