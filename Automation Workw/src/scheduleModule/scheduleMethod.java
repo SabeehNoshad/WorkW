@@ -24,7 +24,7 @@ public class scheduleMethod extends Base_page {
 	public void scheduleRoute(Integer times,String company) {
 		WebElement scheduleNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleNavBar()));
 		scheduleNavBar.click();
-		for (int i = 0; i <= times ; i ++) {
+		for (int i = 1; i <= times ; i ++) {
 		//	driver.findElement(xpaths.getscheduleCreateButton()).click();
 //		WebElement scheduleCreateButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleCreateButton()));
 //		scheduleCreateButton.click();
@@ -34,11 +34,12 @@ public class scheduleMethod extends Base_page {
 	}
 	public void createComposer(Integer i,String company ) {
 		driver.findElement(xpaths.getscheduleCreateButton()).click();
+//		WebElement scheduleCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleSubject()));
+//		scheduleCreateComposer.click();
 		driver.findElement(xpaths.getscheduleCreateButton()).click();
 
 		WebElement scheduleSubject = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleSubject()));
 		scheduleSubject.sendKeys(i + text.getSubject());
-		driver.findElement(xpaths.getscheduleDescription()).click();
 		WebElement scheduleDescription = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleDescription()));
 		scheduleDescription.sendKeys(i + text.getuserModuleDescription500());
 		driver.findElement(xpaths.getscheduleMemberlistClick()).click();

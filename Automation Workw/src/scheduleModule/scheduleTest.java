@@ -17,12 +17,9 @@ public class scheduleTest extends TestBase {
 
 		 try {
 			 driver.get(defaults.getwebUrl());
-//				Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
 			   login.sign_in(email,Password);
-				
 
-				//	Thread.sleep(7000);
 				scheduleMethod sche =new scheduleMethod(driver);
 			 sche.scheduleRoute(loop,company);
 		        tearDown();

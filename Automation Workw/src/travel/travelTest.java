@@ -16,13 +16,10 @@ public class travelTest extends TestBase {
 		  String currentURL = "";
 
 		 try {
-			 driver.get(defaults.getwebUrl());
-//				Thread.sleep(2000);
+			    driver.get(defaults.getwebUrl());			
 				Login_Method login = new Login_Method(driver);
-			   login.sign_in(email,Password);
-				
-
-				//	Thread.sleep(7000);
+			    login.sign_in(email,Password);
+			
 				travelMethod trav =new travelMethod(driver);
 				trav.createComposer(loop);
 		        tearDown();
