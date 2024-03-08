@@ -46,33 +46,37 @@ public void taskCreateComposer(Integer i , String type , String priority) throws
 	driver.findElement(xpaths.getTaskDescription()).click();
 	driver.findElement(xpaths.getTaskDescription()).sendKeys(text.getuserModuleDescription500());
 	
-	if (type == "general") {
-	driver.findElement(xpaths.getTaskGeneralOpt()).click();
-	}
-	else if (type == "project") {
-	driver.findElement(xpaths.getTaskProjectOpt()).click();
-	//Thread.sleep(5000);
-	taskType();
-	}
-	else if (type == "group") {
-	driver.findElement(xpaths.getTaskGroupOpt()).click();
-	//Thread.sleep(5000);
-	taskType();
-	}
-	else {System.out.print("your default type is the general");}
+	 WebElement taskGeneralTpe = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTaskGeneralOpt()));
+	 taskGeneralTpe.click();
+//	if (type == "general") {
+//	driver.findElement(xpaths.getTaskGeneralOpt()).click();
+//	}
+//	else if (type == "project") {
+//	driver.findElement(xpaths.getTaskProjectOpt()).click();
+//	//Thread.sleep(5000);
+//	taskType();
+//	}
+//	else if (type == "group") {
+//	driver.findElement(xpaths.getTaskGroupOpt()).click();
+//	//Thread.sleep(5000);
+//	taskType();
+//	}
+//	else {System.out.print("your default type is the general");}
+//	
+//	if(priority == "low") {
+//	driver.findElement(xpaths.getTaskPrioritylow()).click();
+//	}
+//	else if (priority == "medium") {
+//	driver.findElement(xpaths.getTaskPriorityMedium()).click();
+//	}
+//	else if (priority == "high") {
+//	driver.findElement(xpaths.getTaskPriorityhigh()).click();
+//	}
+//	else {System.out.print("your default priority is set as low ");}
 	
-	if(priority == "low") {
-	driver.findElement(xpaths.getTaskPrioritylow()).click();
-	}
-	else if (priority == "medium") {
-	driver.findElement(xpaths.getTaskPriorityMedium()).click();
-	}
-	else if (priority == "high") {
-	driver.findElement(xpaths.getTaskPriorityhigh()).click();
-	}
-	else {System.out.print("your default priority is set as low ");}
-	
-	
+	 WebElement taskSubmitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTaskCreateButton()));
+	 taskSubmitButton.click();
+	Thread.sleep(3000);
 //	driver.findElement(xpaths.getTaskDatePicker()).click();
 //	//Thread.sleep(2000);
 //	driver.findElement(xpaths.getTaskDatePicker()).clear();
@@ -84,9 +88,8 @@ public void taskCreateComposer(Integer i , String type , String priority) throws
 //	//driver.findElement(xpaths.getTaskEndDate()).sendKeys("2024-02-04");
 //	driver.findElement(xpaths.getTaskDatePickerClose()).click();
 	//Thread.sleep(5000);
-	 WebElement taskSubmitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getTaskCreateButton()));
-	 taskSubmitButton.click();
-	driver.findElement(xpaths.getTaskCreateButton()).click();
+
+	//driver.findElement(xpaths.getTaskCreateButton()).click();
 	
 }
 public void taskType () throws InterruptedException {
