@@ -17,6 +17,8 @@ public class newsFeedCreate_Test extends TestBase {
 
 	
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 				driver.get(defaults.getwebUrl());
 				Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -26,13 +28,15 @@ public class newsFeedCreate_Test extends TestBase {
 				Thread.sleep(7000);
 				newsFeedMethod news = new newsFeedMethod(driver);
 		        news.createPost(posts, mention,company);
+		        ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+				 ApplicationNew.logError("Post Created Sucessfully");
 
 		        // If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Post Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

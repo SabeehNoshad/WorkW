@@ -18,18 +18,22 @@ public class quickadd_test extends TestBase{
 
 		
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 				driver.get(defaults.getwebUrl());
 				Login_Method login = new Login_Method(driver);
 			login.sign_in(email,pass);
 			
 				quick_Method quick =new quick_Method(driver);
 				quick.Add_employee(loop,company);
+				 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+				 ApplicationNew.logError("Employees Added Sucessfully");
 		        // If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Quick Add  on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

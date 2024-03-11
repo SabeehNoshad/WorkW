@@ -17,6 +17,8 @@ public class salary_test extends TestBase {
 		  String currentURL = "";
 
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 			 driver.get(defaults.getwebUrl());
 //				Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -24,12 +26,15 @@ public class salary_test extends TestBase {
 			//	Thread.sleep(10000);
 				salaryMethod salary = new salaryMethod(driver);
 			 salary.salaryModuleClick(company);
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("Salary Created Sucessfully");
+			 
 		        tearDown();
 		        return true;
 		       
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Salary Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

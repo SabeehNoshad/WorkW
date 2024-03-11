@@ -18,6 +18,8 @@ public class leadManager_Test extends TestBase {
 		
 
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 			 driver.get(defaults.getwebUrl());
 				//Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -26,12 +28,15 @@ public class leadManager_Test extends TestBase {
 				//Thread.sleep(7000);
 				leadManager_Method lead =new leadManager_Method(driver);
 				
-			 lead.leadGroupRoute(loop);		        // If createPost is successful, tearDown and return true
+			 lead.leadGroupRoute(loop);	
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("Lead Group Sucessfully Created ");
+			 // If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Lead Group Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 	 }
 		 finally {

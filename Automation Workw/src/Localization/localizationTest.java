@@ -21,12 +21,16 @@ public class localizationTest extends TestBase{
 		
 		
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 			 driver.get(defaults.getwebUrl());
 	         
 				Login_Method login = new Login_Method(driver);
 				login.sign_in(email,pass);
 				localicationMethod lcl = new localicationMethod(driver);
 			 	lcl.languageSelect(lang);
+			 	 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+				 ApplicationNew.logError("Localization Test SucessFull");
 			 tearDown();
 		        return true;
 		       

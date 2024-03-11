@@ -27,7 +27,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 public void leadGroupRoute(Integer times) throws InterruptedException {
 	WebElement LeadManagerNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getLeadManagerOpt()));
 	LeadManagerNavBar.click();
-	for (int i = 11; i <= times ; i ++) {
+	for (int i =1; i <= times ; i ++) {
 //	WebElement LeadManagerTabGroupOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getleadGroupTabSelection()));
 //	LeadManagerTabGroupOption.click();
 	WebElement LeadManagerCreateGroupOpti = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getCreateLeadGroupOption()));

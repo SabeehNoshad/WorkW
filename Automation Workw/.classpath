@@ -66,7 +66,25 @@
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/selenium-java-4.15.0/selenium-safari-driver-4.15.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/selenium-java-4.15.0/selenium-support-4.15.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/selenium-java-4.15.0/selenium-support-4.15.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/httpclient5-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/httpcore5-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/httpcore5-h2-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/http-request-3.3.0-rc1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-annotations-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-core-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-databind-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-dataformat-xml-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-datatype-jdk8-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-datatype-joda-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-datatype-jsr310-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/jackson-module-parameter-names-2.15.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/joda-time-2.12.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/slf4j-api-2.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/stax2-api-4.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/request/woodstox-core-6.5.1.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/user/Desktop/mavenproject1-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/okhttp-3.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (1).zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

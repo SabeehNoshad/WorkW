@@ -121,11 +121,16 @@ public class ApplicationNew extends javax.swing.JFrame {
         // Set the visibility of the tabbed pane to true
         jPanelResult.setVisible(false);
    }
+   //log Errors 
    public static void logError(String errorMessage) {
        System.err.println(errorMessage); // You can replace this with your preferred logging mechanism
        jTextArea1.setText(errorMessage);
    }
-   //  
+   // response time  
+   public static void resTime(String errorMessage) {
+       System.err.println(errorMessage); // You can replace this with your preferred logging mechanism
+		jTextArea2.setText(errorMessage);
+	   }
     /**
      * Creates new form ApplicationNew
      */
@@ -472,11 +477,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	scheduleTest testClass1 = new scheduleTest();
             	 getterMethodTextFile text = new getterMethodTextFile();
                  // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+                
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	 	// boolean result = testClass1.newsFeedCreateTest(inputValue1,inputValue2);
@@ -521,12 +522,12 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	clockIn_Test testClass1 = new clockIn_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
+//                 // Break the string into multiple lines using newline character
+//                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
 
                     // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+//                    String formattedTravelDetails = String.join("\n", lines);
+//                    jTextArea2.setText(formattedTravelDetails);
                 try {
                 	
                 	 	// boolean result = testClass1.newsFeedCreateTest(inputValue1,inputValue2);
@@ -572,12 +573,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
               	newsFeedCreate_Test testClass1 = new newsFeedCreate_Test();
               	 getterMethodTextFile text = new getterMethodTextFile();
-                   // Break the string into multiple lines using newline character
-                      String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                      // Create a new string with line breaks
-                      String formattedTravelDetails = String.join("\n", lines);
-                      jTextArea2.setText(formattedTravelDetails);
+             
                   try {
                   	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                   	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
@@ -625,12 +621,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                 travelTest testClass2 = new travelTest();
                 getterMethodTextFile text = new getterMethodTextFile();
                 testResult tst = new testResult();
-             // Break the string into multiple lines using newline character
-                String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                // Create a new string with line breaks
-                String formattedTravelDetails = String.join("\n", lines);
-                jTextArea2.setText(formattedTravelDetails);
+          
                 try {
                 	
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
@@ -661,10 +652,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     				
     		            // Get the relevant information from ITestResult and update the JTextArea
     			    
-   
-    			     jTextArea2.setText(tst.getuserTestDetails());
-    				//updateResultLabel(result);
-    				
+       				
 
     			} catch (InterruptedException e1) {
     				// TODO Auto-generated catch block
@@ -682,12 +670,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
                 expenseCreateFeed_Test testClass1 = new expenseCreateFeed_Test();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+            
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
     				//Boolean result =testClass1.expenseCreateTest(inputValue1);
@@ -733,12 +716,7 @@ public class ApplicationNew extends javax.swing.JFrame {
              	// Call your test case methods here
              	workBoardTest testClass1 = new workBoardTest();
              	 getterMethodTextFile text = new getterMethodTextFile();
-                  // Break the string into multiple lines using newline character
-                     String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                     // Create a new string with line breaks
-                     String formattedTravelDetails = String.join("\n", lines);
-                     jTextArea1.setText(formattedTravelDetails);
+              
                  try {
                  	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                  	// boolean result =testClass1.workBoardCreateAndSectionAndTodos(inputValue1);
@@ -783,12 +761,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
                 groupCreateTest testClass1 = new groupCreateTest();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.groupCreate(inputValue1);
@@ -832,12 +805,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
                 projectCreateTest testClass1 = new projectCreateTest();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.projectCreate(inputValue1);
@@ -882,12 +850,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
                 leadManager_Test testClass1 = new leadManager_Test();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+               
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.leadManagerCreate(inputValue1);
@@ -927,12 +890,8 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
             	customApprovalTest testClass1 = new customApprovalTest();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+               
+               
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.leadManagerCreate(inputValue1);
@@ -973,12 +932,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
             	Lead_Group_leads testClass1 = new Lead_Group_leads();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1020,12 +974,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
             	taskCreation_Test testClass1 = new taskCreation_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+               
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1068,12 +1017,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         	// Call your test case methods here
         	commentTest testClass1 = new commentTest();
         	 getterMethodTextFile text = new getterMethodTextFile();
-             // Break the string into multiple lines using newline character
-                String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                // Create a new string with line breaks
-                String formattedTravelDetails = String.join("\n", lines);
-                jTextArea2.setText(formattedTravelDetails);
+           
             try {
             	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
             	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1117,12 +1061,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		localizationTest testClass1 = new localizationTest();
             	 getterMethodTextFile text = new getterMethodTextFile();
             	 getterMethods xpaths = new getterMethods();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+                
                 try {
                 	
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1167,12 +1106,6 @@ public class ApplicationNew extends javax.swing.JFrame {
             	 getterMethodTextFile text = new getterMethodTextFile();
          		getterMethods xpaths = new getterMethods();
 
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
                 try {
                 	
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1215,12 +1148,6 @@ public class ApplicationNew extends javax.swing.JFrame {
             	 getterMethodTextFile text = new getterMethodTextFile();
          		getterMethods xpaths = new getterMethods();
 
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
                 try {
                 	
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1263,12 +1190,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	 getterMethodTextFile text = new getterMethodTextFile();
          		getterMethods xpaths = new getterMethods();
 
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+            
                 try {
                 	
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1311,12 +1233,6 @@ public class ApplicationNew extends javax.swing.JFrame {
             	 getterMethodTextFile text = new getterMethodTextFile();
          		getterMethods xpaths = new getterMethods();
 
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
                 try {
                 	
                 	// boolean result =testClass1.LeadCreateTest(inputValue1);  
@@ -1507,12 +1423,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	// Call your test case methods here
                 quickadd_test testClass1 = new quickadd_test();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	 //boolean result =testClass1.quickAddEmployee(inputValue1);
@@ -1557,13 +1468,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	appraisalTest testClass1 = new appraisalTest();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
-                try {
+                             try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
     				//boolean result =testClass1.createPromotionTest(inputValue1);
     				 if (jLabelWelcomName.getText().equals("Wise Work")) {
@@ -1608,12 +1513,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	promotion_Test testClass1 = new promotion_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
     				//boolean result =testClass1.createPromotionTest(inputValue1);
@@ -1658,12 +1558,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		   jTextArea1.setText("");
              	warning_Test testClass1 = new warning_Test();
              	 getterMethodTextFile text = new getterMethodTextFile();
-                  // Break the string into multiple lines using newline character
-                     String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                     // Create a new string with line breaks
-                     String formattedTravelDetails = String.join("\n", lines);
-                     jTextArea2.setText(formattedTravelDetails);
+                
                  try {
                  	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
  					//boolean result = testClass1.createWarning(inputValue1);
@@ -1707,12 +1602,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	jTextArea1.setText("");
                 bonus_Test testClass1 = new bonus_Test();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+             
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
     			//boolean result =	testClass1.BonusCreation(inputValue1);
@@ -1756,12 +1646,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
                 complain_Test testClass1 = new complain_Test();
                 getterMethodTextFile text = new getterMethodTextFile();
-                // Break the string into multiple lines using newline character
-                   String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                   // Create a new string with line breaks
-                   String formattedTravelDetails = String.join("\n", lines);
-                   jTextArea2.setText(formattedTravelDetails);
+            
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	//boolean result=testClass1.CreateComplainOff(inputValue1);
@@ -1805,12 +1690,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             	jTextArea1.setText("");
             	reward_Test testClass1 = new reward_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+              
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	//boolean result =testClass1.createRewardTest(inputValue1);
@@ -1854,12 +1734,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	leaves_Test testClass1 = new leaves_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+               
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	//boolean result=testClass1.LeaveCreationcasual(inputValue1);
@@ -1907,12 +1782,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	salary_test testClass1 = new salary_test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+               
                 try {
                 	
                 	//boolean result=testClass1.loanCreate(inputValue1);
@@ -1958,12 +1828,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	loan_Test testClass1 = new loan_Test();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+             
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	//boolean result=testClass1.loanCreate(inputValue1);
@@ -2010,12 +1875,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
             	resignationTest testClass1 = new resignationTest();
             	 getterMethodTextFile text = new getterMethodTextFile();
-                 // Break the string into multiple lines using newline character
-                    String[] lines = text.getuserModuleDescription150().split("\\*\\*\\*");
-
-                    // Create a new string with line breaks
-                    String formattedTravelDetails = String.join("\n", lines);
-                    jTextArea2.setText(formattedTravelDetails);
+               
                 try {
                 	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
                 	//boolean result=testClass1.loanCreate(inputValue1);
@@ -2682,7 +2542,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private static javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private static javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextFieldLoopValue;
     private javax.swing.JTextField jTextFieldTagValue;
     private JButton comment;

@@ -205,7 +205,7 @@ public class Xpaths {
     By expenseNavBarOpt						= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[13]/a");
     By expenseHeadListClick					= By.xpath("//input[@id='addExpense_headerId']");
     By expenseHeaderListEnterOpt			= By.cssSelector(".ant-select-item-option-content");
-    By expenseAmountField					= By.xpath("//form[@id='addExpense']/div[4]/div/div/div[2]/div/div/span/input");
+    By expenseAmountField					= By.cssSelector(".ant-input:nth-child(2)");
     By expenseDescription					= By.xpath("//textarea[@id='addExpense_description']");
     By expenseCreateButton					= By.xpath("//form[@id='addExpense']/div[10]/div/div/div/div/button");
     By expenseCreateComposer				= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
@@ -379,7 +379,7 @@ public class Xpaths {
     By customApprovalEnterCategory				= By.cssSelector(".ant-select-selector");
     By customApprovalEnterAmount				= By.xpath("//input[@id='addCustomApproval_value']");
     By customApprovalDescription				= By.xpath("//textarea[@id='addCustomApproval_description']");
-    By customApprovalSubmitButton				= By.xpath("//form[@id='addCustomApproval']/div[7]/div/div/div/div/button");
+    By customApprovalSubmitButton				= By.xpath("//form[@id='addCustomApproval']/div[7]/div/div/div/div/button/span");
     By customApprovalOtherCategory				= By.cssSelector(".ant-select-item-option-content");
 //    By customApproval				= By.xpath("");
 //    By customApproval				= By.xpath("");
