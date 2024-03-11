@@ -46,8 +46,10 @@ getterMethodTextFile text = new getterMethodTextFile();
 		expenseHeaderValueClick.click();
 		
 		
-		driver.findElement(xpaths.getexpenseAmountField()).click();
-		driver.findElement(xpaths.getexpenseAmountField()).sendKeys(expenseAmount);
+		WebElement expenseAmountField = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getexpenseHeaderListEntertainment()));
+		expenseAmountField.sendKeys(expenseAmount);
+		
+		
 		
 //		driver.findElement(xpaths.getexpenseDateBox()).click();
 //		//Thread.sleep(3000);

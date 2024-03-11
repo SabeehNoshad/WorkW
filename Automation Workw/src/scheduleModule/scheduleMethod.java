@@ -21,7 +21,7 @@ public class scheduleMethod extends Base_page {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public void scheduleRoute(Integer times,String company) {
+	public void scheduleRoute(Integer times,String company) throws InterruptedException {
 		WebElement scheduleNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleNavBar()));
 		scheduleNavBar.click();
 		for (int i = 1; i <= times ; i ++) {
@@ -32,7 +32,7 @@ public class scheduleMethod extends Base_page {
 		}
 		
 	}
-	public void createComposer(Integer i,String company ) {
+	public void createComposer(Integer i,String company ) throws InterruptedException {
 		driver.findElement(xpaths.getscheduleCreateButton()).click();
 //		WebElement scheduleCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleSubject()));
 //		scheduleCreateComposer.click();
@@ -59,6 +59,7 @@ public class scheduleMethod extends Base_page {
 		scheduleMemberSelectionClick.click();
 		WebElement scheduleSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getscheduleSubmittButton()));
 		scheduleSubmit.click();
+		Thread.sleep(3000);
 	}
 
 }

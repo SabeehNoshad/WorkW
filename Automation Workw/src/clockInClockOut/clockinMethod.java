@@ -28,7 +28,7 @@ public class clockinMethod extends Base_page {
 		  
 		String message =element.getText();
 		//Thread.sleep(2000);
-		Assert.assertNotEquals(message, "Are You Sure to check-out?");
+		Assert.assertEquals(message, "Are You Sure to check-out?");
 		
 		driver.findElement(xpaths.getclockInButtonYes()).click();
 		System.out.print(message);

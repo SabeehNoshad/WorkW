@@ -18,6 +18,8 @@ public class commentTest extends TestBase {
 	
 	
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 				driver.get(defaults.getwebUrl());
 				//Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -25,12 +27,14 @@ public class commentTest extends TestBase {
 				//Thread.sleep(5000);
 				comentsMethod coment = new comentsMethod(driver);
 			 coment.comentRoute(times);
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("Coment Under Lead Manager Test Sucessfull");
 		        tearDown();
 		        return true;
 		       
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Comments On Feed on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {
@@ -49,6 +53,8 @@ public class commentTest extends TestBase {
 
 	
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 			 driver.get(defaults.getwebUrl());
 				//Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -56,19 +62,19 @@ public class commentTest extends TestBase {
 				//Thread.sleep(5000);
 				comentsMethod coment = new comentsMethod(driver);
 			 coment.commentOnLead(times);
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("Coment Under Lead Manager Test Sucessfull");
 		        tearDown();
 		        return true;
 		       
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
-			 throw e;
-		 }
+			 ApplicationNew.logError("Error occurred during Comments on Lead on URL: " + currentURL + "\nError message: "  + e.getMessage());
+		     return false;		 }
 		 finally {
 			 // Handle exceptions or log errors if createPost fails
 		      //  e.printStackTrace(); // Replace with appropriate logging
 		        tearDown(); // Still call tearDown in case cleanup is needed
-		        return false;
 		 }
 		
 	}

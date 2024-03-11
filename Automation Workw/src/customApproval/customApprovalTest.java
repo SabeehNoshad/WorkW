@@ -16,6 +16,9 @@ public class customApprovalTest extends TestBase{
 		  String currentURL = "";
 
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
+
 				driver.get(defaults.getwebUrl());
 //				Thread.sleep(2000);
 				Login_Method login = new Login_Method(driver);
@@ -25,11 +28,13 @@ public class customApprovalTest extends TestBase{
 				//	Thread.sleep(7000);
 				customApprovalMethod Cust =new customApprovalMethod(driver);
 			 Cust.CustomApprovalRoute(loop);
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("CustomApproval Creation Test Sucessfull");
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during CustomApproval Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

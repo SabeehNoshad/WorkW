@@ -16,18 +16,22 @@ public class Lead_Group_leads extends TestBase {
 		  String currentURL = "";
 
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 
 				driver.get(defaults.getwebUrl());
 				Login_Method login = new Login_Method(driver);
 				login.sign_in(email,pass);
 
 				leadManager_Method lead =new leadManager_Method(driver);
-			 lead.leads(loop);	        // If createPost is successful, tearDown and return true
+			 lead.leads(loop);
+			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+			 ApplicationNew.logError("Lead Created Sucessfully ");// If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Lead Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

@@ -20,6 +20,8 @@ public class complain_Test extends TestBase {
 		
 		//Thread.sleep(5000);
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
 				driver.get(defaults.getwebUrl());
 			 Login_Method login = new Login_Method(driver);
 				
@@ -29,12 +31,14 @@ public class complain_Test extends TestBase {
 				complain_Method compMeth = new complain_Method(driver);
 			
 				compMeth.complainCreate(loop,company);
+				 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+				 ApplicationNew.logError("Complain SucessFully Created");
 		        // If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Complain Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {

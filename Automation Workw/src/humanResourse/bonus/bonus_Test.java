@@ -21,6 +21,9 @@ public class bonus_Test extends TestBase {
 
 		
 		 try {
+			 long startTime = System.currentTimeMillis();
+			  long pageLoadTime = System.currentTimeMillis() - startTime;
+
 			 driver.get(defaults.getwebUrl());
 				//Thread.sleep(3000);
 				
@@ -30,12 +33,14 @@ public class bonus_Test extends TestBase {
 
 				bonus_Method bonusmethod = new bonus_Method(driver);
 				bonusmethod.bonusClickAndComposer(loop,company );
+				 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
+				 ApplicationNew.logError("Bonus Created Sucessfully");
 		        // If createPost is successful, tearDown and return true
 		        tearDown();
 		        return true;
 		 } catch (Exception e) {
 			 currentURL = driver.getCurrentUrl();
-			 ApplicationNew.logError("Error occurred during localizationTest on URL: " + currentURL + "\nError message: "  + e.getMessage());
+			 ApplicationNew.logError("Error occurred during Bonus Creation on URL: " + currentURL + "\nError message: "  + e.getMessage());
 		        return false;
 		 }
 		 finally {
