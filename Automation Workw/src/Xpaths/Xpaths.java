@@ -473,4 +473,9 @@ public class Xpaths {
     By turkishLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[5]/p");
     By hindiLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[4]");
     By arabicLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[3]");
+    
+    //
+    By newsFeedPollOption		= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div[3]/img[4]");
+    By newsFeedPollOption1		= By.xpath("(//input[@value=''])[3]");
+    By newsFeedPollOption2		= By.xpath("(//input[@value=''])[4]");
 }

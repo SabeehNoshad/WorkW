@@ -229,6 +229,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         btnHindi = new JButton("Hindi");
         btnNewButton_1 = new JButton("Arabic");
         btnNewButton_2 = new JButton("Urdu");
+        jButtonPoll = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -283,10 +284,10 @@ public class ApplicationNew extends javax.swing.JFrame {
                 }
             }
         });
-
+//*************************************************************************** Wellcome Panel  J panel *******************************************************************************************************
         javax.swing.GroupLayout jPanelwellcomLayout = new javax.swing.GroupLayout(jPanelwellcom);
         jPanelwellcomLayout.setHorizontalGroup(
-        	jPanelwellcomLayout.createParallelGroup(Alignment.LEADING)
+        	jPanelwellcomLayout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(jPanelwellcomLayout.createSequentialGroup()
         			.addGap(206)
         			.addGroup(jPanelwellcomLayout.createParallelGroup(Alignment.LEADING)
@@ -294,9 +295,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jCheckBox4, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBox5, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBox2, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(339, Short.MAX_VALUE))
-        		.addGroup(Alignment.TRAILING, jPanelwellcomLayout.createSequentialGroup()
-        			.addContainerGap(490, Short.MAX_VALUE)
+        			.addContainerGap(358, Short.MAX_VALUE))
+        		.addGroup(jPanelwellcomLayout.createSequentialGroup()
+        			.addContainerGap(499, Short.MAX_VALUE)
         			.addComponent(jButtonSubmit)
         			.addGap(327))
         );
@@ -313,7 +314,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         			.addComponent(jCheckBox3)
         			.addGap(18)
         			.addComponent(jButtonSubmit)
-        			.addContainerGap(261, Short.MAX_VALUE))
+        			.addContainerGap(354, Short.MAX_VALUE))
         );
         jPanelwellcom.setLayout(jPanelwellcomLayout);
 
@@ -329,6 +330,11 @@ public class ApplicationNew extends javax.swing.JFrame {
 
         jLabelheadMain.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelheadMain.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        
+        // ****************************************************************************** Background Set *******************************************************************************************************
+       
+        
+        // *******************************************************************************set text **************************************************************************************************************
         jLabelheadMain.setText("Main Menu ");
 
         jButtonClock.setText("Clock");
@@ -356,8 +362,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonSchedule.setText("Sched");
 
         jButtonForms.setText("Forms");
-        //form 
-        //schedule 
+        
+        jButtonPoll.setText("Poll");
+       //****************************************************************************************************************************************************************************************************
         
         //Comments
         comment.addActionListener(new ActionListener() {
@@ -419,6 +426,8 @@ public class ApplicationNew extends javax.swing.JFrame {
                                      
         // FORMS
         jButtonForms.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+
       	  public void actionPerformed(ActionEvent e) {
             	jTextArea1.setText("");
             	// Call your test case methods here
@@ -470,6 +479,8 @@ public class ApplicationNew extends javax.swing.JFrame {
       });
       //schedule 
         jButtonSchedule.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+
       	  public void actionPerformed(ActionEvent e) {
             	jTextArea1.setText("");
             	// Call your test case methods here
@@ -516,6 +527,8 @@ public class ApplicationNew extends javax.swing.JFrame {
       });
         //Clockin / out 
         jButtonClock.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+
       	  public void actionPerformed(ActionEvent e) {
             	jTextArea1.setText("");
             	// Call your test case methods here
@@ -567,6 +580,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         // News Feed 
         jButtonPost.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+
         	  public void actionPerformed(ActionEvent e) {
               	jTextArea1.setText("");
               	// Call your test case methods here
@@ -598,6 +613,55 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            } else {
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonPost.setBackground(Color.RED);
+       		             updateResultLabel(result);
+                      }
+                      }
+                  	 
+      			} catch (InterruptedException e1) {
+      				// TODO Auto-generated catch block
+      				e1.printStackTrace();
+      			}
+                 
+                
+               
+              }
+        });
+
+        // Poll News Feed
+        jButtonPoll.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+
+        	  public void actionPerformed(ActionEvent e) {
+              	jTextArea1.setText("");
+              	// Call your test case methods here
+
+              	newsFeedCreate_Test testClass1 = new newsFeedCreate_Test();
+              	 getterMethodTextFile text = new getterMethodTextFile();
+             
+                  try {
+                  	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                  	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
+                  	 	// boolean result = testClass1.newsFeedCreateTest(inputValue1,inputValue2);
+                  	  if (jLabelWelcomName.getText().equals("Wise Work")) {
+                          // If yes, pass additional parameters
+                          boolean result = testClass1.newsFeedPoll(inputValue1, inputValue2, defaults.getrmployeeEmail(),defaults.getemployeepassword(),"wise Word");
+                          if (result) {
+       		                // Test passed, change the button color to green
+                        	  jButtonPoll.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonPoll.setBackground(Color.RED);
+       		            }
+                    	   updateResultLabel(result);
+                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    	  
+                    	  boolean result = testClass1.newsFeedPoll(inputValue1, inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
+                          if (result) {
+       		                // Test passed, change the button color to green
+                        	  jButtonPoll.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonPoll.setBackground(Color.RED);
        		             updateResultLabel(result);
                       }
                       }
@@ -1012,6 +1076,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         // comment on lead under lead manager 
         JButton JButtonLeadComent = new JButton("Lead Coment");
         JButtonLeadComent.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         	jTextArea1.setText("");
         	// Call your test case methods here
@@ -1055,6 +1121,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         // Czech republic language
         JButtonCzeck = new JButton("Czech Lang");
         JButtonCzeck.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1099,6 +1167,8 @@ public class ApplicationNew extends javax.swing.JFrame {
        
         // urdu language 
         btnNewButton_2.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1141,6 +1211,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         });
         // hindi language 
         btnHindi.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1183,6 +1255,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         });
         // turkish language
         btnTurkish.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1226,6 +1300,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         });
         // arabic language 
         btnNewButton_1.addActionListener(new ActionListener() {
+            @Override
+
         	public void actionPerformed(ActionEvent e) {
         		jTextArea1.setText("");
             	// Call your test case methods here
@@ -1273,31 +1349,33 @@ public class ApplicationNew extends javax.swing.JFrame {
         JLabel lblNewLabel_1 = new JLabel("Comments");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
         
-       
+       //*********************************************************************************** main panel screen Set ****************************************************************************************
 
         javax.swing.GroupLayout jPanelmainLayout = new javax.swing.GroupLayout(jPanelmain);
         jPanelmainLayout.setHorizontalGroup(
         	jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanelmainLayout.createSequentialGroup()
-        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(Alignment.TRAILING, jPanelmainLayout.createSequentialGroup()
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(jPanelmainLayout.createSequentialGroup()
         					.addContainerGap()
         					.addComponent(jLabelheadMain, GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
-        				.addGroup(Alignment.TRAILING, jPanelmainLayout.createSequentialGroup()
+        				.addGroup(jPanelmainLayout.createSequentialGroup()
         					.addGap(17)
-        					.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
-        						.addGroup(Alignment.TRAILING, jPanelmainLayout.createSequentialGroup()
-        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING, false)
+        					.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
+        						.addGroup(jPanelmainLayout.createSequentialGroup()
+        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
         								.addComponent(jButtonCustomAp, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(jButtonProject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(jButtonClock, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(jButtonForms, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        								.addComponent(jButtonProject, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+        								.addComponent(jButtonClock, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+        								.addComponent(jButtonForms, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+        							)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
         									.addGap(11)
-        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
+        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         										.addComponent(jButtonWOrkBoard, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        										.addComponent(jButtonExpenses, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        										.addComponent(jButtonExpenses, GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+        										.addComponent(jButtonPoll))
         									.addGap(12)
         									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         										.addGroup(jPanelmainLayout.createSequentialGroup()
@@ -1318,18 +1396,20 @@ public class ApplicationNew extends javax.swing.JFrame {
         							.addGap(96))
         						.addGroup(jPanelmainLayout.createSequentialGroup()
         							.addComponent(btnTurkish)
-        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addPreferredGap(ComponentPlacement.UNRELATED)
         							.addComponent(btnHindi)
-        							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        							
+        							.addPreferredGap(ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
         							.addComponent(comment))
-        						.addComponent(JButtonCzeck)
+        						
         						.addGroup(jPanelmainLayout.createSequentialGroup()
-        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING, false)
-        								.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addGroup(Alignment.LEADING, jPanelmainLayout.createSequentialGroup()
+        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
+        								.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addGroup(jPanelmainLayout.createSequentialGroup()
         									.addComponent(btnNewButton_1)
         									.addPreferredGap(ComponentPlacement.UNRELATED)
-        									.addComponent(btnNewButton_2)))
+        									.addComponent(btnNewButton_2))
+        								.addComponent(JButtonCzeck))
         							.addPreferredGap(ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addComponent(JButtonLeadComent, Alignment.TRAILING)
@@ -1360,7 +1440,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jButtonLead)
         				.addComponent(jButtonSchedule))
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jButtonForms)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jButtonForms)
+        				.addComponent(jButtonPoll))
         			.addGap(52)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(lblNewLabel)
@@ -1377,7 +1459,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(comment, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addComponent(JButtonCzeck)
-        			.addContainerGap(90, Short.MAX_VALUE))
+        			.addContainerGap(180, Short.MAX_VALUE))
         );
         jPanelmain.setLayout(jPanelmainLayout);
 
@@ -1387,6 +1469,9 @@ public class ApplicationNew extends javax.swing.JFrame {
 
         jLabelHeadHr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelHeadHr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        //*************************************************************************************************************************************************************************************************************
+        
+        //************************************************************************** HR Menu Lay-Out *****************************************************************************************************************
         jLabelHeadHr.setText("HR Menu");
 
         jButtonQuick.setText("Quick");
@@ -1414,6 +1499,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonBonus.setText("Bonus");
         
         jButtonAppraisal.setText("Appraisal");
+        // ******************************************************************************************************************************************************************************************************
        
       //Quick Add 
         jButtonQuick.addActionListener(new ActionListener() {
@@ -2558,4 +2644,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonMainMenu;
     private JButton jButtonHrMenu;
     private JButton jButtonFinance;
+    private JButton jButtonPoll;
 }
