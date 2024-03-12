@@ -1354,6 +1354,16 @@ public class getterMethods extends Xpaths {
    public By geturduLanguage() {
 	   return urduLanguage;
    }
+   // NewsFeed Poll Option
+   public By getnewsfeedPollOption() {
+	   return newsFeedPollOption;
+   }
+   public By getnewsFeedPollOption1() {
+	   return newsFeedPollOption1;
+   }
+   public By getnewsFeedPollOption2() {
+	   return newsFeedPollOption2;
+   }
    
     
 }
