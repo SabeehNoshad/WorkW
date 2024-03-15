@@ -23,23 +23,23 @@ getterMethods xpaths = new getterMethods();
 getterMethodTextFile text = new getterMethodTextFile();
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-public void  navigation(Integer times) throws InterruptedException {
+public void  navigation(Integer times,Integer value) throws InterruptedException {
 	 WebElement groupNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupNavBar()));
 	 groupNavBarOption.click();
 	 for (int i = 1 ; i <= times ;i++) {
 	 WebElement groupCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupCreateOption()));
 	 groupCreateComposer.click();
-	 createGroup(i);
+	 createGroup(i,value);
 	 }
 	
 	//Thread.sleep(5000);	
 }
-public void createGroup(Integer i) throws InterruptedException {
+public void createGroup(Integer i,Integer value) throws InterruptedException {
 	
 
 driver.findElement(xpaths.getGroupName()).click();
 WebElement groupName = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupName()));
-groupName.sendKeys(i + text.getuserFirstName());
+groupName.sendKeys(value+ i + text.getuserFirstName());
 driver.findElement(xpaths.getGroupDescription()).click();
 driver.findElement(xpaths.getGroupDescription()).sendKeys(text.getuserModuleDescription500());
 driver.findElement(xpaths.getGroupTaskOption()).click();

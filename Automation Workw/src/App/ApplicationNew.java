@@ -48,6 +48,7 @@ import javax.swing.JToggleButton;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -82,9 +83,6 @@ public class ApplicationNew extends javax.swing.JFrame {
 
        // Set the visibility of Panel 2 to true
        jPanelwellcom.setVisible(true);
-
-       // Set the visibility of the tabbed pane to true
-       jPanelResult.setVisible(false);
        
    }
    public void darkmode() {
@@ -152,7 +150,6 @@ public class ApplicationNew extends javax.swing.JFrame {
         jPanelwellcom = new javax.swing.JPanel();
         jButtonSubmit = new javax.swing.JButton();
         jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -202,7 +199,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonGroupTask = new javax.swing.JButton();
         jPanelNew = new javax.swing.JPanel();
         jLabelCOminSoon = new javax.swing.JLabel();
-        jPanelResult = new javax.swing.JPanel();
+        jPanelResult = new JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -289,17 +286,16 @@ public class ApplicationNew extends javax.swing.JFrame {
         jPanelwellcomLayout.setHorizontalGroup(
         	jPanelwellcomLayout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(jPanelwellcomLayout.createSequentialGroup()
+        			.addContainerGap(499, Short.MAX_VALUE)
+        			.addComponent(jButtonSubmit)
+        			.addGap(327))
+        		.addGroup(Alignment.LEADING, jPanelwellcomLayout.createSequentialGroup()
         			.addGap(206)
         			.addGroup(jPanelwellcomLayout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(jCheckBox3, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBox4, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBox5, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBox2, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE))
         			.addContainerGap(358, Short.MAX_VALUE))
-        		.addGroup(jPanelwellcomLayout.createSequentialGroup()
-        			.addContainerGap(499, Short.MAX_VALUE)
-        			.addComponent(jButtonSubmit)
-        			.addGap(327))
         );
         jPanelwellcomLayout.setVerticalGroup(
         	jPanelwellcomLayout.createParallelGroup(Alignment.LEADING)
@@ -310,11 +306,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         			.addComponent(jCheckBox4)
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jCheckBox5)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jCheckBox3)
-        			.addGap(18)
+        			.addGap(42)
         			.addComponent(jButtonSubmit)
-        			.addContainerGap(354, Short.MAX_VALUE))
+        			.addContainerGap(372, Short.MAX_VALUE))
         );
         jPanelwellcom.setLayout(jPanelwellcomLayout);
 
@@ -783,10 +777,11 @@ public class ApplicationNew extends javax.swing.JFrame {
               
                  try {
                  	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                  	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
                  	// boolean result =testClass1.workBoardCreateAndSectionAndTodos(inputValue1);
                  	  if (jLabelWelcomName.getText().equals("Wise Work")) {
                           // If yes, pass additional parameters
-                          boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
+                          boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                           if (result) {
       		                // Test passed, change the button color to green
                         	  jButtonWOrkBoard.setBackground(Color.GREEN);
@@ -797,7 +792,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                           updateResultLabel(result);
                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                       	  
-                      	  boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
+                      	  boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                             if (result) {
          		                // Test passed, change the button color to green
                             	jButtonWOrkBoard.setBackground(Color.GREEN);
@@ -828,10 +823,11 @@ public class ApplicationNew extends javax.swing.JFrame {
               
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
                 	// boolean result =testClass1.groupCreate(inputValue1);
                 	  if (jLabelWelcomName.getText().equals("Wise Work")) {
                           // If yes, pass additional parameters
-                          boolean result = testClass1.groupCreate(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                          boolean result = testClass1.groupCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
       		                // Test passed, change the button color to green
                         	  jButtonGroup.setBackground(Color.GREEN);
@@ -842,7 +838,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                           updateResultLabel(result);
                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                       	  
-                      	  boolean result = testClass1.groupCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                      	  boolean result = testClass1.groupCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
          		                // Test passed, change the button color to green
                             	jButtonGroup.setBackground(Color.GREEN);
@@ -872,10 +868,12 @@ public class ApplicationNew extends javax.swing.JFrame {
               
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
+
                 	// boolean result =testClass1.projectCreate(inputValue1);
                 	  if (jLabelWelcomName.getText().equals("Wise Work")) {
                           // If yes, pass additional parameters
-                          boolean result = testClass1.projectCreate(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                          boolean result = testClass1.projectCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
       		                // Test passed, change the button color to green
                         	  jButtonProject.setBackground(Color.GREEN);
@@ -886,7 +884,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                           updateResultLabel(result);
                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                       	  
-                      	  boolean result = testClass1.projectCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                      	  boolean result = testClass1.projectCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
          		                // Test passed, change the button color to green
                             	jButtonProject.setBackground(Color.GREEN);
@@ -2599,7 +2597,6 @@ public class ApplicationNew extends javax.swing.JFrame {
 
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JLabel jLabel4;
@@ -2620,7 +2617,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelFinance;
     private javax.swing.JPanel jPanelHR;
     private javax.swing.JPanel jPanelNew;
-    private javax.swing.JPanel jPanelResult;
+    private JLayeredPane jPanelResult;
     private javax.swing.JPanel jPanelmain;
     private javax.swing.JPanel jPanelwellcom;
     private javax.swing.JProgressBar jProgressBar1;
