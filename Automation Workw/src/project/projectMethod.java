@@ -25,22 +25,22 @@ getterMethodTextFile text = new getterMethodTextFile();
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 
-public void  navigation(Integer times) throws InterruptedException { 
+public void  navigation(Integer times,Integer value) throws InterruptedException { 
 	 WebElement projectNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getProjectNavBarOpt()));
 	 projectNavBar.click();
 	 for (int i = 1 ; i  <= times ; i++ ) {
 	 WebElement projectCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupCreateOption()));
 	 projectCreateComposer.click();
-	 createProject(i);
+	 createProject(i,value);
 	 }
 //	Thread.sleep(5000);
 }
-public void createProject(Integer i) throws InterruptedException {
+public void createProject(Integer i,Integer value) throws InterruptedException {
 
 //Thread.sleep(3000);
 driver.findElement(xpaths.getprojectCreateName()).click();
 WebElement projectCreateName = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getprojectCreateName()));
-projectCreateName.sendKeys(i + text.getuserFirstName());
+projectCreateName.sendKeys(value + i + text.getuserFirstName());
 
 driver.findElement(xpaths.getprojectDescription()).click();
 driver.findElement(xpaths.getprojectDescription()).sendKeys(i + text.getuserModuleDescription500());

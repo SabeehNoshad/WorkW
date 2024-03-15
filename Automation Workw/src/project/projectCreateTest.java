@@ -10,7 +10,7 @@ import user.urls.testArguments.getterMethod_Defaults;
 
 public class projectCreateTest extends TestBase{
 	@Test 
-	public Boolean projectCreate(Integer loop,String email , String pass) throws InterruptedException {
+	public Boolean projectCreate(Integer loop,Integer value,String email , String pass) throws InterruptedException {
 		 setUp();
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
 		  String currentURL = "";
@@ -28,7 +28,7 @@ public class projectCreateTest extends TestBase{
 
 					//	Thread.sleep(7000);
 					projectMethod project= new projectMethod(driver);
-			 project.navigation(loop);
+			 project.navigation(loop,value);
 			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
 			 ApplicationNew.logError("Project Created SucessFully ");
 

@@ -9,7 +9,7 @@ import user.urls.testArguments.getterMethod_Defaults;
 
 public class groupCreateTest extends TestBase {
 	@Test (priority =1 )
-	public Boolean groupCreate(Integer loop , String email, String password) throws InterruptedException {
+	public Boolean groupCreate(Integer loop ,Integer value, String email, String password) throws InterruptedException {
 		setUp(); 
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
 		  String currentURL = "";
@@ -26,7 +26,7 @@ public class groupCreateTest extends TestBase {
 				
 				//Thread.sleep(5000);
 				groupMethod group = new groupMethod(driver);
-			 group.navigation(loop);
+			 group.navigation(loop,value);
 			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
 			 ApplicationNew.logError("Group Creation Test Sucessfull");
 		        // If createPost is successful, tearDown and return true

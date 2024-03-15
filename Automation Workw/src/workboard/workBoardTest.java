@@ -9,7 +9,7 @@ import user.urls.testArguments.getterMethod_Defaults;
 
 public class workBoardTest extends TestBase {
 	@Test 
-	public Boolean workBoardCreateAndSectionAndTodos(Integer loop,String email,String password,String company) throws InterruptedException {
+	public Boolean workBoardCreateAndSectionAndTodos(Integer loop,Integer Value,String email,String password,String company) throws InterruptedException {
 		setUp();
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
 		  String currentURL = "";
@@ -24,7 +24,7 @@ public class workBoardTest extends TestBase {
 					Login_Method login = new Login_Method(driver);
 					login.sign_in(email,password);
 					workboardMethod work = new workboardMethod(driver);
-			 work.workBoardRoute(loop,company);	        // If createPost is successful, tearDown and return true
+			 work.workBoardRoute(loop,Value,company);	        // If createPost is successful, tearDown and return true
 			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
 			 ApplicationNew.logError("WorkBoard + Todo Created Sucessfully");   
 			 tearDown();
