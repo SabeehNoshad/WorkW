@@ -24,7 +24,7 @@ getterMethodTextFile text = new getterMethodTextFile();
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 // creating number of lead groups 
-public void leadGroupRoute(Integer times) throws InterruptedException {
+public void leadGroupRoute(Integer times,Integer value) throws InterruptedException {
 	WebElement LeadManagerNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getLeadManagerOpt()));
 	LeadManagerNavBar.click();
 	for (int i =1; i <= times ; i ++) {
@@ -32,7 +32,7 @@ public void leadGroupRoute(Integer times) throws InterruptedException {
 //	LeadManagerTabGroupOption.click();
 	WebElement LeadManagerCreateGroupOpti = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getCreateLeadGroupOption()));
 	LeadManagerCreateGroupOpti.click();
-	createLeadGroup(i);
+	createLeadGroup(i,value);
 	Thread.sleep(3000);
 	createLeadGroupMUltipleTime();
 	Thread.sleep(1000);
@@ -68,11 +68,11 @@ public void leadGroupRoute(Integer times) throws InterruptedException {
 
 
 // create composer of lead group working / filling of the form 
-	public void createLeadGroup(Integer i ) throws InterruptedException {
+	public void createLeadGroup(Integer i ,Integer value) throws InterruptedException {
 //		Thread.sleep(3000);
 //		driver.findElement(xpaths.getNameField()).click();
 		WebElement lmGroupName = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getNameField()));
-		lmGroupName.sendKeys(i + text.getuserFirstName());
+		lmGroupName.sendKeys(value + i + text.getuserFirstName());
 		driver.findElement(xpaths.getLeadDescriptionField()).click();
 		WebElement lmGroupDesc = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getLeadDescriptionField()));
 		lmGroupDesc.sendKeys(i + text.getuserModuleDescription500());
