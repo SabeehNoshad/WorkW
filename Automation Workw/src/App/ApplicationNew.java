@@ -163,6 +163,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonGroup = new javax.swing.JButton();
         jButtonWOrkBoard = new javax.swing.JButton();
         jButtonCustomAp = new javax.swing.JButton();
+        jButtonCustomAp.setToolTipText("Place loop count for regression");
         jButtonTask = new javax.swing.JButton();
         jButtonProject = new javax.swing.JButton();
         jButtonLeadMana = new javax.swing.JButton();
@@ -915,10 +916,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                
                 try {
                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	 int inputValue2 = Integer.parseInt(jTextFieldTagValue.getText());
+
                 	// boolean result =testClass1.leadManagerCreate(inputValue1);
                 	  if (jLabelWelcomName.getText().equals("Wise Work")) {
                           // If yes, pass additional parameters
-                          boolean result = testClass1.leadManagerCreate(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                          boolean result = testClass1.leadManagerCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
       		                // Test passed, change the button color to green
                         	  jButtonLeadMana.setBackground(Color.GREEN);
@@ -929,7 +932,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                           updateResultLabel(result);
                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                       	  
-                      	  boolean result = testClass1.leadManagerCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                      	  boolean result = testClass1.leadManagerCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
          		                // Test passed, change the button color to green
                             	jButtonLeadMana.setBackground(Color.GREEN);
