@@ -477,5 +477,5 @@ public class Xpaths {
     //
     By newsFeedPollOption		= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div[3]/img[4]");
     By newsFeedPollOption1		= By.xpath("(//input[@value=''])[3]");
-    By newsFeedPollOption2		= By.xpath("(//input[@value=''])[4]");
+    By newsFeedPollOption2		= By.cssSelector(".poll-input:nth-child(3) > .ant-input");
 }
