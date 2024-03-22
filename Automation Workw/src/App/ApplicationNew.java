@@ -158,18 +158,29 @@ public class ApplicationNew extends javax.swing.JFrame {
         jLabelheadMain = new javax.swing.JLabel();
         jButtonClock = new javax.swing.JButton();
         jButtonPost = new javax.swing.JButton();
+        jButtonPost.setToolTipText("please enter the loop count and the tag value ");
         jButtonTravel = new javax.swing.JButton();
+        jButtonTravel.setToolTipText("please place the loop count ");
         jButtonExpenses = new javax.swing.JButton();
+        jButtonExpenses.setToolTipText("please place the loop count ");
         jButtonGroup = new javax.swing.JButton();
+        jButtonGroup.setToolTipText("please enter the loop count and aswell as the tag value for the unique name of the item ");
         jButtonWOrkBoard = new javax.swing.JButton();
+        jButtonWOrkBoard.setToolTipText("Place the loop & tag value for generating a Unique name for the Item ");
         jButtonCustomAp = new javax.swing.JButton();
         jButtonCustomAp.setToolTipText("Place loop count for regression");
         jButtonTask = new javax.swing.JButton();
+        jButtonTask.setToolTipText("please enter the loop count ");
         jButtonProject = new javax.swing.JButton();
+        jButtonProject.setToolTipText("Please enter the loop count");
         jButtonLeadMana = new javax.swing.JButton();
+        jButtonLeadMana.setToolTipText("please enter the loop and tag value for the unique name of the item ");
         jButtonLead = new javax.swing.JButton();
+        jButtonLead.setToolTipText("please enter the loop count ");
         jButtonSchedule = new javax.swing.JButton();
+        jButtonSchedule.setToolTipText("please enter teh loop count ");
         jButtonForms = new javax.swing.JButton();
+        jButtonForms.setToolTipText("Please Enter the loop Count ");
         jPanelHR = new javax.swing.JPanel();
         jLabelHeadHr = new javax.swing.JLabel();
         jButtonQuick = new javax.swing.JButton();
@@ -228,6 +239,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         btnNewButton_1 = new JButton("Arabic");
         btnNewButton_2 = new JButton("Urdu");
         jButtonPoll = new javax.swing.JButton();
+        jButtonPoll.setToolTipText("enter the loop count and also the tag value ");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -1076,6 +1088,7 @@ public class ApplicationNew extends javax.swing.JFrame {
            });
         // comment on lead under lead manager 
         JButton JButtonLeadComent = new JButton("Lead Coment");
+        JButtonLeadComent.setToolTipText("please enter teh loop count ");
         JButtonLeadComent.addActionListener(new ActionListener() {
             @Override
 
