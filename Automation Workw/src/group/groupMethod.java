@@ -2,7 +2,6 @@ package group;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,12 +22,10 @@ public groupMethod(WebDriver driver) {
 getterMethods xpaths = new getterMethods();
 getterMethodTextFile text = new getterMethodTextFile();
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-// feature adding array 
-By[] modules = new By [] {xpaths.getgroupTaskFeature(),xpaths.getgroupWorkBoardFeature(),xpaths.getgroupExpenseFeature(),xpaths.getgroupScheduleFeature(),xpaths.getgroupDocumentsFeature()
-							,xpaths.getgroupDisscusionBoardFeature(),xpaths.getgroupPagesFeature()};
-// creating group 
+
 public void  navigation(Integer times,Integer value) throws InterruptedException {
-	NavBarGroupOption();
+	 WebElement groupNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupNavBar()));
+	 groupNavBarOption.click();
 	 for (int i = 1 ; i <= times ;i++) {
 	 WebElement groupCreateComposer = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupCreateOption()));
 	 groupCreateComposer.click();
@@ -36,16 +33,6 @@ public void  navigation(Integer times,Integer value) throws InterruptedException
 	 }
 	
 	//Thread.sleep(5000);	
-}
-// adding feature
-public void addingFeature() throws InterruptedException {
-	NavBarGroupOption();
-	addFeatures();
-	
-}
-public void NavBarGroupOption() {
-	 WebElement groupNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getGroupNavBar()));
-	 groupNavBarOption.click();
 }
 public void createGroup(Integer i,Integer value) throws InterruptedException {
 	
@@ -89,23 +76,4 @@ public void createPostInGroup(Integer j) throws InterruptedException {
 	Thread.sleep(2000);
 	}
 	}
-//adding features
-public void addFeatures() throws InterruptedException {
-	WebElement groupSearchCLick = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getgroupSearchField()));
-	groupSearchCLick.sendKeys("56 Hello");
-	Thread.sleep(2000);
-	WebElement groupClick = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getgroupSearchedItemClick()));
-	groupClick.click();
-	WebElement groupSettingOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getgroupSettingOption()));
-	groupSettingOption.click();
-	WebElement groupSettingAddFeatures = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getgroupFeatureOptionClick()));
-	groupSettingAddFeatures.click();
-	for (int i = 1 ; i <= 7 ; i++) {
-		WebElement groupAddingFeatures = wait.until(ExpectedConditions.visibilityOfElementLocated(modules[i]));
-		groupAddingFeatures.click();
-		Thread.sleep(1000);
-	}
-}
-	
-
 }
