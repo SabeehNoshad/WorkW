@@ -748,6 +748,43 @@ public class getterMethods extends Xpaths {
     public By getgroupFeedTextArea() {
     	return groupFeedTextAreaCick;
     }
+    public By getgroupSearchField() {
+    	return groupSearchField;
+    }
+    public By getgroupSearchedItemClick() {
+    	return groupSearchedItemCLick;
+    }
+    public By getgroupSettingOption() {
+    	return groupSettingOption;
+    }
+    public By getgroupFeatureOptionClick() {
+    	return groupSettingFeatureOptionCLick ;
+    }
+    public By getgroupTaskFeature() {
+    	return groupFeatureTask ;
+    }
+    public By getgroupWorkBoardFeature() {
+    	return groupFeatureWorkB;
+    }
+    public By getgroupExpenseFeature() {
+    	return groupFeatureExpense;
+    }
+    public By getgroupScheduleFeature() {
+    	return groupFeatureSchedule;
+    }
+    public By getgroupDocumentsFeature() {
+    	return groupFeatureDocuments;
+    }
+    public By getgroupDisscusionBoardFeature() {
+    	return groupFeatureDiscussionB;
+    }
+    public By getgroupPagesFeature() {
+    	return groupFeaturepages;
+    }
+    public By getgroupCLoseFeatureModal() {
+    	return groupFeatureModalCloseClick;
+    }
+   
     // project
     public By getProjectNavBarOpt() {
     	return projectNavBar;
