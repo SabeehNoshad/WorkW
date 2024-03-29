@@ -244,22 +244,6 @@ public class Xpaths {
     By groupNewsFeedCreate				= By.xpath("//div[@id='rc-tabs-0-panel-1']/div/div[2]/div/div/div/div/div[2]/span");
     By groupNewsFeedCreateButton		= By.cssSelector(".ant-btn-submit");
     By groupFeedTextAreaCick			= By.cssSelector(".ant-mentions-focused > .rc-textarea");
-    By groupSearchField					= By.xpath("//div[@id='section1']/div/div[2]/div/div/span/input");
-    By groupSearchedItemCLick			= By.xpath("//div[@id='section1']/div/div[3]/div/div/div/img");
-    By groupSettingOption				= By.cssSelector(".anticon-setting path");
-    By groupSettingFeatureOptionCLick	= By.cssSelector(".text-sm:nth-child(1)");
-    //adding features 
-    By groupFeatureTask					= By.cssSelector("#Task > .ant-switch-handle");
-    By groupFeatureWorkB				=By.cssSelector("#WorkBoard > .ant-switch-handle");
-    By groupFeatureExpense				=By.cssSelector("#Expense > .ant-switch-handle");
-    By groupFeatureSchedule				=By.cssSelector("#Schedule > .ant-switch-handle");
-    By groupFeatureDocuments			=By.cssSelector("#Documents > .ant-switch-handle");
-    By groupFeatureDiscussionB			=By.cssSelector("#DiscussionBoard > .ant-switch-handle");
-    By groupFeaturepages				=By.cssSelector("#Pages > .ant-switch-handle");
-    By groupFeatureModalCloseClick		=By.cssSelector(".ant-modal-centered");
-    
-    
-    
 
     // projects
     By projectNavBar					= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[10]/a");
@@ -494,5 +478,4 @@ public class Xpaths {
     By newsFeedPollOption		= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div[3]/img[4]");
     By newsFeedPollOption1		= By.xpath("(//input[@value=''])[3]");
     By newsFeedPollOption2		= By.cssSelector(".poll-input:nth-child(3) > .ant-input");
-   
 }
