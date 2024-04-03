@@ -240,6 +240,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         btnNewButton_2 = new JButton("Urdu");
         jButtonPoll = new javax.swing.JButton();
         jButtonPoll.setToolTipText("enter the loop count and also the tag value ");
+        jButtonGroupSettingFeature = new javax.swing.JButton();
+        jButtonGroupSummary = new javax.swing.JButton();
+        jButtonLeadConvToProject = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -371,8 +374,129 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonForms.setText("Forms");
         
         jButtonPoll.setText("Poll");
-       //****************************************************************************************************************************************************************************************************
         
+        jButtonGroupSettingFeature.setText("Group Setting Features");
+        
+        jButtonGroupSummary.setText("GroupSummary");
+        
+        jButtonLeadConvToProject.setText("Lead Convert To Project");
+       //****************************************************************************************************************************************************************************************************
+        //Group Setting Features
+        jButtonGroupSettingFeature.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	jTextArea1.setText("");
+            	// Call your test case methods here
+                commentTest testClass2 = new commentTest();
+                getterMethodTextFile text = new getterMethodTextFile();
+                testResult tst = new testResult();
+             // Break the string into multiple lines using newline character
+                String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                // Create a new string with line breaks
+                String formattedTravelDetails = String.join("\n", lines);
+                jTextArea2.setText(formattedTravelDetails);
+                try {
+                	
+                	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	
+    				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                	   if (jLabelWelcomName.getText().equals("abc")) {
+                           // If yes, pass additional parameters
+                           boolean result = testClass2.commentsTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                           if (result) {
+       		                // Test passed, change the button color to green
+                        	   jButtonGroupSettingFeature.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonGroupSettingFeature.setBackground(Color.RED);
+       		            }
+                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     	  
+                     	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                           if (result) {
+        		                // Test passed, change the button color to green
+                        	   jButtonGroupSettingFeature.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonGroupSettingFeature.setBackground(Color.RED);
+        		            	 updateResultLabel(result);
+                       }
+                       }
+    				
+    		            // Get the relevant information from ITestResult and update the JTextArea
+    			    
+   
+    			     jTextArea2.setText(tst.getuserTestDetails());
+    				//updateResultLabel(result);
+    				
+
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+              
+            }
+        });
+                                  
+        //jButtonGroupSummary
+        jButtonGroupSummary.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	jTextArea1.setText("");
+            	// Call your test case methods here
+                commentTest testClass2 = new commentTest();
+                getterMethodTextFile text = new getterMethodTextFile();
+                testResult tst = new testResult();
+             // Break the string into multiple lines using newline character
+                String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                // Create a new string with line breaks
+                String formattedTravelDetails = String.join("\n", lines);
+                jTextArea2.setText(formattedTravelDetails);
+                try {
+                	
+                	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	
+    				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                	   if (jLabelWelcomName.getText().equals("abc")) {
+                           // If yes, pass additional parameters
+                           boolean result = testClass2.commentsTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                           if (result) {
+       		                // Test passed, change the button color to green
+                        	   jButtonGroupSummary.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonGroupSummary.setBackground(Color.RED);
+       		            }
+                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     	  
+                     	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                           if (result) {
+        		                // Test passed, change the button color to green
+                        	   jButtonGroupSummary.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonGroupSummary.setBackground(Color.RED);
+        		            	 updateResultLabel(result);
+                       }
+                       }
+    				
+    		            // Get the relevant information from ITestResult and update the JTextArea
+    			    
+   
+    			     jTextArea2.setText(tst.getuserTestDetails());
+    				//updateResultLabel(result);
+    				
+
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+              
+            }
+        });
+                                  
         //Comments
         comment.addActionListener(new ActionListener() {
             @Override
@@ -1371,59 +1495,91 @@ public class ApplicationNew extends javax.swing.JFrame {
         		.addGroup(jPanelmainLayout.createSequentialGroup()
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
         				.addGroup(jPanelmainLayout.createSequentialGroup()
-        					.addContainerGap()
-        					.addComponent(jLabelheadMain, GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
-        				.addGroup(jPanelmainLayout.createSequentialGroup()
-        					.addGap(17)
-        					.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
-        						.addGroup(jPanelmainLayout.createSequentialGroup()
-        							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
-        								.addComponent(jButtonCustomAp, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(jButtonProject, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-        								.addComponent(jButtonClock, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-        								.addComponent(jButtonForms, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+        																	.addContainerGap()
+        																	.addComponent(jLabelheadMain, GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
+        																.addGroup(jPanelmainLayout.createSequentialGroup()
+        																		.addGap(1)
+        																		.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)
+        																				.addGroup(jPanelmainLayout.createSequentialGroup()
+        																						.addGroup(jPanelmainLayout.createParallelGroup(Alignment.TRAILING)// column 1 alignment 
+        																								.addComponent(jButtonCustomAp,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								.addComponent(jButtonGroup,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)        																								.addComponent(jButtonClock,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								.addComponent(jButtonForms,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								.addComponent(jButtonLead,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								.addComponent(jButtonTravel,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         							)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addGap(11)
-        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
-        										.addComponent(jButtonWOrkBoard, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        										.addComponent(jButtonExpenses, GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-        										.addComponent(jButtonPoll))
-        									.addGap(12)
+        									.addGap(1)
+        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)// column 2 alignment 
+        										.addComponent(jButtonWOrkBoard, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonExpenses, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonLeadMana,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonPoll,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonGroupSummary,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonProject, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										
+        										)
+        									
+        									
+//        								.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
+//                								.addGroup(jPanelmainLayout.createSequentialGroup()
+//                									.addGap(1)
+//                									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)// column 2 alignment 
+//                										.addComponent(jButtonTravel, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+//                										.addComponent(jButtonPost, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+//                										.addComponent(jButtonGroup, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+//                										.addComponent(jButtonPoll, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+//                										.addComponent(jButtonTask, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
+//                									)
+//        									)
         									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         										.addGroup(jPanelmainLayout.createSequentialGroup()
-        											.addComponent(jButtonTravel)
-        											.addPreferredGap(ComponentPlacement.RELATED)
-        											.addComponent(jButtonPost))
-        										.addGroup(jPanelmainLayout.createSequentialGroup()
-        											.addComponent(jButtonGroup)
-        											.addPreferredGap(ComponentPlacement.RELATED)
-        											.addComponent(jButtonTask))))
+        												.addGap(1)
+        	        									.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
+        											
+        											//.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(jButtonPost, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        									//	.addGroup(jPanelmainLayout.createSequentialGroup()
+        											
+        										//	.addPreferredGap(ComponentPlacement.RELATED)
+        											.addComponent(jButtonTask, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        											.addComponent(jButtonSchedule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        											.addComponent(jButtonLeadConvToProject,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)        																								.addComponent(jButtonGroupSettingFeature,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+													.addComponent(jButtonGroupSettingFeature,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+
+        											)))
+        											)
+        									
         								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addGap(12)
-        									.addComponent(jButtonLeadMana)
-        									.addPreferredGap(ComponentPlacement.UNRELATED)
-        									.addComponent(jButtonLead)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(jButtonSchedule)))
+        									.addGap(1)
+//        									
+//        									.addPreferredGap(ComponentPlacement.RELATED)
+//        									.addComponent(jButtonLead)
+//        									.addPreferredGap(ComponentPlacement.RELATED)
+//        									.addComponent(jButtonSchedule)
+        									))
         							.addGap(96))
         						.addGroup(jPanelmainLayout.createSequentialGroup()
-        							.addComponent(btnTurkish)
-        							.addPreferredGap(ComponentPlacement.UNRELATED)
-        							.addComponent(btnHindi)
+        							.addComponent(btnTurkish,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        							//.addPreferredGap(ComponentPlacement.UNRELATED)
         							
-        							.addPreferredGap(ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
-        							.addComponent(comment))
-        						
+        							
+        							.addPreferredGap(ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+        							.addComponent(comment,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE))
+ 
         						.addGroup(jPanelmainLayout.createSequentialGroup()
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING, false)
         								.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
-        									.addComponent(btnNewButton_1)
-        									.addPreferredGap(ComponentPlacement.UNRELATED)
-        									.addComponent(btnNewButton_2))
-        								.addComponent(JButtonCzeck))
+        										// arabic btn new button 1  =
+        									.addComponent(btnNewButton_1,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE))
+        									
+        									//.addPreferredGap(ComponentPlacement.UNRELATED)
+        									.addComponent(btnNewButton_2,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(JButtonCzeck, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(btnHindi,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE))
+        							
         							.addPreferredGap(ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addComponent(JButtonLeadComent, Alignment.TRAILING)
@@ -1435,44 +1591,80 @@ public class ApplicationNew extends javax.swing.JFrame {
         		.addGroup(jPanelmainLayout.createSequentialGroup()
         			.addGap(15)
         			.addComponent(jLabelheadMain)
-        			.addGap(48)
+        			.addGap(05)
+        			//row 1 
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jButtonClock)
-        				.addComponent(jButtonTravel)
-        				.addComponent(jButtonExpenses)
-        				.addComponent(jButtonPost))
+        				.addComponent(jButtonPoll)
+        				
+        				.addComponent(jButtonPost)
+        			
+        				)
+        			// row 2 
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jButtonGroup)
-        				.addComponent(jButtonWOrkBoard)
-        				.addComponent(jButtonCustomAp)
-        				.addComponent(jButtonTask))
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jButtonProject)
+        				
+        				
+        				
         				.addComponent(jButtonLeadMana)
         				.addComponent(jButtonLead)
-        				.addComponent(jButtonSchedule))
+        				.addComponent(jButtonLeadConvToProject)
+        				
+        				)
+        			// row 3 
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        		
+        				.addComponent(jButtonGroup)
+        			
+        				.addComponent(jButtonGroupSettingFeature)
+        				.addComponent(jButtonGroupSummary)
+        				
+        				)
+        			//row 4 
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jButtonForms)
-        				.addComponent(jButtonPoll))
-        			.addGap(52)
+        				.addComponent(jButtonExpenses)
+        				.addComponent(jButtonTask))
+        			//row 5 
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        					.addComponent(jButtonTravel)
+        				.addComponent(jButtonProject)
+        				.addComponent(jButtonSchedule)
+        				
+        				)
+        			//row 6 
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        			
+        				.addComponent(jButtonCustomAp)
+        				.addComponent(jButtonWOrkBoard)
+        				)
+        			// section 2 
+        			.addGap(150)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(lblNewLabel)
         				.addComponent(lblNewLabel_1))
-        			.addGap(18)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+
+        			//.addGap(5)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(btnNewButton_1)
-        				.addComponent(btnNewButton_2)
+        				
         				.addComponent(JButtonLeadComent))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(btnTurkish)
-        				.addComponent(btnHindi)
+        				
         				.addComponent(comment, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(JButtonCzeck)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(btnNewButton_2)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(btnHindi)
         			.addContainerGap(180, Short.MAX_VALUE))
         );
         jPanelmain.setLayout(jPanelmainLayout);
@@ -1481,7 +1673,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
         jPanelHR.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelHeadHr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelHeadHr.setFont(new java.awt.Font("Segoe UI", 1, 9)); // NOI18N
         jLabelHeadHr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         //*************************************************************************************************************************************************************************************************************
         
@@ -2658,4 +2850,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonHrMenu;
     private JButton jButtonFinance;
     private JButton jButtonPoll;
+    private JButton jButtonGroupSettingFeature;
+    private JButton jButtonGroupSummary;
+    private JButton jButtonLeadConvToProject;
 }
