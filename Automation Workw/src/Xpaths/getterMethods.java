@@ -584,6 +584,9 @@ public class getterMethods extends Xpaths {
     public By getclockInYes() {
     	return clockInyes;
     }
+    public By getclockInessage() {
+    	return clockInputMessage;
+    }
     // newsFeed 
     public By getnewsFeedCreateComposer() {
     	return newsFeedCreateComposer;
@@ -1364,7 +1367,47 @@ public class getterMethods extends Xpaths {
    public By getnewsFeedPollOption2() {
 	   return newsFeedPollOption2;
    }
-   
+   // lead manager 
+   public By getLeadmangerLead() {
+	   return leadManagerlead;
+   }
+   public By getLeadManagerConvertButton() {
+	   return LeadManagerConvertButton;
+   }
+   public By getLeadManagerGoToProject() {
+	   return LeadManagerGoToProject;
+   }
+   // pages 
+   public By getpagesnewsFeedOpt() {
+	   return pagesNewsfeedOption ;
+   }
+   public By getpagesCreateButton() {
+	   return pagesCreatePagesButton ;
+   }
+   public By getpagesName() {
+	   return pagesName;
+   }
+   public By getpagesCategoryClick() {
+	   return pagesCategory;
+   }
+   public By getpagesCategorySelect() {
+	   return pagesCategorySelect;
+   }
+   public By getpagestags() {
+	   return pagesTags;
+   }
+   public By getPagesDEscription() {
+	   return pagesDescriptions;
+   }
+   public By getpagesSubmittButton() {
+	   return pagesSubmittButton;
+   }
+   public By getpagesoptennewlyCreatedPages () {
+	   return PagesCreatedPageOpening;
+   }
+   public By getpagesTagsText () {
+	   return pagesTagText;
+   }
     
 }
 
