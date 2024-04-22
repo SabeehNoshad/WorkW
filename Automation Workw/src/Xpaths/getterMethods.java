@@ -1048,6 +1048,9 @@ public class getterMethods extends Xpaths {
     public By getauctionBidNotificationBanner() {
     	return auctionBidNotificationBanner;
     }
+    public By getautctionListViewTableView() {
+    	return auctionListViewTableView;
+    }
     //getterMethods Payroll 
    public By getpayrollNavBarOption() {
 	   return payrollNavBarOption;

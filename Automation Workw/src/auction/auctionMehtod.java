@@ -86,5 +86,13 @@ public class auctionMehtod extends Base_page {
 //	  			 String BannerValue = AuctionBanner.getText();
 //	  			 return BannerValue;
 	  		}
+//---------------------------------********** AUCTION LIST VIEW TABLE VIEW ---------------------------------------
+	  		public void auctionListViewTableView () throws InterruptedException {
+	  			 WebElement aucitonNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionNavBar()));
+	  			  aucitonNavBarOption.click();
+	  			  WebElement AuctionListview = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getautctionListViewTableView()));
+	  			AuctionListview.click();
+	  			Thread.sleep(6000);
+	  		}
 	  
 }
