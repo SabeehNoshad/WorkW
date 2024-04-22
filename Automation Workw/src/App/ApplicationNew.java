@@ -247,6 +247,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonLeadConvToProject = new javax.swing.JButton();
         jButtonPages = new javax.swing.JButton();
         jButtonAuction = new javax.swing.JButton();
+        jButtonAuctionBidding = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -388,8 +389,127 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonPages.setText("Pages");
         
         jButtonAuction.setText("Auction");
+        
+        jButtonAuctionBidding.setText("AuctionBidding");
        //****************************************************************************************************************************************************************************************************
-       
+        //AuctionBidding Jbutton 
+        jButtonAuctionBidding.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+             	jTextArea1.setText("");
+             	// Call your test case methods here
+                 auctionTest testClass2 = new auctionTest();
+                 getterMethodTextFile text = new getterMethodTextFile();
+                 testResult tst = new testResult();
+              // Break the string into multiple lines using newline character
+                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                 // Create a new string with line breaks
+                 String formattedTravelDetails = String.join("\n", lines);
+                 jTextArea2.setText(formattedTravelDetails);
+                 try {
+                 	
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	
+     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                 	   if (jLabelWelcomName.getText().equals("abc")) {
+                            // If yes, pass additional parameters
+                            boolean result = testClass2.auctionBiddingTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                            if (result) {
+        		                // Test passed, change the button color to green
+                            	jButtonAuctionBidding.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonAuctionBidding.setBackground(Color.RED);
+        		            }
+                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      	  
+                      	  boolean result = testClass2.auctionBiddingTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                            if (result) {
+         		                // Test passed, change the button color to green
+                            	jButtonAuctionBidding.setBackground(Color.GREEN);
+         		            } else {
+         		                // Test failed, change the button color to red (or any other color)
+         		            	jButtonAuctionBidding.setBackground(Color.RED);
+         		            	 updateResultLabel(result);
+                        }
+                        }
+     				
+     		            // Get the relevant information from ITestResult and update the JTextArea
+     			    
+    
+     			     jTextArea2.setText(tst.getuserTestDetails());
+     				//updateResultLabel(result);
+     				
+
+     			} catch (InterruptedException e1) {
+     				// TODO Auto-generated catch block
+     				e1.printStackTrace();
+     			}
+               
+             }
+        	
+        });
+        
+        //pages Jbutton 
+        jButtonPages.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+             	jTextArea1.setText("");
+             	// Call your test case methods here
+                 pagesTest testClass2 = new pagesTest();
+                 getterMethodTextFile text = new getterMethodTextFile();
+                 testResult tst = new testResult();
+              // Break the string into multiple lines using newline character
+                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                 // Create a new string with line breaks
+                 String formattedTravelDetails = String.join("\n", lines);
+                 jTextArea2.setText(formattedTravelDetails);
+                 try {
+                 	
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	
+     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                 	   if (jLabelWelcomName.getText().equals("abc")) {
+                            // If yes, pass additional parameters
+                            boolean result = testClass2.pagesMethodTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                            if (result) {
+        		                // Test passed, change the button color to green
+                            	jButtonPages.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonPages.setBackground(Color.RED);
+        		            }
+                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      	  
+                      	  boolean result = testClass2.pagesMethodTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                            if (result) {
+         		                // Test passed, change the button color to green
+                            	jButtonPages.setBackground(Color.GREEN);
+         		            } else {
+         		                // Test failed, change the button color to red (or any other color)
+         		            	jButtonPages.setBackground(Color.RED);
+         		            	 updateResultLabel(result);
+                        }
+                        }
+     				
+     		            // Get the relevant information from ITestResult and update the JTextArea
+     			    
+    
+     			     jTextArea2.setText(tst.getuserTestDetails());
+     				//updateResultLabel(result);
+     				
+
+     			} catch (InterruptedException e1) {
+     				// TODO Auto-generated catch block
+     				e1.printStackTrace();
+     			}
+               
+             }
+        	
+        });
+        
         //Auction Jbutton 
         jButtonAuction.addActionListener(new ActionListener() {
         	 @Override
@@ -1647,7 +1767,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         										.addComponent(jButtonPoll,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										.addComponent(jButtonGroupSummary,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										.addComponent(jButtonProject, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
-        										
+        										.addComponent(jButtonAuctionBidding, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										)
         									
         									
@@ -1778,6 +1898,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         			
         				.addComponent(jButtonAuction)
+        				.addComponent(jButtonAuctionBidding)
         				
         				)
         			// section 2 
@@ -2993,4 +3114,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonLeadConvToProject;
     private JButton jButtonPages;
     private JButton jButtonAuction;
+    private JButton jButtonAuctionBidding;
 }

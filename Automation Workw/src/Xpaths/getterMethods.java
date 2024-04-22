@@ -1036,6 +1036,18 @@ public class getterMethods extends Xpaths {
     public By getauctionSubmittButton() {
     	return auctionSubmitButton;
     }
+    public By getauctionbidOpt() {
+    	return auctionClickOnTheBiddingPage;
+    }
+    public By getauctionBidFieldValue () {
+    	return auctionBidFieldValue;
+    }
+    public By getauctionBidButton() {
+    	return auctionBidButton;
+    }
+    public By getauctionBidNotificationBanner() {
+    	return auctionBidNotificationBanner;
+    }
     //getterMethods Payroll 
    public By getpayrollNavBarOption() {
 	   return payrollNavBarOption;

@@ -63,5 +63,28 @@ public class auctionMehtod extends Base_page {
 		  driver.findElement(xpaths.getauctionSubmittButton()).click();
 		  Thread.sleep(2000);
 	  }
+//------------------------********************** AUCTION BIDDING********************************------------------------------------
+	  		public void auctionBid() {
+	  			 WebElement aucitonNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionNavBar()));
+	  			  aucitonNavBarOption.click();
+	  			 WebElement aucitonBidPage = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionbidOpt()));
+	  			aucitonBidPage.click();
+	  			WebElement auctionBidValue = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidFieldValue()));
+	  			auctionBidValue.click();
+	  			String value = auctionBidValue.getText();
+	  			if (value == null) {
+	  				WebElement auctionBidMyValue = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidFieldValue()));
+	  				auctionBidMyValue.sendKeys("1400");
+	  				WebElement valueAuction= wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidButton()));
+	  				valueAuction.click();
+	  			}
+	  			else {
+	  				WebElement valueAuction= wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidButton()));
+	  				valueAuction.click();
+	  			}
+//	  			 WebElement AuctionBanner = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidNotificationBanner()));
+//	  			 String BannerValue = AuctionBanner.getText();
+//	  			 return BannerValue;
+	  		}
 	  
 }
