@@ -47,7 +47,9 @@ public class auctionMehtod extends Base_page {
 		  aucitonBuyNowAmount.sendKeys(i + text.getaucitonBuyNowAmount()); 
 		  driver.findElement(xpaths.getauctionMemberr()).click();
 		  WebElement aucitonMemeberSelection = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionMemberr()));
-		  aucitonMemeberSelection.sendKeys(text.getmileTapMemberName1());
+		  aucitonMemeberSelection.sendKeys("Amir");
+		  Thread.sleep(4000);
+		  driver.findElement(xpaths.getauctionSelectionOfMember()).click();
 		  WebElement aucitonselectTheMember = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionSelectionOfMember()));
 		  aucitonselectTheMember.click();
 		  driver.findElement(xpaths.getauctionDatePicker()).click();
