@@ -328,9 +328,9 @@ public class Xpaths {
     By appraisalSubmitOption		= By.xpath("//div[@id='section1']/div/div/div[2]/div/button/span[2]");
     
     // auction
-    By auctionNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
+    By auctionNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
     By auctionCreateAction			= By.xpath("//div[@id='section1']/div/div/div[2]/div/button/span");
-    By auctionName					= By.xpath("//input[@id='aadAuction_name']");
+    By auctionName					= By.xpath("//form[@id='aadAuction']/div/div/div[2]/div/div/span/input");
     By auctionStartingBid			= By.xpath("//input[@id='aadAuction_startingBid']");
     By auctionIcreaseBid			= By.xpath("//input[@id='aadAuction_minIncreaseBid']");
     By auctionBuyNowAmount			= By.xpath("//input[@id='aadAuction_buyNowAmount']");

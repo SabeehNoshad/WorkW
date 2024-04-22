@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import javax.swing.JLabel;
 
 import appraisal.appraisalTest;
+import auction.auctionTest;
 import clockInClockOut.clockIn_Test;
 import coments.commentTest;
 import customApproval.customApprovalTest;
@@ -245,6 +246,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonGroupSummary = new javax.swing.JButton();
         jButtonLeadConvToProject = new javax.swing.JButton();
         jButtonPages = new javax.swing.JButton();
+        jButtonAuction = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -384,7 +386,69 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonLeadConvToProject.setText("Lead Convert To Project");
         
         jButtonPages.setText("Pages");
+        
+        jButtonAuction.setText("Auction");
        //****************************************************************************************************************************************************************************************************
+       
+        //Auction Jbutton 
+        jButtonAuction.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+             	jTextArea1.setText("");
+             	// Call your test case methods here
+                 auctionTest testClass2 = new auctionTest();
+                 getterMethodTextFile text = new getterMethodTextFile();
+                 testResult tst = new testResult();
+              // Break the string into multiple lines using newline character
+                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                 // Create a new string with line breaks
+                 String formattedTravelDetails = String.join("\n", lines);
+                 jTextArea2.setText(formattedTravelDetails);
+                 try {
+                 	
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	
+     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                 	   if (jLabelWelcomName.getText().equals("abc")) {
+                            // If yes, pass additional parameters
+                            boolean result = testClass2.auctionTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                            if (result) {
+        		                // Test passed, change the button color to green
+                            	jButtonAuction.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonAuction.setBackground(Color.RED);
+        		            }
+                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      	  
+                      	  boolean result = testClass2.auctionTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                            if (result) {
+         		                // Test passed, change the button color to green
+                            	jButtonAuction.setBackground(Color.GREEN);
+         		            } else {
+         		                // Test failed, change the button color to red (or any other color)
+         		            	jButtonAuction.setBackground(Color.RED);
+         		            	 updateResultLabel(result);
+                        }
+                        }
+     				
+     		            // Get the relevant information from ITestResult and update the JTextArea
+     			    
+    
+     			     jTextArea2.setText(tst.getuserTestDetails());
+     				//updateResultLabel(result);
+     				
+
+     			} catch (InterruptedException e1) {
+     				// TODO Auto-generated catch block
+     				e1.printStackTrace();
+     			}
+               
+             }
+        	
+        });
+        
         //pages Jbutton 
         jButtonPages.addActionListener(new ActionListener() {
         	 @Override
@@ -1571,7 +1635,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         																								.addComponent(jButtonForms,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonLead,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonTravel,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
-        							)
+        																								.addComponent(jButtonAuction,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
         									.addGap(1)
@@ -1707,6 +1772,13 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jButtonCustomAp)
         				.addComponent(jButtonWOrkBoard)
         				.addComponent(jButtonPages)
+        				)
+        			//row 7
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        			
+        				.addComponent(jButtonAuction)
+        				
         				)
         			// section 2 
         			.addGap(150)
@@ -2920,4 +2992,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonGroupSummary;
     private JButton jButtonLeadConvToProject;
     private JButton jButtonPages;
+    private JButton jButtonAuction;
 }
