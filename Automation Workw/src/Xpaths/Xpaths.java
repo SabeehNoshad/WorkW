@@ -341,6 +341,10 @@ public class Xpaths {
     By auctionDatePickerOk			= By.xpath("//span[contains(.,'OK')]");
     By auctionDescription			= By.xpath("//textarea[@id='aadAuction_description']");
     By auctionSubmitButton			= By.xpath("//button[@type='submit']");
+    By auctionClickOnTheBiddingPage	= By.cssSelector(".sc-jTQCzO:nth-child(1) .ant-btn:nth-child(1) > svg");
+    By auctionBidFieldValue			= By.xpath("//div[@id='section1']/div/div[2]/div/div/div[2]/div[3]/div[4]/div/div/div/div[2]/div[2]/input");
+    By auctionBidButton				= By.cssSelector(".ant-btn > svg");
+    By auctionBidNotificationBanner = By.cssSelector(".ant-notification-notice-description");
     // Payroll
     By payrollNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[5]/a/p");
     By payrollCreateButton			= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
