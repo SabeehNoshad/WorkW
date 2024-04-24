@@ -44,6 +44,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JToggleButton;
 
 import Localization.localizationTest;
+import SearchHrModule.seachHrTest;
 import Xpaths.getterMethods;
 
 import javax.swing.JToggleButton;
@@ -249,7 +250,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonAuction = new javax.swing.JButton();
         jButtonAuctionBidding = new javax.swing.JButton();
         jButtonAuctionListVIew = new javax.swing.JButton();
-
+        jButtonEmployeeUpdate = new javax.swing.JButton();
+        jButtonSearchHrModules = new javax.swing.JButton();
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
         jPanelwellcom.setBackground(new java.awt.Color(51, 0, 51));
@@ -394,6 +397,10 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonAuctionBidding.setText("AuctionBidding");
         
         jButtonAuctionListVIew.setText("AuctionTableView");
+        
+        jButtonEmployeeUpdate.setText("Emp Update");
+        
+        jButtonSearchHrModules.setText("Search Hr");
        //****************************************************************************************************************************************************************************************************
        
         //AuctionListView Jbutton 
@@ -1996,7 +2003,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 
         jPanelHR.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelHeadHr.setFont(new java.awt.Font("Segoe UI", 1, 9)); // NOI18N
+        jLabelHeadHr.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelHeadHr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         //*************************************************************************************************************************************************************************************************************
         
@@ -2029,7 +2036,66 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonAppraisal.setText("Appraisal");
         // ******************************************************************************************************************************************************************************************************
-       
+      
+        //AuctionListView Jbutton 
+        jButtonSearchHrModules.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+             	jTextArea1.setText("");
+             	// Call your test case methods here
+                 seachHrTest testClass2 = new seachHrTest();
+                 getterMethodTextFile text = new getterMethodTextFile();
+                 testResult tst = new testResult();
+              // Break the string into multiple lines using newline character
+                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                 // Create a new string with line breaks
+                 String formattedTravelDetails = String.join("\n", lines);
+                 jTextArea2.setText(formattedTravelDetails);
+                 try {
+                 	
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	
+     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                 	   if (jLabelWelcomName.getText().equals("abc")) {
+                            // If yes, pass additional parameters
+                            boolean result = testClass2.seachHrTst(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                            if (result) {
+        		                // Test passed, change the button color to green
+                            	jButtonSearchHrModules.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonSearchHrModules.setBackground(Color.RED);
+        		            }
+                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      	  
+                      	  boolean result = testClass2.seachHrTst( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                            if (result) {
+         		                // Test passed, change the button color to green
+                            	jButtonSearchHrModules.setBackground(Color.GREEN);
+         		            } else {
+         		                // Test failed, change the button color to red (or any other color)
+         		            	jButtonSearchHrModules.setBackground(Color.RED);
+         		            	 updateResultLabel(result);
+                        }
+                        }
+     				
+     		            // Get the relevant information from ITestResult and update the JTextArea
+     			    
+    
+     			     jTextArea2.setText(tst.getuserTestDetails());
+     				//updateResultLabel(result);
+     				
+
+     			} catch (InterruptedException e1) {
+     				// TODO Auto-generated catch block
+     				e1.printStackTrace();
+     			}
+               
+             }
+        	
+        });
+        
       //Quick Add 
         jButtonQuick.addActionListener(new ActionListener() {
             @Override
@@ -2531,69 +2597,118 @@ public class ApplicationNew extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanelHRLayout = new javax.swing.GroupLayout(jPanelHR);
         jPanelHR.setLayout(jPanelHRLayout);
         jPanelHRLayout.setHorizontalGroup(
-            jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelHeadHr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanelHRLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHRLayout.createSequentialGroup()
-                        .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonComplain, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(jButtonQuick, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelHRLayout.createSequentialGroup()
-                                .addComponent(jButtonEmployee)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonPromotion))
-                            .addGroup(jPanelHRLayout.createSequentialGroup()
-                                .addComponent(jButtonReward, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonCareers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(1, 1, 1))))
-                    .addGroup(jPanelHRLayout.createSequentialGroup()
-                        .addComponent(jButtonSalary)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonResignation, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButtonwarning, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                        .addComponent(jButtonBonus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                        .addComponent(jButtonAppraisal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+            jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+            .addGroup(jPanelmainLayout.createSequentialGroup()
+            .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+            		   .addGroup(jPanelHRLayout.createSequentialGroup()
+                       		    				
+           // .addComponent(jLabelHeadHr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          
+                //---------------------------------- 1st column-------------------------------------------------------------------
+                
+            				   .addContainerGap()
 
-                        .addComponent(jButtonLeaves, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(152, Short.MAX_VALUE))
-        );
+                    	    .addComponent(jLabelHeadHr, GroupLayout.DEFAULT_SIZE, 396,Short.MAX_VALUE))
+							.addGroup(jPanelHRLayout.createSequentialGroup()
+									.addGap(1)
+									.addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+											.addGroup(jPanelHRLayout.createSequentialGroup()
+							.addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                            .addComponent(jButtonComplain,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonQuick,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonSalary,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonLeaves,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAppraisal,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            )
+
+
+                       // ------------------------- 2ND COLUMN ------------------------------------------------------------------------
+                        
+                        .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                            .addGroup(jPanelHRLayout.createSequentialGroup()
+                            		.addGap(1)
+                                    .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+
+                             .addComponent(jButtonEmployee,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                             .addComponent(jButtonReward,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                             .addComponent(jButtonResignation,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                             .addComponent(jButtonwarning,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                             .addComponent(jButtonEmployeeUpdate,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                            )
+                       // -------------------------- 3RD COLUMN --------------------------------------------------------------------------------
+                            .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                            .addGroup(jPanelHRLayout.createSequentialGroup()
+                            		.addGap(1)
+                                .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                            	.addComponent(jButtonPromotion,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonCareers,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonLoan,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonBonus,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+
+                               )))
+                            .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                                    .addGroup(jPanelHRLayout.createSequentialGroup()
+                                    		.addGap(1)
+                                        .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+                                    	.addComponent(jButtonSearchHrModules,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                        
+
+                                       )))
+              
+                      
+                       
+                        
+                       
+                   
+                       )))))
+
+									)));
+        
         jPanelHRLayout.setVerticalGroup(
-            jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanelHRLayout.createParallelGroup(Alignment.LEADING)
+         
             .addGroup(jPanelHRLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+            	.addGap(15)	
                 .addComponent(jLabelHeadHr)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(05)
+                //************************************************* 1ST ROW ********************************************************************************************
+                .addGroup(jPanelHRLayout.createParallelGroup(Alignment.BASELINE)
+
+               
                     .addComponent(jButtonQuick)
                     .addComponent(jButtonPromotion)
-                    .addComponent(jButtonEmployee))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEmployee)
+                    .addComponent(jButtonSearchHrModules))
+            	//*************************************2ND ROW****************************************************************************************
+            .addPreferredGap(ComponentPlacement.RELATED)    
+            .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonComplain)
                     .addComponent(jButtonReward)
                     .addComponent(jButtonCareers))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
+            	//*********************************************3RD ROW***********************************************************************************
+            .addPreferredGap(ComponentPlacement.RELATED) 
                 .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalary)
                     .addComponent(jButtonLoan)
                     .addComponent(jButtonResignation))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                //**************************************************4TH ROW***********************************************************************************
+
+                .addPreferredGap(ComponentPlacement.RELATED) 
+                .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButtonLeaves)
-               // .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonwarning)
                 .addComponent(jButtonBonus)
+                )
+                // **************************************************5TH ROW ***********************************************************************************
+
+                .addPreferredGap(ComponentPlacement.RELATED) 
+                .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButtonAppraisal)
-                .addContainerGap(247, Short.MAX_VALUE))
-        );
+                .addComponent(jButtonEmployeeUpdate)
+                )
+                   
+      ) );
 
         jTabbedPane1.addTab("HR ", jPanelHR);
 
@@ -3180,4 +3295,6 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonAuction;
     private JButton jButtonAuctionBidding;
     private JButton jButtonAuctionListVIew;
+    private JButton jButtonEmployeeUpdate;
+    private JButton jButtonSearchHrModules;
 }
