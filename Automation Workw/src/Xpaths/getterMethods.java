@@ -1423,6 +1423,9 @@ public class getterMethods extends Xpaths {
    public By getpagesTagsText () {
 	   return pagesTagText;
    }
+   public By getsearchHrModules() {
+	   return searchfieldemp;
+   }
     
 }
 

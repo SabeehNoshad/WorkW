@@ -500,4 +500,9 @@ public class Xpaths {
     By pagesSubmittButton		= By.xpath("//form[@id='pageForm']/div[6]/div/div/div/div/div/button[2]");
     By PagesCreatedPageOpening	= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div/div/div/div/div/table/tbody/tr[2]/td/span");
     By pagesTagText				= By.xpath("//input[@id='pageForm_tags']");
+    
+    // search Hr modules
+    By searchfieldemp			= By.cssSelector(".ant-input");
+  
+    
 }
