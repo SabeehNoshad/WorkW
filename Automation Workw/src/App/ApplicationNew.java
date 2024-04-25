@@ -45,6 +45,7 @@ import javax.swing.JToggleButton;
 
 import Localization.localizationTest;
 import SearchHrModule.seachHrTest;
+import SearchMainModule.searchMainTest;
 import Xpaths.getterMethods;
 
 import javax.swing.JToggleButton;
@@ -255,6 +256,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonAuctionListVIew = new javax.swing.JButton();
         jButtonEmployeeUpdate = new javax.swing.JButton();
         jButtonSearchHrModules = new javax.swing.JButton();
+        jButtonSearchMainModule = new javax.swing.JButton();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -404,8 +406,67 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonEmployeeUpdate.setText("Emp Update");
         
         jButtonSearchHrModules.setText("Search Hr");
+        
+        jButtonSearchMainModule.setText("Search Main");
        //****************************************************************************************************************************************************************************************************
-       
+       // search main module 
+        jButtonSearchMainModule.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+             	jTextArea1.setText("");
+             	// Call your test case methods here
+                 searchMainTest testClass2 = new searchMainTest();
+                 getterMethodTextFile text = new getterMethodTextFile();
+                 testResult tst = new testResult();
+              // Break the string into multiple lines using newline character
+                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                 // Create a new string with line breaks
+                 String formattedTravelDetails = String.join("\n", lines);
+                 jTextArea2.setText(formattedTravelDetails);
+                 try {
+                 	
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	
+     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                 	   if (jLabelWelcomName.getText().equals("abc")) {
+                            // If yes, pass additional parameters
+                            boolean result = testClass2.searchMainTest(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                            if (result) {
+        		                // Test passed, change the button color to green
+                            	jButtonSearchMainModule.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonSearchMainModule.setBackground(Color.RED);
+        		            }
+                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      	  
+                      	  boolean result = testClass2.searchMainTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                            if (result) {
+         		                // Test passed, change the button color to green
+                            	jButtonSearchMainModule.setBackground(Color.GREEN);
+         		            } else {
+         		                // Test failed, change the button color to red (or any other color)
+         		            	jButtonSearchMainModule.setBackground(Color.RED);
+         		            	 updateResultLabel(result);
+                        }
+                        }
+     				
+     		            // Get the relevant information from ITestResult and update the JTextArea
+     			    
+    
+     			     jTextArea2.setText(tst.getuserTestDetails());
+     				//updateResultLabel(result);
+     				
+
+     			} catch (InterruptedException e1) {
+     				// TODO Auto-generated catch block
+     				e1.printStackTrace();
+     			}
+               
+             }
+        	
+        });
         //AuctionListView Jbutton 
         jButtonAuctionListVIew.addActionListener(new ActionListener() {
         	 @Override
@@ -1830,6 +1891,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         																								.addComponent(jButtonLead,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonTravel,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonAuction,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								.addComponent(jButtonSearchMainModule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								)
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
@@ -1974,6 +2036,13 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jButtonAuction)
         				.addComponent(jButtonAuctionBidding)
         				.addComponent(jButtonAuctionListVIew)
+        				)
+        			//row 8
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        			
+        				.addComponent(jButtonSearchMainModule)
+        				
         				)
         			// section 2 
         			.addGap(150)
@@ -3357,4 +3426,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonAuctionListVIew;
     private JButton jButtonEmployeeUpdate;
     private JButton jButtonSearchHrModules;
+    private JButton jButtonSearchMainModule;
 }
