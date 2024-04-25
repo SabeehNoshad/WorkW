@@ -10,7 +10,7 @@ import user.urls.testArguments.getterMethod_Defaults;
 
 public class employeeTest extends TestBase{
 	@Test 
-	public boolean EmployeeTestUpdate( String email, String pass) throws InterruptedException {
+	public boolean EmployeeTestUpdate( Integer times,String email, String pass) throws InterruptedException {
 		setUp();
 		getterMethod_Defaults defaults = new getterMethod_Defaults();
 		  String currentURL = "";
@@ -29,7 +29,7 @@ public class employeeTest extends TestBase{
 //		       
 				//Thread.sleep(5000);
 				employeeMethod employee = new employeeMethod(driver);
-				employee.employeeModuleRoute();
+				employee.employeeModuleRoute(times);
 			 ApplicationNew.resTime("Response time: " + pageLoadTime + " milliseconds" );
 			 ApplicationNew.logError("Employee Test Sucessfull");
 		        tearDown();

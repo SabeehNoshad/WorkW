@@ -20,19 +20,19 @@ public class employeeMethod extends Base_page{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public void employeeModuleRoute() throws InterruptedException {
+	public void employeeModuleRoute(Integer times) throws InterruptedException {
 		WebElement EmployeeNavBaroption	=  wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getEmployeeNavBarOpt()));
 		EmployeeNavBaroption.click();
 		WebElement EmployeeUpdateOption	=  wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getEmployeeUpdateButton()));
 		EmployeeUpdateOption.click();
 		empEmailConfiguration();
-		bankDetail();
-		educationModule();
-		emergencyInformation();
-		workExperience ();
-		rebate();
-		salaryEmployee();
-		family();
+		bankDetail(times);
+		educationModule(times);
+		emergencyInformation(times);
+		workExperience (times);
+		rebate(times);
+		salaryEmployee(times);
+		family(times);
 		
 		
 		

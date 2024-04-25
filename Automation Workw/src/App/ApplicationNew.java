@@ -2061,7 +2061,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     				//Boolean result = testClass2.travelCreateTest(inputValue1);
                 	   if (jLabelWelcomName.getText().equals("abc")) {
                            // If yes, pass additional parameters
-                           boolean result = testClass2.EmployeeTestUpdate(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                           boolean result = testClass2.EmployeeTestUpdate( inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
        		                // Test passed, change the button color to green
                         	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
@@ -2071,7 +2071,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            }
                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                      	  
-                     	  boolean result = testClass2.EmployeeTestUpdate( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                     	  boolean result = testClass2.EmployeeTestUpdate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
         		                // Test passed, change the button color to green
                         	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
