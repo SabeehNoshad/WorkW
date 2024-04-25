@@ -436,5 +436,87 @@ public class Xpaths {
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
-
+// EMPLOYEE UPDATE MODULE
+    By employeeUpdateButton						= By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/div/div/div[2]/button[2]");
+    By employeeEmailConfiguration				= By.xpath("//a[contains(text(),'Email Configuration')]");
+    By employeeEmailUsername					= By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/div/div/div/div/input");
+    By employeePassword							= By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/div/div/div/div[2]/input");
+    
+    By employeeBankDetailOption					= By.xpath("//a[contains(text(),'Bank Detail')]");
+    By employeeAddbankDetailButton				= By.xpath("");
+    By employeeBankDetailname					= By.xpath("");
+    By employeeAccTitle							= By.xpath("");
+    By empBranchCode							= By.xpath("");
+    By empAccountNumber							= By.xpath("");
+    By empIBAN									= By.xpath("");
+    By empSortCode								= By.xpath("");
+    By empCountryList							= By.xpath("");
+    By empCountryClick							= By.xpath("");
+    By empCityList								= By.xpath("");
+    By empCityClick								= By.xpath("");
+    By empIsDefaultClick						= By.xpath("");
+    By empAddBankSubmittButton					= By.xpath("");
+    
+    By empEducationOption						= By.xpath("");
+    By empAddEducationButton					= By.xpath("");
+    By empDegreeName							= By.xpath("");
+    By empInstitute								= By.xpath("");
+    By empTotalMarks							= By.xpath("");
+    By empObtainMarks							= By.xpath("");
+    By empStatdate								= By.xpath("");
+    By empStartDateclick						= By.xpath("");
+    By empEndDateClick							= By.xpath("");
+    By empCountry								= By.xpath("");
+    By empCountyclick							= By.xpath("");
+    By empcityList								= By.xpath("");
+    By empCityCli								= By.xpath("");
+    By empEducationSubmittButton				= By.xpath("");
+    
+    By empEmergencyInformation					= By.xpath("");
+    By empEmergencyAddButton					= By.xpath("");
+    By empEmename								= By.xpath("");
+    By empEmeAdd								= By.xpath("");
+    By EmpEmeNumber								= By.xpath("");
+    By empEmeRelationList						= By.xpath("");
+    By empEmeSelectRelation						= By.xpath("");
+    By empEmeSubmittButton						= By.xpath("");
+    
+    By empWorkExpOpt							= By.xpath("");
+    By empworkAddButton							= By.xpath("");
+    By empworkPosi								= By.xpath("");
+    By empWorkEmpTYpeList						= By.xpath("");
+    By empWorkEmploymentTYpeClick				= By.xpath("");
+    By empWorkOrganization						= By.xpath("");
+    By empAddWorkExpSubmittButton				= By.xpath("");
+    
+    By empRebateOption							= By.xpath("");
+    By empRebateAddButton						= By.xpath("");
+    By empRebateAmmount							= By.xpath("");
+    By empRebateCategoryList					= By.xpath("");
+    By empRebateCategoryClick					= By.xpath("");
+    By empRebateDateClick						= By.xpath("");
+    By empRebateDateSelect						= By.xpath("");
+    By empRebateDescription						= By.xpath("");
+    By empRebateSubmittButton					= By.xpath("");
+    
+    By empSalaryOption							= By.xpath("");
+    By empSalaryAddButton						= By.xpath("");
+    By empSalaryEffectiveDateClick				= By.xpath("");
+    By empSalaryEffectiveDateSelect				= By.xpath("");
+    By empSalaryBasicSalary						= By.xpath("");
+    By empSalaryDescription						= By.xpath("");
+    By empSalarySubmittButton					= By.xpath("");
+    
+    By empFamilyOPtion							= By.xpath("");
+    By empFamilyAddButton						= By.xpath("");
+    By empFamilyFirstName						= By.xpath("");
+    By empFamilyLastName						= By.xpath("");
+    By empDateOfBirthCLick						= By.xpath("");
+    By empDateOfBirthSelect						= By.xpath("");
+    By empFAmilyCOntactNo						= By.xpath("");
+    By empFamilyEmailAddress					= By.xpath("");
+    By empFamilyRelationList					= By.xpath("");
+    By empFamilyRelationCLick					= By.xpath("");
+    By empFamilySubmittButton					= By.xpath("");
+    
 }
