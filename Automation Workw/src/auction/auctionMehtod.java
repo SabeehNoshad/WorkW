@@ -47,7 +47,9 @@ public class auctionMehtod extends Base_page {
 		  aucitonBuyNowAmount.sendKeys(i + text.getaucitonBuyNowAmount()); 
 		  driver.findElement(xpaths.getauctionMemberr()).click();
 		  WebElement aucitonMemeberSelection = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionMemberr()));
-		  aucitonMemeberSelection.sendKeys(text.getmileTapMemberName1());
+		  aucitonMemeberSelection.sendKeys("Amir");
+		  Thread.sleep(4000);
+		  driver.findElement(xpaths.getauctionSelectionOfMember()).click();
 		  WebElement aucitonselectTheMember = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionSelectionOfMember()));
 		  aucitonselectTheMember.click();
 		  driver.findElement(xpaths.getauctionDatePicker()).click();
@@ -61,5 +63,36 @@ public class auctionMehtod extends Base_page {
 		  driver.findElement(xpaths.getauctionSubmittButton()).click();
 		  Thread.sleep(2000);
 	  }
+//------------------------********************** AUCTION BIDDING********************************------------------------------------
+	  		public void auctionBid() {
+	  			 WebElement aucitonNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionNavBar()));
+	  			  aucitonNavBarOption.click();
+	  			 WebElement aucitonBidPage = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionbidOpt()));
+	  			aucitonBidPage.click();
+	  			WebElement auctionBidValue = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidFieldValue()));
+	  			auctionBidValue.click();
+	  			String value = auctionBidValue.getText();
+	  			if (value == null) {
+	  				WebElement auctionBidMyValue = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidFieldValue()));
+	  				auctionBidMyValue.sendKeys("1400");
+	  				WebElement valueAuction= wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidButton()));
+	  				valueAuction.click();
+	  			}
+	  			else {
+	  				WebElement valueAuction= wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidButton()));
+	  				valueAuction.click();
+	  			}
+//	  			 WebElement AuctionBanner = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionBidNotificationBanner()));
+//	  			 String BannerValue = AuctionBanner.getText();
+//	  			 return BannerValue;
+	  		}
+//---------------------------------********** AUCTION LIST VIEW TABLE VIEW ---------------------------------------
+	  		public void auctionListViewTableView () throws InterruptedException {
+	  			 WebElement aucitonNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getauctionNavBar()));
+	  			  aucitonNavBarOption.click();
+	  			  WebElement AuctionListview = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getautctionListViewTableView()));
+	  			AuctionListview.click();
+	  			Thread.sleep(6000);
+	  		}
 	  
 }

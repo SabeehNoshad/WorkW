@@ -584,6 +584,9 @@ public class getterMethods extends Xpaths {
     public By getclockInYes() {
     	return clockInyes;
     }
+    public By getclockInessage() {
+    	return clockInputMessage;
+    }
     // newsFeed 
     public By getnewsFeedCreateComposer() {
     	return newsFeedCreateComposer;
@@ -1033,6 +1036,21 @@ public class getterMethods extends Xpaths {
     public By getauctionSubmittButton() {
     	return auctionSubmitButton;
     }
+    public By getauctionbidOpt() {
+    	return auctionClickOnTheBiddingPage;
+    }
+    public By getauctionBidFieldValue () {
+    	return auctionBidFieldValue;
+    }
+    public By getauctionBidButton() {
+    	return auctionBidButton;
+    }
+    public By getauctionBidNotificationBanner() {
+    	return auctionBidNotificationBanner;
+    }
+    public By getautctionListViewTableView() {
+    	return auctionListViewTableView;
+    }
     //getterMethods Payroll 
    public By getpayrollNavBarOption() {
 	   return payrollNavBarOption;
@@ -1235,6 +1253,7 @@ public class getterMethods extends Xpaths {
    public By getcomentTextArea() {
 	   return commentsTextArea;
    }
+
    // -------------------------------------------------------------------------employee update*********************************************************************************************************** 
    public By getEmployeeUpdateButton() {
 	    return employeeUpdateButton;
@@ -1531,6 +1550,182 @@ public class getterMethods extends Xpaths {
 	public By getEmpFamilySubmittButton() {
 	    return empFamilySubmittButton;
 	}
+
+
+   public By getcomentLeadinLeadmanager() {
+	   return commentsleadManagerLead;
+   }
+   public By getcommentInLead() {
+	   return commentsInLeadManager;
+   }
+   // language selection 
+   public By getLangOption() {
+	   return languageOption;
+   }
+   public By getlangCzech () {
+	   return landCzech;
+   }
+   public By getclickOnMessenger() {
+	   return clickOnmessenger;
+   }
+   public By getclickOnMailBox() {
+	   return ClickOnMailBox;
+   }
+   public By getclickDocs() {
+	   return clickOnDocsAndArchive;
+   }
+   public By getclickOnLandD() {
+	   return clickOnLandD;
+   }
+   public By getclickOnJObBoard() {
+	   return clickonJobBoard;
+   }
+   public By getclickOnBusinessPolicy() {
+	   return clickOnBusinessPolicy;
+   }
+   public By getclickOnForms() {
+	   return clickOnForms;
+   }
+   public By getclickOnMarketplace() {
+	   return ClickOnMarketPlace;
+   }
+   public By getclickOnAuxtion() {
+	   return clickOnAuction;
+   }
+   public By getclickOnDiscussionBoard() {
+	   return clickOnDiscussionBoard;
+   }
+   public By getclickOnPages() {
+	   return clickOnPages;
+   }
+   public By getclickOnAdministration() {
+	   return ClickOnAdministration;
+   }
+   public By getclickOnOrgChart() {
+	   return clickOnOrganizationChart;
+   }
+   public By getclickOnMyTeam() {
+	   return clickOnMyTeam;
+   }
+   public By getclickOnOnDept() {
+	   return clickOnDepartments;
+   }
+   public By getclickOnCareers() {
+	   return clickOnCareers;
+   }
+   public By getclickOnResig() {
+	   return clickOnResignation;
+   }
+   public By getclickOnAttendance() {
+	   return ClickOnAttendance;
+   }
+   public By getclickOnChartsOfAccounts() {
+	   return clickOnCHartOfAccount;
+   }
+   public By getclickOnQuotation() {
+	   return clickOnQuotation;
+   }
+   public By getclickOnVoucher() {
+	   return clickOnCreateVoucher;
+   }
+   public By getclickOnvoucherList() {
+	   return clickOnVoucherList;
+   }
+   public By getclickOnLedgerRepo() {
+	   return clickOnLedgerList;
+   }
+   public By getclickOnTrailBalance() {
+	   return clickOnTrialBalance;
+   }
+   public By getclickOnPayroll() {
+	   return clickOnPayroll;
+   }
+   public By getclickOnRequisition() {
+	   return clickOnRequisition;
+   }
+   public By getclickOnAssetsAllocaiton() {
+	   return clickOnAssetsAllocation;
+   }
+   public By getclickOnCreateAssets() {
+	   return clickOnCreateAssets;
+   }
+   public By getclickOnAssetsLists() {
+	   return clickOnAssetsList;
+   }
+   public By getclickOnRequestForItems() {
+	   return clickOnRequestForItem;
+   }
+   public By getclickOnCompanies() {
+	   return clickOnCompanies;
+   }
+   // language 
+   public By getarabicLanguage() {
+	   return arabicLanguage;
+   }
+   public By gethindiLanguage() {
+	   return hindiLanguage;
+   }
+   public By getturkishLanguage() {
+	   return turkishLanguage;
+   }
+   public By geturduLanguage() {
+	   return urduLanguage;
+   }
+   // NewsFeed Poll Option
+   public By getnewsfeedPollOption() {
+	   return newsFeedPollOption;
+   }
+   public By getnewsFeedPollOption1() {
+	   return newsFeedPollOption1;
+   }
+   public By getnewsFeedPollOption2() {
+	   return newsFeedPollOption2;
+   }
+   // lead manager 
+   public By getLeadmangerLead() {
+	   return leadManagerlead;
+   }
+   public By getLeadManagerConvertButton() {
+	   return LeadManagerConvertButton;
+   }
+   public By getLeadManagerGoToProject() {
+	   return LeadManagerGoToProject;
+   }
+   // pages 
+   public By getpagesnewsFeedOpt() {
+	   return pagesNewsfeedOption ;
+   }
+   public By getpagesCreateButton() {
+	   return pagesCreatePagesButton ;
+   }
+   public By getpagesName() {
+	   return pagesName;
+   }
+   public By getpagesCategoryClick() {
+	   return pagesCategory;
+   }
+   public By getpagesCategorySelect() {
+	   return pagesCategorySelect;
+   }
+   public By getpagestags() {
+	   return pagesTags;
+   }
+   public By getPagesDEscription() {
+	   return pagesDescriptions;
+   }
+   public By getpagesSubmittButton() {
+	   return pagesSubmittButton;
+   }
+   public By getpagesoptennewlyCreatedPages () {
+	   return PagesCreatedPageOpening;
+   }
+   public By getpagesTagsText () {
+	   return pagesTagText;
+   }
+   public By getsearchHrModules() {
+	   return searchfieldemp;
+   }
+    
 
 }
 

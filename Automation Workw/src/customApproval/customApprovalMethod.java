@@ -23,7 +23,7 @@ public class customApprovalMethod extends Base_page {
 	public void CustomApprovalRoute(Integer times ) throws InterruptedException {
 		WebElement customApprovalNavBar = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getcustomApprovalNavBar()));
 		customApprovalNavBar.click();
-		for (int i = 0 ; i <= times ; i ++) {
+		for (int i = 1 ; i <= times ; i ++) {
 		WebElement customApprovalCreateButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getcustomApprovalCreateButton()));
 		customApprovalCreateButton.click();
 		CreateComposer(i);

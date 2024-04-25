@@ -22,24 +22,24 @@ public class workboardMethod extends Base_page {
 	  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	  getterMethodTextFile text = new getterMethodTextFile();
 	  
-	  public void workBoardRoute(Integer times,String company) throws InterruptedException {
+	  public void workBoardRoute(Integer times,Integer Value,String company) throws InterruptedException {
 		  WebElement workboardNavBarOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getworkboardNavBaroption()));
 		  workboardNavBarOption.click();
 		  WebElement workboardCreateBoard = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getworkboardCreateBoard()));
 		  workboardCreateBoard.click();
-		  workBoardCreateComposer(times,company);
+		  workBoardCreateComposer(times,Value ,company);
 		  Thread.sleep(2000);
 		  workBoardSectionCreation();
 		  workBoardTodo(times);
 		  
 		  
 	  }
-	  public void workBoardCreateComposer(Integer times,String company) throws InterruptedException {
+	  public void workBoardCreateComposer(Integer times,Integer Value,String company) throws InterruptedException {
 		  Thread.sleep(2000);
 		  //work board name 
 		  driver.findElement(xpaths.getworkboardname()).click();
 		  WebElement workboardName = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getworkboardname()));
-		  workboardName.sendKeys(times + text.getuserFirstName());
+		  workboardName.sendKeys(Value+ times + text.getuserFirstName());
 		  // workboard description
 		  WebElement workboardDescription = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getworkboardDescription()));
 		  workboardDescription.sendKeys(text.getuserModuleDescription500());

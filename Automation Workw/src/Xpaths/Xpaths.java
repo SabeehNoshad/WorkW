@@ -35,6 +35,9 @@ public class Xpaths {
 	By All_leads_option					 = By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/button[2]/span");
 	By leadTabGroup						 = By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/button[3]/span");
 	By leadGroupBackButton				 = By.cssSelector(".anticon-left > svg");
+	By leadManagerlead					 = By.xpath("//div[@id='section1']/div/div[3]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div[2]");
+	By LeadManagerConvertButton			 = By.xpath("//form[@id='basic']/div[4]/div[2]/div/button/span");
+	By LeadManagerGoToProject			 = By.xpath("//form[@id='basic']/div[4]/div[2]/div/button/span");
 	
 	// lead section
 	By Create_section_opt				 = By.xpath("//div[@id='section1']/div/div[3]/div/div/div/div/div/div/button");
@@ -188,8 +191,10 @@ public class Xpaths {
     By clockInOpt							= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/div[2]/img");
     By clockInButton						= By.xpath("//div[2]/div/div[2]/div/div[2]/img");
     By clockInMessage						= By.cssSelector(".ant-popover-message-title");
-    By clockInyes							= By.xpath("//span[contains(.,'Yes')]");
-    By clockInYes							= By.xpath("//span[contains(.,'Yes')]");
+    By clockInyes							= By.xpath("//div[2]/button[2]/span");
+    By clockInYes							= By.xpath("//div[2]/button[2]/span");
+    By clockInputMessage					= By.xpath("//div[2]/input");
+    
     
     // newsFeed 
     
@@ -205,7 +210,7 @@ public class Xpaths {
     By expenseNavBarOpt						= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[13]/a");
     By expenseHeadListClick					= By.xpath("//input[@id='addExpense_headerId']");
     By expenseHeaderListEnterOpt			= By.cssSelector(".ant-select-item-option-content");
-    By expenseAmountField					= By.xpath("//form[@id='addExpense']/div[4]/div/div/div[2]/div/div/span/input");
+    By expenseAmountField					= By.cssSelector(".ant-input:nth-child(2)");
     By expenseDescription					= By.xpath("//textarea[@id='addExpense_description']");
     By expenseCreateButton					= By.xpath("//form[@id='addExpense']/div[10]/div/div/div/div/button");
     By expenseCreateComposer				= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
@@ -215,7 +220,7 @@ public class Xpaths {
     // task 
     By taskFeedOption					= By.xpath("//div[@id='section1']/div/div[2]/div[2]/div/img[5]");
     By taskSubject						= By.xpath("//form[@id='createTask']/div/div/div[2]/div/div/input");
-    By taskDescription					= By.xpath("//textarea[@id='createTask_description']");
+    By taskDescription					= By.xpath("//textarea[@id='description']");
     By taskGeneralOpt					= By.xpath("//div[@id='createTask_referenceType']/label/span[2]");
     By taskProjectOpt					= By.xpath("//div[@id='createTask_referenceType']/label[2]/span[2]");
     By taskGroupOpt						= By.xpath("//div[@id='createTask_referenceType']/label[3]/span[2]");
@@ -323,9 +328,9 @@ public class Xpaths {
     By appraisalSubmitOption		= By.xpath("//div[@id='section1']/div/div/div[2]/div/button/span[2]");
     
     // auction
-    By auctionNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
+    By auctionNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
     By auctionCreateAction			= By.xpath("//div[@id='section1']/div/div/div[2]/div/button/span");
-    By auctionName					= By.xpath("//input[@id='aadAuction_name']");
+    By auctionName					= By.xpath("//form[@id='aadAuction']/div/div/div[2]/div/div/span/input");
     By auctionStartingBid			= By.xpath("//input[@id='aadAuction_startingBid']");
     By auctionIcreaseBid			= By.xpath("//input[@id='aadAuction_minIncreaseBid']");
     By auctionBuyNowAmount			= By.xpath("//input[@id='aadAuction_buyNowAmount']");
@@ -336,6 +341,11 @@ public class Xpaths {
     By auctionDatePickerOk			= By.xpath("//span[contains(.,'OK')]");
     By auctionDescription			= By.xpath("//textarea[@id='aadAuction_description']");
     By auctionSubmitButton			= By.xpath("//button[@type='submit']");
+    By auctionClickOnTheBiddingPage	= By.cssSelector(".sc-jTQCzO:nth-child(1) .ant-btn:nth-child(1) > svg");
+    By auctionBidFieldValue			= By.xpath("//div[@id='section1']/div/div[2]/div/div/div[2]/div[3]/div[4]/div/div/div/div[2]/div[2]/input");
+    By auctionBidButton				= By.cssSelector(".ant-btn > svg");
+    By auctionBidNotificationBanner = By.cssSelector(".ant-notification-notice-description");
+    By auctionListViewTableView		= By.xpath("//div[@id='section1']/div/div[2]/div[2]/div/div/label[2]/div/span[2]");
     // Payroll
     By payrollNavBarOption			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[5]/a/p");
     By payrollCreateButton			= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
@@ -379,7 +389,7 @@ public class Xpaths {
     By customApprovalEnterCategory				= By.cssSelector(".ant-select-selector");
     By customApprovalEnterAmount				= By.xpath("//input[@id='addCustomApproval_value']");
     By customApprovalDescription				= By.xpath("//textarea[@id='addCustomApproval_description']");
-    By customApprovalSubmitButton				= By.xpath("//form[@id='addCustomApproval']/div[7]/div/div/div/div/button");
+    By customApprovalSubmitButton				= By.xpath("//form[@id='addCustomApproval']/div[7]/div/div/div/div/button/span");
     By customApprovalOtherCategory				= By.cssSelector(".ant-select-item-option-content");
 //    By customApproval				= By.xpath("");
 //    By customApproval				= By.xpath("");
@@ -390,7 +400,7 @@ public class Xpaths {
     By ScheduleNavbarOpt						= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[2]/a");
     By ScheduleCreateButton						= By.cssSelector(".ant-btn-square > span");
     By ScheduleSubject						= By.xpath("//form/div/div/div[2]/div/div/input");
-    By ScheduleDescriptio						= By.xpath("//div[2]/div/div/div/div/div[2]/div/div[2]/div");
+    By ScheduleDescriptio						= By.xpath("//div[2]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div");
     By SchedulememberListClick						= By.xpath("//div[9]/div/div[2]/div/div/div/input");
     By ScheduleMemberSelection						= By.xpath("//span/div/div/p");
     By ScheduleSubmittButton						= By.xpath("//div[12]/div/div/div/div/button");
@@ -431,9 +441,12 @@ public class Xpaths {
  // Comments
     By commentsOption = By.xpath("//div[@id='scrollableDiv']/div/div/div/div[3]/div[2]/div[2]/div[2]");
     By commentsTextArea = By.xpath("//textarea");
+    By commentsleadManagerLead = By.xpath("//div[@id='section1']/div/div[3]/div/div/div/div/div/div/div/div/div/table/tbody/tr/td");
+    By commentsInLeadManager = By.xpath("//textarea");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
+
 //    By comments = By.xpath("");
 //    By comments = By.xpath("");
 // EMPLOYEE UPDATE MODULE
@@ -518,5 +531,65 @@ public class Xpaths {
     By empFamilyRelationList					= By.xpath("");
     By empFamilyRelationCLick					= By.xpath("");
     By empFamilySubmittButton					= By.xpath("");
+
+    By languageOption 			= By.xpath("//img[@alt='userSettingToggle']");
+    By landCzech				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[6]");
+    By clickOnmessenger			 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/a");
+    By ClickOnMailBox			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[4]/a/p");
+    By clickOnDocsAndArchive	 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[8]/a");
+    By clickOnLandD				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[8]/a/p");
+    By clickonJobBoard 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[15]/a/p");
+    By clickOnBusinessPolicy	 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[15]/a");
+    By clickOnForms				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[17]/a");
+    By ClickOnMarketPlace		 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
+    By clickOnAuction 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
+    By clickOnDiscussionBoard 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
+    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[21]/a");
+    By ClickOnAdministration 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnOrganizationChart = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[7]/a/p");
+    By clickOnMyTeam    		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[10]/a/p");
+    By clickOnDepartments		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[12]/a/p");
+    By clickOnCareers			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[13]/a/p");
+    By clickOnResignation		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[16]/a/p");
+    By ClickOnAttendance		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[17]/a");
+    By clickOnCHartOfAccount	= By.xpath("//a[contains(@href, '/chart-of-account')]");
+    By clickOnQuotation			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[2]/a/p");
+    By clickOnCreateVoucher		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnVoucherList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[4]/a/p");
+    By clickOnLedgerList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[5]/a/p");
+    By clickOnTrialBalance		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[6]/a/p");
+    By clickOnPayroll			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/div[7]/a/p");
+    By clickOnRequisition		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div/a");
+    By clickOnAssetsAllocation	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[2]/a");
+    By clickOnCreateAssets		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnAssetsList		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[3]/a/p");
+    By clickOnRequestForItem	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[4]/div/div[2]/div/div/div[5]/a/p");
+    By clickOnCompanies			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[5]/div/div[2]/div/div/div/a");
+    By urduLanguage				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[2]/p");
+    By turkishLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[5]/p");
+    By hindiLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[4]");
+    By arabicLanguage			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul[2]/li[3]");
+    
+    // news feed poll options
+    By newsFeedPollOption		= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div[3]/img[4]");
+    By newsFeedPollOption1		= By.xpath("(//input[@value=''])[3]");
+    By newsFeedPollOption2		= By.cssSelector(".poll-input:nth-child(3) > .ant-input");
+    
+    // pages 
+    By pagesNewsfeedOption		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
+    By pagesCreatePagesButton	= By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
+    By pagesName				= By.xpath("//form[@id='pageForm']/div/div/div[2]/div/div/input");
+    By pagesCategory			= By.xpath("//form[@id='pageForm']/div[2]/div/div[2]/div/div/div/div/span/input");
+    By pagesCategorySelect		= By.cssSelector(".ant-select-item-option-active > .ant-select-item-option-content");
+    By pagesTags				= By.cssSelector(".ant-select-selection-overflow");
+    By pagesDescriptions		= By.xpath("//textarea[@id='pageForm_description']");
+    By pagesSubmittButton		= By.xpath("//form[@id='pageForm']/div[6]/div/div/div/div/div/button[2]");
+    By PagesCreatedPageOpening	= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div/div/div/div/div/table/tbody/tr[2]/td/span");
+    By pagesTagText				= By.xpath("//input[@id='pageForm_tags']");
+    
+    // search Hr modules
+    By searchfieldemp			= By.cssSelector(".ant-input");
+  
+
     
 }

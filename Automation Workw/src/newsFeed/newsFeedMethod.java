@@ -2,6 +2,8 @@ package newsFeed;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -88,5 +90,41 @@ public class newsFeedMethod extends Base_page {
 		Thread.sleep(2000);
 	}
 	}
+	public void newsFeedPollComposer(Integer j,Integer l) throws InterruptedException {
+		//	Thread.sleep(7000);
+		for (int k = 1 ; k <= j; k++) {
+			 WebElement newsFeedPollOption = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewsfeedPollOption()));
+			 newsFeedPollOption.click();
+			 WebElement newsFeedPollOption1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewsFeedPollOption1()));
+			 newsFeedPollOption1.sendKeys(text.getprioritylow());
+//			 driver.findElement(xpaths.getnewsFeedPollOption1()).sendKeys(text.getprioritylow());
+			 WebElement newsFeedPollOption2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewsFeedPollOption2()));
+			 newsFeedPollOption2.sendKeys(text.getpriorityhighh());
+		for (int i = 1 ; i <= l; i++) { 
+			
+		 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewFeedTextArea()));
+			  element.click();
+		
+			  WebElement elementComposerTag = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewFeedTextArea()));
+			  elementComposerTag.sendKeys("@");
+	
+	
+			  WebElement elementTagMemberClick = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewsfeedComposerMember()));
+			  elementTagMemberClick.click();
+	
+		}
+//		 WebElement newsFeedPostdesTextArea = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewFeedTextArea()));
+//		 newsFeedPostdesTextArea.sendKeys(k + text.getuserModuleDescription500());
+	//	driver.findElement(xpaths.getnewFeedTextArea()).sendKeys(k + text.getuserModuleDescription500());
+	
+
+		 WebElement newsFeedPostSubmittButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewFeedCreateButton()));
+		 newsFeedPostSubmittButton.click();
+		Thread.sleep(2000);
+		}
+	}
+//	 driver.findElement(xpaths.getnewsFeedPollOption2()).sendKeys(text.getpriorityhighh());
+//	 WebElement newsfeedImportantButton = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getnewsFeedImportantButton()));
+//	 newsfeedImportantButton .click();
 
 }
