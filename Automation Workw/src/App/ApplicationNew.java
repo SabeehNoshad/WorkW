@@ -50,6 +50,9 @@ import Xpaths.getterMethods;
 import javax.swing.JToggleButton;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
+
+import Employee.employeeTest;
+
 import javax.swing.JPanel;
 import javax.swing.JLayeredPane;
 
@@ -2036,8 +2039,65 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonAppraisal.setText("Appraisal");
         // ******************************************************************************************************************************************************************************************************
-      
-        //AuctionListView Jbutton 
+      // Employee Update module 
+        jButtonEmployeeUpdate.addActionListener(new ActionListener() {
+       	 @Override
+            public void actionPerformed(ActionEvent e) {
+            	jTextArea1.setText("");
+            	// Call your test case methods here
+                employeeTest testClass2 = new employeeTest();
+                getterMethodTextFile text = new getterMethodTextFile();
+                testResult tst = new testResult();
+             // Break the string into multiple lines using newline character
+                String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                // Create a new string with line breaks
+                String formattedTravelDetails = String.join("\n", lines);
+                jTextArea2.setText(formattedTravelDetails);
+                try {
+                	
+                	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	
+    				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                	   if (jLabelWelcomName.getText().equals("abc")) {
+                           // If yes, pass additional parameters
+                           boolean result = testClass2.EmployeeTestUpdate(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                           if (result) {
+       		                // Test passed, change the button color to green
+                        	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonEmployeeUpdate.setBackground(Color.RED);
+       		            }
+                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     	  
+                     	  boolean result = testClass2.EmployeeTestUpdate( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                           if (result) {
+        		                // Test passed, change the button color to green
+                        	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonEmployeeUpdate.setBackground(Color.RED);
+        		            	 updateResultLabel(result);
+                       }
+                       }
+    				
+    		            // Get the relevant information from ITestResult and update the JTextArea
+    			    
+   
+    			     jTextArea2.setText(tst.getuserTestDetails());
+    				//updateResultLabel(result);
+    				
+
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+              
+            }
+       	
+       });
+        //Hr Search Module Jbutton 
         jButtonSearchHrModules.addActionListener(new ActionListener() {
         	 @Override
              public void actionPerformed(ActionEvent e) {
