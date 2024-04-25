@@ -1246,13 +1246,312 @@ public class getterMethods extends Xpaths {
    public By getresignationSubmitButton() {
 	   return resignationSubmitButtonClick; 
    }
-   //comment 
+   //********************************************************************************comment********************************************************************************************************** 
    public By gecommentOption() {
 	   return commentsOption;
    }
    public By getcomentTextArea() {
 	   return commentsTextArea;
    }
+
+   // -------------------------------------------------------------------------employee update*********************************************************************************************************** 
+   public By getEmployeeUpdateButton() {
+	    return employeeUpdateButton;
+	}
+
+	public By getEmployeeEmailConfiguration() {
+	    return employeeEmailConfiguration;
+	}
+
+	public By getEmployeeEmailUsername() {
+	    return employeeEmailUsername;
+	}
+
+	public By getEmployeePassword() {
+	    return employeePassword;
+	}
+
+	public By getEmployeeBankDetailOption() {
+	    return employeeBankDetailOption;
+	}
+
+	public By getEmployeeAddBankDetailButton() {
+	    return employeeAddbankDetailButton;
+	}
+
+	public By getEmployeeBankDetailname() {
+	    return employeeBankDetailname;
+	}
+
+	public By getEmployeeAccTitle() {
+	    return employeeAccTitle;
+	}
+
+	public By getEmpBranchCode() {
+	    return empBranchCode;
+	}
+
+	public By getEmpAccountNumber() {
+	    return empAccountNumber;
+	}
+
+	public By getEmpIBAN() {
+	    return empIBAN;
+	}
+
+	public By getEmpSortCode() {
+	    return empSortCode;
+	}
+
+	public By getEmpCountryList() {
+	    return empCountryList;
+	}
+
+	public By getEmpCountryClick() {
+	    return empCountryClick;
+	}
+
+	public By getEmpCityList() {
+	    return empCityList;
+	}
+
+	public By getEmpCityClick() {
+	    return empCityClick;
+	}
+
+	public By getEmpIsDefaultClick() {
+	    return empIsDefaultClick;
+	}
+
+	public By getEmpAddBankSubmittButton() {
+	    return empAddBankSubmittButton;
+	}
+
+	public By getEmpEducationOption() {
+	    return empEducationOption;
+	}
+
+	public By getEmpAddEducationButton() {
+	    return empAddEducationButton;
+	}
+
+	public By getEmpDegreeName() {
+	    return empDegreeName;
+	}
+
+	public By getEmpInstitute() {
+	    return empInstitute;
+	}
+
+	public By getEmpTotalMarks() {
+	    return empTotalMarks;
+	}
+
+	public By getEmpObtainMarks() {
+	    return empObtainMarks;
+	}
+
+	public By getEmpStatdate() {
+	    return empStatdate;
+	}
+
+	public By getEmpStartDateclick() {
+	    return empStartDateclick;
+	}
+
+	public By getEmpEndDateClick() {
+	    return empEndDateClick;
+	}
+
+	public By getEmpCountry() {
+	    return empCountry;
+	}
+
+	public By getEmpCountyclick() {
+	    return empCountyclick;
+	}
+
+	public By getEmpcityList() {
+	    return empcityList;
+	}
+
+	public By getEmpCityCli() {
+	    return empCityCli;
+	}
+
+	public By getEmpEducationSubmittButton() {
+	    return empEducationSubmittButton;
+	}
+
+	public By getEmpEmergencyInformation() {
+	    return empEmergencyInformation;
+	}
+
+	public By getEmpEmergencyAddButton() {
+	    return empEmergencyAddButton;
+	}
+
+	public By getEmpEmename() {
+	    return empEmename;
+	}
+
+	public By getEmpEmeAdd() {
+	    return empEmeAdd;
+	}
+
+	public By getEmpEmeNumber() {
+	    return EmpEmeNumber;
+	}
+
+	public By getEmpEmeRelationList() {
+	    return empEmeRelationList;
+	}
+
+	public By getEmpEmeSelectRelation() {
+	    return empEmeSelectRelation;
+	}
+
+	public By getEmpEmeSubmittButton() {
+	    return empEmeSubmittButton;
+	}
+
+	public By getEmpWorkExpOpt() {
+	    return empWorkExpOpt;
+	}
+
+	public By getEmpWorkAddButton() {
+	    return empworkAddButton;
+	}
+
+	public By getEmpWorkPosi() {
+	    return empworkPosi;
+	}
+
+	public By getEmpWorkEmploymentTypeList() {
+	    return empWorkEmpTYpeList;
+	}
+
+	public By getEmpWorkEmploymentTypeClick() {
+	    return empWorkEmploymentTYpeClick;
+	}
+
+	public By getEmpWorkOrganization() {
+	    return empWorkOrganization;
+	}
+
+	public By getEmpAddWorkExpSubmittButton() {
+	    return empAddWorkExpSubmittButton;
+	}
+
+	public By getEmpRebateOption() {
+	    return empRebateOption;
+	}
+
+	public By getEmpRebateAddButton() {
+	    return empRebateAddButton;
+	}
+
+	public By getEmpRebateAmount() {
+	    return empRebateAmmount;
+	}
+
+	public By getEmpRebateCategoryList() {
+	    return empRebateCategoryList;
+	}
+
+	public By getEmpRebateCategoryClick() {
+	    return empRebateCategoryClick;
+	}
+
+	public By getEmpRebateDateClick() {
+	    return empRebateDateClick;
+	}
+
+	public By getEmpRebateDateSelect() {
+	    return empRebateDateSelect;
+	}
+
+	public By getEmpRebateDescription() {
+	    return empRebateDescription;
+	}
+
+	public By getEmpRebateSubmittButton() {
+	    return empRebateSubmittButton;
+	}
+
+	public By getEmpSalaryOption() {
+	    return empSalaryOption;
+	}
+
+	public By getEmpSalaryAddButton() {
+	    return empSalaryAddButton;
+	}
+
+	public By getEmpSalaryEffectiveDateClick() {
+	    return empSalaryEffectiveDateClick;
+	}
+
+	public By getEmpSalaryEffectiveDateSelect() {
+	    return empSalaryEffectiveDateSelect;
+	}
+
+	public By getEmpSalaryBasicSalary() {
+	    return empSalaryBasicSalary;
+	}
+
+	public By getEmpSalaryDescription() {
+	    return empSalaryDescription;
+	}
+
+	public By getEmpSalarySubmittButton() {
+	    return empSalarySubmittButton;
+	}
+
+	public By getEmpFamilyOption() {
+	    return empFamilyOPtion;
+	}
+
+	public By getEmpFamilyAddButton() {
+	    return empFamilyAddButton;
+	}
+
+	public By getEmpFamilyFirstName() {
+	    return empFamilyFirstName;
+	}
+
+	public By getEmpFamilyLastName() {
+	    return empFamilyLastName;
+	}
+
+	public By getEmpDateOfBirthClick() {
+	    return empDateOfBirthCLick;
+	}
+
+	public By getEmpDateOfBirthSelect() {
+	    return empDateOfBirthSelect;
+	}
+
+	public By getEmpFamilyContactNo() {
+	    return empFAmilyCOntactNo;
+	}
+
+	public By getEmpFamilyEmailAddress() {
+	    return empFamilyEmailAddress;
+	}
+
+	public By getEmpFamilyRelationList() {
+	    return empFamilyRelationList;
+	}
+
+	public By getEmpFamilyRelationClick() {
+	    return empFamilyRelationCLick;
+	}
+
+	public By getEmpFamilySubmittButton() {
+	    return empFamilySubmittButton;
+	}
+
+
    public By getcomentLeadinLeadmanager() {
 	   return commentsleadManagerLead;
    }
@@ -1427,5 +1726,6 @@ public class getterMethods extends Xpaths {
 	   return searchfieldemp;
    }
     
+
 }
 
