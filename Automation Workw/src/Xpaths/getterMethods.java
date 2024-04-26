@@ -1725,6 +1725,137 @@ public class getterMethods extends Xpaths {
    public By getsearchHrModules() {
 	   return searchfieldemp;
    }
+   // careers
+   public By getcareersNavBarOption() {
+	   return careersNavBarOption;
+   }
+   public By getcareersCreateButton() {
+	   return careersCreateButton;
+   }
+
+public By getCareersDesignation() {
+    return careersDesignation;
+}
+
+public By getCareersDescription() {
+    return careersDescription;
+}
+
+public By getCareersSalaryRange() {
+    return careersSalaryRange;
+}
+
+public By getCareersMaxiSalary() {
+    return careersMaxiSalary;
+}
+
+public By getCareersDepartmentList() {
+    return careersDepartmentList;
+}
+
+public By getCareersDepartmentListClick() {
+    return careersDepartmentListClick;
+}
+
+public By getCareersSupervisorList() {
+    return careersSupervisorList;
+}
+
+public By getCareersSuperVisorClick() {
+    return careersSuperVisorClick;
+}
+
+public By getCareersInterviewerList() {
+    return careersInterviewerList;
+}
+
+public By getCareersInterviewerClick() {
+    return careersInterviewerClick;
+}
+
+public By getCareersPostReviwerList() {
+    return careersPostReviwerList;
+}
+
+public By getCareersReviewerClick() {
+    return careersreviewerClick;
+}
+
+public By getCareersHiringBuddyList() {
+    return careersHiringBudyList;
+}
+
+public By getCareersHiringBuddyClick() {
+    return careersHiringBudyCLick;
+}
+
+public By getCareersCityList() {
+    return careersCityList;
+}
+
+public By getCareersCityClick() {
+    return careersCityClick;
+}
+
+public By getCareersSkills() {
+    return careersSkills;
+}
+
+public By getCareersExperience() {
+    return careersExperience;
+}
+
+public By getCareersJobTypeList() {
+    return careersJobTypeList;
+}
+
+public By getCareersJobTypeClick() {
+    return careersJobTypeClick;
+}
+
+public By getCareersJobShiftList() {
+    return careersJobShiftList;
+}
+
+public By getCareersJobShiftClick() {
+    return careersJobShiftClick;
+}
+
+public By getCareersEducationList() {
+    return careersEducationList;
+}
+
+public By getCareersEducationClick() {
+    return careersEducationClick;
+}
+
+public By getCareersCareerList() {
+    return careersCareerList;
+}
+
+public By getCareersCareerClick() {
+    return careersCareerClick;
+}
+
+public By getCareersDateList() {
+    return careersDateList;
+}
+
+public By getCareersDateClick() {
+    return careersDateclick;
+}
+
+public By getCareersReviewCriterion() {
+    return careersReciewCriterion;
+}
+
+public By getCareersReviewSubmittButton() {
+    return careersReviewSubmittButton;
+}
+
+public By getCareersSubmitButton() {
+    return careersSubmittButton;
+}
     
 
 }
