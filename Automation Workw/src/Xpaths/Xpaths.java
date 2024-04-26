@@ -618,7 +618,7 @@ public class Xpaths {
     By careersJobShiftClick					= By.xpath("//div[6]/div/div/div/div[2]/div/div/div/div/div");
     By careersEducationList					= By.xpath("//form[@id='createCareer']/div[15]/div/div/div[2]/div/div/div/div/span/input");
     By careersEducationClick				= By.xpath("//div[7]/div/div/div/div[2]/div/div/div/div[4]/div");
-    By careersCareerList					= By.xpath("/form[@id='createCareer']/div[15]/div[2]/div/div[2]/div/div/div/div/span/input");
+    By careersCareerList					= By.xpath("//form[@id='createCareer']/div[15]/div[2]/div/div[2]/div/div/div/div/span/input");
     By careersCareerClick					= By.xpath("//div[8]/div/div/div/div[2]/div/div/div/div/div");
     By careersDateList						= By.xpath("//form[@id='createCareer']/div[16]/div/div[2]/div/div/div/div/input");
     By careersDateclick						= By.xpath("//tr[5]/td[2]/div");
