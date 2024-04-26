@@ -1734,7 +1734,10 @@ public class getterMethods extends Xpaths {
    }
 
 public By getCareersDesignation() {
-    return careersDesignation;
+    return careersDesignationList;
+}
+public By getcareerDesgnationClick() {
+	return careersDesignationListClick;
 }
 
 public By getCareersDescription() {

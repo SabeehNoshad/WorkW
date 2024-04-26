@@ -6,8 +6,6 @@ import org.openqa.selenium.devtools.v85.network.model.Request;
 import org.testng.annotations.Test;
 
 import App.ApplicationNew;
-import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import signin.Login_Method;
 import signin.TestBase;
 import user.urls.testArguments.getterMethod_Defaults;
