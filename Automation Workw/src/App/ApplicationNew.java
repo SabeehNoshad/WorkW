@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 
 import appraisal.appraisalTest;
 import auction.auctionTest;
+import careers.careersTest;
 import clockInClockOut.clockIn_Test;
 import coments.commentTest;
 import customApproval.customApprovalTest;
@@ -662,7 +663,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                  jTextArea2.setText(formattedTravelDetails);
                  try {
                  	
-                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());  
                  	
      				//Boolean result = testClass2.travelCreateTest(inputValue1);
                  	   if (jLabelWelcomName.getText().equals("abc")) {
@@ -2108,7 +2109,66 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonAppraisal.setText("Appraisal");
         // ******************************************************************************************************************************************************************************************************
-      // Employee Update module 
+        //Careers
+      
+        jButtonCareers.addActionListener(new ActionListener() {
+       	 @Override
+            public void actionPerformed(ActionEvent e) {
+            	jTextArea1.setText("");
+            	// Call your test case methods here
+            	careersTest testClass2 = new careersTest();
+                getterMethodTextFile text = new getterMethodTextFile();
+                testResult tst = new testResult();
+             // Break the string into multiple lines using newline character
+                String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                // Create a new string with line breaks
+                String formattedTravelDetails = String.join("\n", lines);
+                jTextArea2.setText(formattedTravelDetails);
+                try {
+                	
+                	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	
+    				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                	   if (jLabelWelcomName.getText().equals("abc")) {
+                           // If yes, pass additional parameters
+                           boolean result = testClass2.careersTestRun( defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                           if (result) {
+       		                // Test passed, change the button color to green
+                        	   jButtonCareers.setBackground(Color.GREEN);
+       		            } else {
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonCareers.setBackground(Color.RED);
+       		            }
+                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     	  
+                     	  boolean result = testClass2.careersTestRun( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                           if (result) {
+        		                // Test passed, change the button color to green
+                        	   jButtonCareers.setBackground(Color.GREEN);
+        		            } else {
+        		                // Test failed, change the button color to red (or any other color)
+        		            	jButtonCareers.setBackground(Color.RED);
+        		            	 updateResultLabel(result);
+                       }
+                       }
+    				
+    		            // Get the relevant information from ITestResult and update the JTextArea
+    			    
+   
+    			     jTextArea2.setText(tst.getuserTestDetails());
+    				//updateResultLabel(result);
+    				
+
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+              
+            }
+       	
+       });
+        // Employee Update module 
         jButtonEmployeeUpdate.addActionListener(new ActionListener() {
        	 @Override
             public void actionPerformed(ActionEvent e) {

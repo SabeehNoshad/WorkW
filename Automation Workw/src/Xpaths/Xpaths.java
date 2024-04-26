@@ -590,6 +590,39 @@ public class Xpaths {
     // search Hr modules
     By searchfieldemp			= By.cssSelector(".ant-input");
   
-
-    
+    //*********************** CAREERS******************************************************************
+    By careersNavBarOption					= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[13]/a/p");
+    By careersCreateButton					= By.xpath("//div[@id='section1']/div/div/div[2]/div/button/span");
+    By careersDesignation					= By.xpath("");
+    By careersDescription					= By.xpath("");
+    By careersSalaryRange					= By.xpath("");
+    By careersMaxiSalary					= By.xpath("");
+    By careersDepartmentList				= By.xpath("");
+    By careersDepartmentListClick			= By.xpath("");
+    By careersSupervisorList				= By.xpath("");
+    By careersSuperVisorClick				= By.xpath("");
+    By careersInterviewerList				= By.xpath("");
+    By careersInterviewerClick				= By.xpath("");
+    By careersPostReviwerList				= By.xpath("");
+    By careersreviewerClick					= By.xpath("");
+    By careersHiringBudyList				= By.xpath("");
+    By careersHiringBudyCLick				= By.xpath("");
+    By careersCityList						= By.xpath("");
+    By careersCityClick						= By.xpath("");
+    By careersSkills						= By.xpath("");
+    By careersExperience					= By.xpath("");
+    By careersJobTypeList					= By.xpath("");
+    By careersJobTypeClick					= By.xpath("");
+    By careersJobShiftList					= By.xpath("");
+    By careersJobShiftClick					= By.xpath("");
+    By careersEducationList					= By.xpath("");
+    By careersEducationClick				= By.xpath("");
+    By careersCareerList					= By.xpath("");
+    By careersCareerClick					= By.xpath("");
+    By careersDateList						= By.xpath("");
+    By careersDateclick						= By.xpath("");
+    By careersReciewCriterion				= By.xpath("");
+    By careersReviewSubmittButton			= By.xpath("");
+    By careersSubmittButton					= By.xpath("");
+    	
 }
