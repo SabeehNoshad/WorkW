@@ -1859,6 +1859,9 @@ public By getCareersReviewSubmittButton() {
 public By getCareersSubmitButton() {
     return careersSubmittButton;
 }
+public By getResignationReportingTo() {
+	return resignationReportingTOCLick;
+}
     
 
 }

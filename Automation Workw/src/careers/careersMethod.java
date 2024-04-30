@@ -110,6 +110,6 @@ public class careersMethod extends Base_page{
 		CareerReviewSubmitt.click();
 		WebElement CareerCareersSubmitt	= wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getCareersSubmitButton()));
 		CareerCareersSubmitt.click();
-		
+		Thread.sleep(3000);
 	}
 }

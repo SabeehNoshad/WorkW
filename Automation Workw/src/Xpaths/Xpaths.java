@@ -625,5 +625,6 @@ public class Xpaths {
     By careersReciewCriterion				= By.xpath("//form[@id='createCareer']/div[17]/div/div/div[2]/div/div/input");
     By careersReviewSubmittButton			= By.cssSelector(".ant-btn-default svg");
     By careersSubmittButton					= By.xpath("//form[@id='createCareer']/div[20]/div/div/div/div/button");
-    	
+   //************************************RESIGNATION***********************************************************************
+    By resignationReportingTOCLick			= By.xpath("//form[@id='addResignation']/div[4]/div/div[2]/div/div/div[2]/span/div/div/p");
 }
