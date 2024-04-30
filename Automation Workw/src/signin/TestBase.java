@@ -1,14 +1,9 @@
 package signin;
 
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -20,18 +15,23 @@ public class TestBase {
 //		driver =new ChromeDriver();
 		
 	
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 
+		ChromeOptions options = new ChromeOptions();
 		
-//	    options.addArguments("--disable-notifications");
-//		options.setAcceptInsecureCerts(true);
 
 		
+		options.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+	//	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 
+//		ChromeOptions options = new ChromeOptions();
+//	    options.addArguments("--disable-notifications");
+//		options.setAcceptInsecureCerts(true);
+//		options.addArguments("--remote-allow-origins=*");
+//		
 //		driver = new ChromeDriver(options);
 //		driver.manage().window().maximize();
-		
+//		
 	}
 	@AfterTest
 	public void tearDown() {
@@ -43,5 +43,3 @@ public class TestBase {
 	 
 	}
 	
-
-

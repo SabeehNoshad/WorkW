@@ -1,7 +1,5 @@
 package signin;
 
-import org.testng.annotations.Test;
-
 import user.urls.testArguments.getterMethod_Defaults;
 
 
@@ -19,8 +17,7 @@ public class Login_Test extends TestBase {
 		Login_Method login = new Login_Method(driver);
 		login.sign_in(defaults.getrmployeeEmail(), defaults.getemployeepassword());
 //		Thread.sleep(5000);
-		tearDown();
-		
+	
 	}
 
 }
