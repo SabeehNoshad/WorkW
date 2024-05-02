@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-08T12:32:50 PKT" name="Default suite" finished-at="2024-03-08T12:32:52 PKT" duration-ms="2374">
+  <suite started-at="2024-04-30T16:50:26 PKT" name="Default suite" finished-at="2024-04-30T16:50:29 PKT" duration-ms="3200">
     <groups>
     </groups>
-    <test started-at="2024-03-08T12:32:50 PKT" name="Default test" finished-at="2024-03-08T12:32:52 PKT" duration-ms="2374">
-      <class name="travel.travelTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:travel.travelTest@243c4f91]" started-at="2024-03-08T12:32:50 PKT" name="setUp" finished-at="2024-03-08T12:32:52 PKT" duration-ms="2012" status="PASS">
+    <test started-at="2024-04-30T16:50:26 PKT" name="Default test" finished-at="2024-04-30T16:50:29 PKT" duration-ms="3200">
+      <class name="humanResourse.loan.loan_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:humanResourse.loan.loan_Test@2df3b89c]" started-at="2024-04-30T16:50:26 PKT" name="setUp" finished-at="2024-04-30T16:50:29 PKT" duration-ms="2481" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:travel.travelTest@243c4f91]" started-at="2024-03-08T12:32:52 PKT" name="tearDown" finished-at="2024-03-08T12:32:52 PKT" duration-ms="328" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:humanResourse.loan.loan_Test@2df3b89c]" started-at="2024-04-30T16:50:29 PKT" name="tearDown" finished-at="2024-04-30T16:50:29 PKT" duration-ms="654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- travel.travelTest -->
+      </class> <!-- humanResourse.loan.loan_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -258,6 +258,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonEmployeeUpdate = new javax.swing.JButton();
         jButtonSearchHrModules = new javax.swing.JButton();
         jButtonSearchMainModule = new javax.swing.JButton();
+        jButtonLoanWorkWiseModule = new javax.swing.JButton();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -409,6 +410,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonSearchHrModules.setText("Search Hr");
         
         jButtonSearchMainModule.setText("Search Main");
+        
+        jButtonLoanWorkWiseModule.setText("WW-Loan");
        //****************************************************************************************************************************************************************************************************
        // search main module 
         jButtonSearchMainModule.addActionListener(new ActionListener() {
@@ -2109,6 +2112,66 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonAppraisal.setText("Appraisal");
         // ******************************************************************************************************************************************************************************************************
+       // LOAN WORKWISE MODULE
+        jButtonLoanWorkWiseModule.addActionListener(new ActionListener() {
+          	 @Override
+               public void actionPerformed(ActionEvent e) {
+               	jTextArea1.setText("");
+               	// Call your test case methods here
+               	loan_Test testClass2 = new loan_Test();
+                   getterMethodTextFile text = new getterMethodTextFile();
+                   testResult tst = new testResult();
+                // Break the string into multiple lines using newline character
+                   String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+                   // Create a new string with line breaks
+                   String formattedTravelDetails = String.join("\n", lines);
+                   jTextArea2.setText(formattedTravelDetails);
+                   try {
+                   	
+                   	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                   	
+       				//Boolean result = testClass2.travelCreateTest(inputValue1);
+                   	   if (jLabelWelcomName.getText().equals("abc")) {
+                              // If yes, pass additional parameters
+                              boolean result = testClass2.workWiseLoan( defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                              if (result) {
+          		                // Test passed, change the button color to green
+                            	  jButtonLoanWorkWiseModule.setBackground(Color.GREEN);
+          		            } else {
+          		                // Test failed, change the button color to red (or any other color)
+          		            	jButtonLoanWorkWiseModule.setBackground(Color.RED);
+          		            }
+                          } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        	  
+                        	  boolean result = testClass2.workWiseLoan( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                              if (result) {
+           		                // Test passed, change the button color to green
+                            	  jButtonLoanWorkWiseModule.setBackground(Color.GREEN);
+           		            } else {
+           		                // Test failed, change the button color to red (or any other color)
+           		            	jButtonLoanWorkWiseModule.setBackground(Color.RED);
+           		            	 updateResultLabel(result);
+                          }
+                          }
+       				
+       		            // Get the relevant information from ITestResult and update the JTextArea
+       			    
+      
+       			     jTextArea2.setText(tst.getuserTestDetails());
+       				//updateResultLabel(result);
+       				
+
+       			} catch (InterruptedException e1) {
+       				// TODO Auto-generated catch block
+       				e1.printStackTrace();
+       			}
+                 
+               }
+          	
+          });
+        
+        
         //Careers
       
         jButtonCareers.addActionListener(new ActionListener() {
@@ -2833,6 +2896,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                                 .addComponent(jButtonCareers,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonLoan,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonBonus,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonLoanWorkWiseModule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
 
                                )))
                             .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
@@ -2895,6 +2959,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                 .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButtonAppraisal)
                 .addComponent(jButtonEmployeeUpdate)
+                .addComponent(jButtonLoanWorkWiseModule)
                 )
                    
       ) );
@@ -3487,4 +3552,5 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonEmployeeUpdate;
     private JButton jButtonSearchHrModules;
     private JButton jButtonSearchMainModule;
+    private JButton jButtonLoanWorkWiseModule;
 }

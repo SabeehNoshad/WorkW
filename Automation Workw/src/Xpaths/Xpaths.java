@@ -627,4 +627,7 @@ public class Xpaths {
     By careersSubmittButton					= By.xpath("//form[@id='createCareer']/div[20]/div/div/div/div/button");
    //************************************RESIGNATION***********************************************************************
     By resignationReportingTOCLick			= By.xpath("//form[@id='addResignation']/div[4]/div/div[2]/div/div/div[2]/span/div/div/p");
+    // ***************************************** LOAN WORKWISE ******************************************************************
+    By loanWorkWiseRadioButton						= By.cssSelector(".ant-radio-wrapper:nth-child(2) .ant-radio-input");
+    By loanMaxAmount						= By.xpath("//form[@id='createLoans']/div[2]/div[3]/div");
 }

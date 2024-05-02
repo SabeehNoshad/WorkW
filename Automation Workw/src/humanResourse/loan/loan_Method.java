@@ -29,6 +29,11 @@ public class loan_Method extends Base_page {
 			loanCreation("company", i);
 		}
 	}
+	public void workWiseLoan() throws InterruptedException {
+		  WebElement loanOptionClick   = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanNavBar()));
+		  loanOptionClick .click();
+		  loanWorkWCreateCOmposer();
+	}
 	public void loanCreation(String options , Integer i ) throws InterruptedException {
 		
 		
@@ -94,5 +99,27 @@ public class loan_Method extends Base_page {
 	    driver.findElement(loan.getLoanDescription()).sendKeys(loan_description);
 	    driver.findElement(loan.getLoanCreateLoanButton()).click();
 	    //Thread.sleep(3000);
+	}
+	public void loanWorkWCreateCOmposer() throws InterruptedException {
+		WebElement createButton = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanCreateOption()));
+		createButton.click();
+		Thread.sleep(5000);
+//		WebElement workWiseRadioButton = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getloanWorkwRadioButton()));
+//		workWiseRadioButton.click();
+		WebElement element = driver.findElement(loan.getloanWorkwMaxAmmount());
+		String AmountMaxtext = element.getText();
+		double Amount = Double.parseDouble(AmountMaxtext);
+
+		double NewAmount = Amount - 5;
+
+		String convertedAmount = String.valueOf(NewAmount);
+		WebElement amount = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanComposerAmount()));
+		amount.sendKeys(convertedAmount);
+		WebElement loanDescriptionWorkWIse = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanDescription()));
+		loanDescriptionWorkWIse.sendKeys(text.getuserModuleDescription500());
+		WebElement SubmittButton = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanCreateLoanButton()));
+		SubmittButton.click();
+		Thread.sleep(3000);
+		System.out.print(AmountMaxtext);
 	}
 }

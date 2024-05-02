@@ -1862,6 +1862,13 @@ public By getCareersSubmitButton() {
 public By getResignationReportingTo() {
 	return resignationReportingTOCLick;
 }
+// ******************************* LOAN WORKWISE **********************************
+public By getloanWorkwRadioButton() {
+	return loanWorkWiseRadioButton ;
+}
+public By getloanWorkwMaxAmmount() {
+	return loanMaxAmount ;
+}
     
 
 }
