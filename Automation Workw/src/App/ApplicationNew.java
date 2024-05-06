@@ -70,7 +70,8 @@ import javax.swing.JLayeredPane;
 public class ApplicationNew extends javax.swing.JFrame {
 	getterMethod_Defaults defaults = new getterMethod_Defaults();
 	// background color set 
-	
+	Integer countTest = 0;
+	Integer CountFail = 0;
 
 	// second stage when all other panels are visible and welcome is not 
    public void showPanel2AndTabbedPane() {
@@ -92,6 +93,30 @@ public class ApplicationNew extends javax.swing.JFrame {
        // Set the visibility of Panel 2 to true
        jPanelwellcom.setVisible(true);
        
+   }
+   public  void updateResultLabel(boolean result) {
+   	
+       if (result = true) {
+       //	jTextArea1.setText("Pass");
+   //    	subCount();
+       } else {
+       	 updateProgressBar(80);
+//       	 addCount();
+       	
+      // 	jTextArea1.setText("Fail");
+       }
+   }
+   public void addCount () {
+   	 countTest = countTest + 1;
+   	String sumAsString = countTest.toString();
+   	jLabelResult.setText("Test pass ="+ sumAsString);
+
+   }
+   public void subCount () {
+	   CountFail = CountFail + 1;
+    	String sumAsString = CountFail.toString();
+    	jLabelDetail.setText("Test fail ="+ sumAsString);
+
    }
    public void darkmode() {
 	   jTabbedPane1.setBackground(new java.awt.Color(64, 64, 64));
@@ -135,7 +160,7 @@ public class ApplicationNew extends javax.swing.JFrame {
    // response time  
    public static void resTime(String errorMessage) {
        System.err.println(errorMessage); // You can replace this with your preferred logging mechanism
-		jTextArea2.setText(errorMessage);
+		jTextArea1.setText(errorMessage);
 	   }
     /**
      * Creates new form ApplicationNew
@@ -437,19 +462,23 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.searchMainTest(defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
         		                // Test passed, change the button color to green
                             	jButtonSearchMainModule.setBackground(Color.GREEN);
         		            } else {
-        		                // Test failed, change the button color to red (or any other color)
+        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
         		            	jButtonSearchMainModule.setBackground(Color.RED);
         		            }
                         } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                       	  
                       	  boolean result = testClass2.searchMainTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonSearchMainModule.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonSearchMainModule.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -495,9 +524,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.auctionListViewTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonAuctionListVIew.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuctionListVIew.setBackground(Color.RED);
         		            }
@@ -505,9 +537,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.auctionListViewTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonAuctionListVIew.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonAuctionListVIew.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -555,9 +590,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.auctionBiddingTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonAuctionBidding.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuctionBidding.setBackground(Color.RED);
         		            }
@@ -565,9 +603,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.auctionBiddingTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonAuctionBidding.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonAuctionBidding.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -614,9 +655,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.pagesMethodTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonPages.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonPages.setBackground(Color.RED);
         		            }
@@ -624,9 +668,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.pagesMethodTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonPages.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonPages.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -673,9 +720,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.auctionTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonAuction.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuction.setBackground(Color.RED);
         		            }
@@ -683,9 +733,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.auctionTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonAuction.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonAuction.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -732,9 +785,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.pagesMethodTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonPages.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonPages.setBackground(Color.RED);
         		            }
@@ -742,9 +798,13 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.pagesMethodTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonPages.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
+         		            	
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonPages.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -792,19 +852,25 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.commentsTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   jButtonGroupSettingFeature.setBackground(Color.GREEN);
        		            } else {
-       		                // Test failed, change the button color to red (or any other color)
+       		            	subCount();
+       		                // Test faled, change the button color to red (or any other color)
        		            	jButtonGroupSettingFeature.setBackground(Color.RED);
        		            }
                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonGroupSettingFeature.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonGroupSettingFeature.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -850,9 +916,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.commentsTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   jButtonGroupSummary.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonGroupSummary.setBackground(Color.RED);
        		            }
@@ -860,9 +929,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonGroupSummary.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonGroupSummary.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -908,9 +980,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.commentsTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   comment.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	comment.setBackground(Color.RED);
        		            }
@@ -918,9 +993,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   comment.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	comment.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -965,9 +1043,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.form1Test(inputValue1, defaults.getrmployeeEmail(),defaults.getemployeepassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonForms.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonForms.setBackground(Color.RED);
      		            }
@@ -977,9 +1058,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                   	  
                   	  boolean result = testClass1.form1Test( inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonForms.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonForms.setBackground(Color.RED);
      		            	 updateResultLabel(result);
@@ -1014,9 +1098,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.scheduleCreateTest(inputValue1, defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonSchedule.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonSchedule.setBackground(Color.RED);
      		            }
@@ -1025,9 +1112,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                   	  
                   	  boolean result = testClass1.scheduleCreateTest( inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonSchedule.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonSchedule.setBackground(Color.RED);
      		            	 updateResultLabel(result);
@@ -1066,24 +1156,35 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.clockInMessageTest( defaults.getrmployeeEmail(),defaults.getemployeepassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonClock.setBackground(Color.GREEN);
      		            } else {
+                        	subCount();
+
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonClock.setBackground(Color.RED);
      		            }
                   	   updateResultLabel(result);
+                  	 
                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
                   	  
                   	  boolean result = testClass1.clockInMessageTest(  defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	jButtonClock.setBackground(Color.GREEN);
      		            } else {
+                        	subCount();
+
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonClock.setBackground(Color.RED);
      		            	 updateResultLabel(result);
                     }
+                    
+   
                     }
                 	 
     			} catch (InterruptedException e1) {
@@ -1115,9 +1216,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.newsFeedCreateTest(inputValue1, inputValue2, defaults.getrmployeeEmail(),defaults.getemployeepassword(),"wise Word");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                     		 jButtonPost.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonPost.setBackground(Color.RED);
        		            }
@@ -1126,9 +1230,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                     	  
                     	  boolean result = testClass1.newsFeedCreateTest(inputValue1, inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                     		 jButtonPost.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonPost.setBackground(Color.RED);
        		             updateResultLabel(result);
@@ -1164,9 +1271,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.newsFeedPoll(inputValue1, inputValue2, defaults.getrmployeeEmail(),defaults.getemployeepassword(),"wise Word");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	  jButtonPoll.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonPoll.setBackground(Color.RED);
        		            }
@@ -1175,10 +1285,13 @@ public class ApplicationNew extends javax.swing.JFrame {
                     	  
                     	  boolean result = testClass1.newsFeedPoll(inputValue1, inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	  jButtonPoll.setBackground(Color.GREEN);
        		            } else {
-       		                // Test failed, change the button color to red (or any other color)
+       		            	subCount();
+       		                // Test fai0led, change the button color to red (or any other color)
        		            	jButtonPoll.setBackground(Color.RED);
        		             updateResultLabel(result);
                       }
@@ -1213,9 +1326,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.travelCreateTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
        			    	 jButtonTravel.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonTravel.setBackground(Color.RED);
        		            }
@@ -1223,9 +1339,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass2.travelCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonTravel.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonTravel.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1260,9 +1379,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass1.expenseCreateTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   jButtonExpenses.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonExpenses.setBackground(Color.RED);
        		            }
@@ -1271,9 +1393,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.expenseCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonExpenses.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonExpenses.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -1307,9 +1432,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
       		                // Test passed, change the button color to green
                         	  jButtonWOrkBoard.setBackground(Color.GREEN);
       		            } else {
+      		            	subCount();
       		                // Test failed, change the button color to red (or any other color)
       		            	jButtonWOrkBoard.setBackground(Color.RED);
       		            }
@@ -1318,9 +1446,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonWOrkBoard.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonWOrkBoard.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -1353,9 +1484,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.groupCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
       		                // Test passed, change the button color to green
                         	  jButtonGroup.setBackground(Color.GREEN);
       		            } else {
+      		            	subCount();
       		                // Test failed, change the button color to red (or any other color)
       		            	jButtonGroup.setBackground(Color.RED);
       		            }
@@ -1364,9 +1498,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.groupCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonGroup.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonGroup.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -1399,9 +1536,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.projectCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
       		                // Test passed, change the button color to green
                         	  jButtonProject.setBackground(Color.GREEN);
       		            } else {
+      		            	subCount();
       		                // Test failed, change the button color to red (or any other color)
       		            	jButtonProject.setBackground(Color.RED);
       		            }
@@ -1410,9 +1550,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.projectCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonProject.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonProject.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -1446,9 +1589,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.leadManagerCreate(inputValue1,inputValue2,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
       		                // Test passed, change the button color to green
                         	  jButtonLeadMana.setBackground(Color.GREEN);
       		            } else {
+      		            	subCount();
       		                // Test failed, change the button color to red (or any other color)
       		            	jButtonLeadMana.setBackground(Color.RED);
       		            }
@@ -1457,9 +1603,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.leadManagerCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonLeadMana.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonLeadMana.setBackground(Color.RED);
                         }
@@ -1487,9 +1636,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                           // If yes, pass additional parameters
                           boolean result = testClass1.CustomApprovalCreateTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
       		                // Test passed, change the button color to green
                         	  jButtonCustomAp.setBackground(Color.GREEN);
       		            } else {
+      		            	subCount();
       		                // Test failed, change the button color to red (or any other color)
       		            	jButtonCustomAp.setBackground(Color.RED);
       		            }
@@ -1498,9 +1650,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass1.CustomApprovalCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonCustomAp.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonCustomAp.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -1528,9 +1683,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.LeadCreateTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonLead.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonLead.setBackground(Color.RED);
      		            }
@@ -1539,9 +1697,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.LeadCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonLead.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonLead.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1570,9 +1731,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.testCreateTestCond1(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonTask.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonTask.setBackground(Color.RED);
      		            }
@@ -1581,9 +1745,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.testCreateTestCond1(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonTask.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonTask.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1616,9 +1783,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      // If yes, pass additional parameters
                      boolean result = testClass1.commentLeadManagerTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                      if (result) {
+                    	 addCount();
+                    	 updateProgressBar(20);
  		                // Test passed, change the button color to green
                     	 JButtonLeadComent.setBackground(Color.GREEN);
  		            } else {
+ 		            	subCount();
  		                // Test failed, change the button color to red (or any other color)
  		            	JButtonLeadComent.setBackground(Color.RED);
  		            }
@@ -1627,9 +1797,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                  	  
                  	  boolean result = testClass1.commentLeadManagerTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                        if (result) {
+                    	   addCount();
+                    	   updateProgressBar(20);
     		                // Test passed, change the button color to green
                     	   JButtonLeadComent.setBackground(Color.GREEN);
     		            } else {
+    		            	subCount();
     		                // Test failed, change the button color to red (or any other color)
     		            	JButtonLeadComent.setBackground(Color.RED);
     		            	 updateResultLabel(result);
@@ -1662,9 +1835,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.localicationlangTest(xpaths.getlangCzech(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 JButtonCzeck.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	JButtonCzeck.setBackground(Color.RED);
      		            }
@@ -1673,9 +1849,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getlangCzech(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   JButtonCzeck.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	JButtonCzeck.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1708,9 +1887,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.localicationlangTest(xpaths.geturduLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 btnNewButton_2.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	btnNewButton_2.setBackground(Color.RED);
      		            }
@@ -1719,9 +1901,13 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.geturduLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   btnNewButton_2.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
+        		            	
         		                // Test failed, change the button color to red (or any other color)
         		            	btnNewButton_2.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1752,9 +1938,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.localicationlangTest(xpaths.gethindiLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 btnHindi.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	btnHindi.setBackground(Color.RED);
      		            }
@@ -1763,9 +1952,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.gethindiLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   btnHindi.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	btnHindi.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1797,9 +1989,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.localicationlangTest(xpaths.getturkishLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 btnTurkish.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	btnTurkish.setBackground(Color.RED);
      		            }
@@ -1808,9 +2003,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getturkishLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   btnTurkish.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	btnTurkish.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -1841,9 +2039,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.localicationlangTest(xpaths.getarabicLanguage(),defaults.getrmployeeEmail(),defaults.getemployeepassword());
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 btnNewButton_1.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	btnNewButton_1.setBackground(Color.RED);
      		            }
@@ -1852,9 +2053,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getarabicLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   btnNewButton_1.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	btnNewButton_1.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2136,9 +2340,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                               // If yes, pass additional parameters
                               boolean result = testClass2.workWiseLoan( defaults.getrmployeeEmail(),defaults.getemployeepassword());
                               if (result) {
+                            	  addCount();
+                            	  updateProgressBar(20);
           		                // Test passed, change the button color to green
                             	  jButtonLoanWorkWiseModule.setBackground(Color.GREEN);
           		            } else {
+          		            	subCount();
           		                // Test failed, change the button color to red (or any other color)
           		            	jButtonLoanWorkWiseModule.setBackground(Color.RED);
           		            }
@@ -2146,9 +2353,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         	  
                         	  boolean result = testClass2.workWiseLoan( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                               if (result) {
+                            	  addCount();
+                            	  updateProgressBar(20);
            		                // Test passed, change the button color to green
                             	  jButtonLoanWorkWiseModule.setBackground(Color.GREEN);
            		            } else {
+           		            	subCount();
            		                // Test failed, change the button color to red (or any other color)
            		            	jButtonLoanWorkWiseModule.setBackground(Color.RED);
            		            	 updateResultLabel(result);
@@ -2197,9 +2407,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.careersTestRun( defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   jButtonCareers.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonCareers.setBackground(Color.RED);
        		            }
@@ -2207,9 +2420,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass2.careersTestRun( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonCareers.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonCareers.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2255,9 +2471,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                            // If yes, pass additional parameters
                            boolean result = testClass2.EmployeeTestUpdate( inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonEmployeeUpdate.setBackground(Color.RED);
        		            }
@@ -2265,9 +2484,11 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass2.EmployeeTestUpdate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
+                        	   addCount();
         		                // Test passed, change the button color to green
                         	   jButtonEmployeeUpdate.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonEmployeeUpdate.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2313,9 +2534,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                             // If yes, pass additional parameters
                             boolean result = testClass2.seachHrTst(defaults.getrmployeeEmail(),defaults.getemployeepassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
         		                // Test passed, change the button color to green
                             	jButtonSearchHrModules.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonSearchHrModules.setBackground(Color.RED);
         		            }
@@ -2323,9 +2547,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                       	  
                       	  boolean result = testClass2.seachHrTst( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
+                            	addCount();
+                            	updateProgressBar(20);
          		                // Test passed, change the button color to green
                             	jButtonSearchHrModules.setBackground(Color.GREEN);
          		            } else {
+         		            	subCount();
          		                // Test failed, change the button color to red (or any other color)
          		            	jButtonSearchHrModules.setBackground(Color.RED);
          		            	 updateResultLabel(result);
@@ -2364,9 +2591,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.quickAddEmployee(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Word");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonQuick.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonQuick.setBackground(Color.RED);
      		            }
@@ -2375,9 +2605,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.quickAddEmployee(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonQuick.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonQuick.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2408,9 +2641,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.appraisalCreate(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonAppraisal.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonAppraisal.setBackground(Color.RED);
      		            }
@@ -2419,9 +2655,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.appraisalCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"Mile Tap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonAppraisal.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAppraisal.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2454,9 +2693,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.createPromotionTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonPromotion.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonPromotion.setBackground(Color.RED);
      		            }
@@ -2465,9 +2707,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.createPromotionTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonPromotion.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonPromotion.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2499,9 +2744,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.createWarning(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Word");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonwarning.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonwarning.setBackground(Color.RED);
      		            }
@@ -2510,9 +2758,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.createWarning(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonwarning.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonwarning.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2543,9 +2794,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      // If yes, pass additional parameters
                      boolean result = testClass1.BonusCreation(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                      if (result) {
+                    	 addCount();
+                    	 updateProgressBar(20);
  		                // Test passed, change the button color to green
                     	 jButtonBonus.setBackground(Color.GREEN);
  		            } else {
+ 		            	subCount();
  		                // Test failed, change the button color to red (or any other color)
  		            	jButtonBonus.setBackground(Color.RED);
  		            }
@@ -2554,9 +2808,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                  	  
                  	  boolean result = testClass1.BonusCreation(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                        if (result) {
+                    	   addCount();
+                    	   updateProgressBar(20);
     		                // Test passed, change the button color to green
                     	   jButtonBonus.setBackground(Color.GREEN);
     		            } else {
+    		            	subCount();
     		                // Test failed, change the button color to red (or any other color)
     		            	jButtonBonus.setBackground(Color.RED);
     		            	 updateResultLabel(result);
@@ -2587,9 +2844,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.CreateComplainOff(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonComplain.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonComplain.setBackground(Color.RED);
      		            }
@@ -2598,9 +2858,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.CreateComplainOff(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonComplain.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonComplain.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2631,9 +2894,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.createRewardTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonReward.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonReward.setBackground(Color.RED);
      		            }
@@ -2642,9 +2908,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.createRewardTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonReward.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonReward.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2675,9 +2944,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                          // If yes, pass additional parameters
                          boolean result = testClass1.LeaveCreationcasual(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                          if (result) {
+                        	 addCount();
+                        	 updateProgressBar(20);
      		                // Test passed, change the button color to green
                         	 jButtonLeaves.setBackground(Color.GREEN);
      		            } else {
+     		            	subCount();
      		                // Test failed, change the button color to red (or any other color)
      		            	jButtonLeaves.setBackground(Color.RED);
      		            }
@@ -2686,9 +2958,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                      	  
                      	  boolean result = testClass1.LeaveCreationcasual(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
+                        	   addCount();
+                        	   updateProgressBar(20);
         		                // Test passed, change the button color to green
                         	   jButtonLeaves.setBackground(Color.GREEN);
         		            } else {
+        		            	subCount();
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonLeaves.setBackground(Color.RED);
         		            	 updateResultLabel(result);
@@ -2723,9 +2998,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.createSalaryTest(defaults.getrmployeeEmail(),defaults.getemployeepassword(),"Wise Work");
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
     		                // Test passed, change the button color to green
                         	jButtonSalary.setBackground(Color.GREEN);
     		            } else {
+    		            	subCount();
     		                // Test failed, change the button color to red (or any other color)
     		            	jButtonSalary.setBackground(Color.RED);
     		            }
@@ -2734,9 +3012,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                     	  
                     	  boolean result = testClass1.createSalaryTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	  jButtonSalary.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonSalary.setBackground(Color.RED);
        		             updateResultLabel(result);
@@ -2769,9 +3050,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.loanCreate(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
     		                // Test passed, change the button color to green
                         	jButtonLoan.setBackground(Color.GREEN);
     		            } else {
+    		            	subCount();
     		                // Test failed, change the button color to red (or any other color)
     		            	jButtonLoan.setBackground(Color.RED);
     		            }
@@ -2780,9 +3064,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                     	  
                     	  boolean result = testClass1.loanCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	  jButtonLoan.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonLoan.setBackground(Color.RED);
        		             updateResultLabel(result);
@@ -2816,9 +3103,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                         // If yes, pass additional parameters
                         boolean result = testClass1.createResignationTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
                         if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
     		                // Test passed, change the button color to green
                         	jButtonResignation.setBackground(Color.GREEN);
     		            } else {
+    		            	subCount();
     		                // Test failed, change the button color to red (or any other color)
     		            	jButtonResignation.setBackground(Color.RED);
     		            }
@@ -2827,9 +3117,12 @@ public class ApplicationNew extends javax.swing.JFrame {
                     	  
                     	  boolean result = testClass1.createResignationTest( inputValue1,defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                           if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
        		                // Test passed, change the button color to green
                         	  jButtonResignation.setBackground(Color.GREEN);
        		            } else {
+       		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonResignation.setBackground(Color.RED);
        		             updateResultLabel(result);
@@ -3521,16 +3814,7 @@ public class ApplicationNew extends javax.swing.JFrame {
             new ApplicationNew().setVisible(true);
         });
     }
-    public  void updateResultLabel(boolean result) {
-    	
-        if (result) {
-        //	jTextArea1.setText("Pass");
-        	 updateProgressBar(80);
-        	 
-        } else {
-       // 	jTextArea1.setText("Fail");
-        }
-    }
+   
     public void updateProgressBar(int value) {
     	value = Math.min(100, Math.max(10, value));
 
