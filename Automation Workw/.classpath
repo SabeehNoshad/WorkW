@@ -306,5 +306,31 @@
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/selenium-api-3.0.0-beta3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/slf4j-api-2.0.13.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/slf4j-simple-2.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/pdfbox-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/fontbox-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/fontbox-2.0.31.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/pdfbox-2.0.31.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3).zip"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/attoparser-2.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/fontbox-2.0.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/graphics2d-0.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/micrometer-commons-1.12.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/micrometer-observation-1.12.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/openhtmltopdf-core-1.0.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/openhtmltopdf-pdfbox-1.0.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/pdf-10.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/pdfbox-2.0.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/slf4j-api-2.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-aop-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-beans-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-context-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-core-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-expression-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/spring-jcl-6.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/thymeleaf-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/thymeleaf-spring6-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/unbescape-1.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/jar_files (3)/xmpbox-2.0.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/pdf-renderer.jar/pdf-renderer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

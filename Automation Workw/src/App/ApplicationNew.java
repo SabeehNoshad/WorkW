@@ -2,6 +2,12 @@ package App;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 import javax.swing.JLabel;
@@ -36,7 +42,6 @@ import travel.travelTest;
 import user.urls.testArguments.getterMethodTextFile;
 import user.urls.testArguments.getterMethod_Defaults;
 import workboard.workBoardTest;
-
 import static java.awt.Color.red;
 import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
@@ -52,6 +57,11 @@ import Xpaths.getterMethods;
 import javax.swing.JToggleButton;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 import Employee.employeeTest;
 
@@ -142,6 +152,26 @@ public class ApplicationNew extends javax.swing.JFrame {
 	    jPanelCustomCases.setBackground(new java.awt.Color(255, 255, 255));
 	    
 	}
+   public void saveFile() {
+	   String text = jTextArea2.getText();
+
+	   // Save the text to a PDF file
+	   saveTextToPdf(text, "output.pdf");
+
+	   System.out.println("Text saved to PDF file successfully.");
+   }
+   //save to pdf file 
+
+   private static void saveTextToPdf(String text, String filePath) {
+	   try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+           // Write the text to the file
+           writer.write(text);
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+		    
+	   } 
+   
    // logout panel display 
    public void logOutPanel(){
          jTabbedPane1.setVisible(false);
@@ -437,8 +467,26 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonSearchMainModule.setText("Search Main");
         
         jButtonLoanWorkWiseModule.setText("WW-Loan");
+        
+        //jButtonSave
        //****************************************************************************************************************************************************************************************************
-       // search main module 
+        
+        // save button 
+        jButtonSave.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		   String text = jTextArea1.getText();
+        		   String filePath = "C:\\Users\\user\\Downloadsoutput.txt";
+        		   // Save the text to a PDF file
+        		   
+        		   saveTextToPdf(text,filePath);
+
+        		   System.out.println("Text saved to  file successfully.");
+        	 
+        	 
+        	 }});
+        
+        // search main module 
         jButtonSearchMainModule.addActionListener(new ActionListener() {
         	 @Override
              public void actionPerformed(ActionEvent e) {
@@ -3414,6 +3462,9 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBackActionPerformed(evt);
+                jTextArea1.setText("");
+                jLabelResult.setText("");
+                jLabelDetail.setText("");
             }
         });
 
