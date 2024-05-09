@@ -67,6 +67,7 @@ import Employee.employeeTest;
 
 import javax.swing.JPanel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -95,6 +96,10 @@ public class ApplicationNew extends javax.swing.JFrame {
         jPanelResult.setVisible(true);
         
     }
+
+   private static void showToast(String message) {
+       JOptionPane.showMessageDialog(null, message, "Toast Message", JOptionPane.INFORMATION_MESSAGE);
+   }
    // initial state when the wellcome panel is visible and rest are not 
    public final void showPane() {
        // Set the visibility of Panel 1 to false
@@ -481,8 +486,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         		   
         		   saveTextToPdf(text,filePath);
 
-        		   System.out.println("Text saved to  file successfully.");
-        	 
+        		//   System.out.println("Text saved to  file successfully.");
+        		   showToast("Result saved to file in Downloads as output.txt successfully.");
         	 
         	 }});
         
