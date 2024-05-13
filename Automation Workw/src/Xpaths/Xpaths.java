@@ -201,7 +201,7 @@ public class Xpaths {
     By newsFeedCreateComposer				= By.xpath("//div[@id='section1']/div/div[2]/div/div/div/div/div[2]");
     By newsFeedTextArea						= By.xpath("//textarea");
     By newsFeedClickMember					= By.xpath("(//input[@value=''])[3]");
-    By newsFeedSelectMember					= By.xpath("//div[2]/div[2]/div/div/div/div/div[2]/span/div");
+    By newsFeedSelectMember					= By.cssSelector(".tags > input");
     By newsFeedCreateButton					= By.xpath("//div[4]/button[2]");
     By newsfeedComposerMember				= By.xpath("//li/div/div/div[2]");
     By newsfeedImportantTag					= By.cssSelector(".importantButton");
@@ -542,9 +542,9 @@ public class Xpaths {
     By clickOnBusinessPolicy	 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[15]/a");
     By clickOnForms				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[17]/a");
     By ClickOnMarketPlace		 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
-    By clickOnAuction 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
-    By clickOnDiscussionBoard 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
-    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[21]/a");
+    By clickOnAuction 			= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[18]/a/p");
+    By clickOnDiscussionBoard 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[19]/a/p");
+    By clickOnPages				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[20]/a/p");
     By ClickOnAdministration 	= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[3]/a/p");
     By clickOnOrganizationChart = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[7]/a/p");
     By clickOnMyTeam    		= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div[2]/div/div[2]/div/div/div[10]/a/p");
@@ -630,4 +630,8 @@ public class Xpaths {
     // ***************************************** LOAN WORKWISE ******************************************************************
     By loanWorkWiseRadioButton						= By.cssSelector(".ant-radio-wrapper:nth-child(2) .ant-radio-input");
     By loanMaxAmount						= By.xpath("//form[@id='createLoans']/div[2]/div[3]/div");
+    
+   //******************************************MENU CROSS BUTTON**************************************************************************************************
+    By menuCrossButton						= By.xpath("//div[@id='root']/div/div[2]/div/div[2]/img");
+    By menuOpenButton						= By.xpath("//img[@alt='mobileMenuButton']");
 }

@@ -7,7 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class TestBase {
+import responsivness.responsivness_Test;
+
+public class TestBase  {
 	protected WebDriver driver;
 @BeforeTest
 	public void setUp() {
@@ -31,7 +33,13 @@ public class TestBase {
 //		
 //		driver = new ChromeDriver(options);
 //		driver.manage().window().maximize();
-//		
+//	
+		
+		  // Test different viewport sizes
+//		responsivness_Test.testViewportSize(driver, 320, 480); // Test for mobile
+//		responsivness_Test. testViewportSize(driver, 768, 1024); // Test for tablet
+//		responsivness_Test. testViewportSize(driver, 1366, 768); // Test for desktop
+
 	}
 	@AfterTest
 	public void tearDown() {

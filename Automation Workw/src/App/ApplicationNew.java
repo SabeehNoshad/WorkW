@@ -35,6 +35,7 @@ import pages.pagesTest;
 import project.projectCreateTest;
 import quickAdd.quickadd_test;
 import resignation.resignationTest;
+import responsivness.responsivness_Test;
 import salary.salary_test;
 import scheduleModule.scheduleTest;
 import task.taskCreation_Test;
@@ -90,7 +91,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         jTabbedPane1.setVisible(true);
 
         // Set the visibility of Panel 2 to true
-        jPanelwellcom.setVisible(false);
+        jPanelwellcom.setVisible(false);  
 
         // Set the visibility of the tabbed pane to true
         jPanelResult.setVisible(true);
@@ -115,7 +116,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        //	jTextArea1.setText("Pass");
    //    	subCount();
        } else {
-       	 updateProgressBar(80);
+       	 updateProgressBar(100);
 //       	 addCount();
        	
       // 	jTextArea1.setText("Fail");
@@ -195,7 +196,7 @@ public class ApplicationNew extends javax.swing.JFrame {
    // response time  
    public static void resTime(String errorMessage) {
        System.err.println(errorMessage); // You can replace this with your preferred logging mechanism
-		jTextArea1.setText(errorMessage);
+		jTextArea2.setText(errorMessage);
 	   }
     /**
      * Creates new form ApplicationNew
@@ -319,6 +320,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonSearchHrModules = new javax.swing.JButton();
         jButtonSearchMainModule = new javax.swing.JButton();
         jButtonLoanWorkWiseModule = new javax.swing.JButton();
+        jButtonMobileViewRes = new javax.swing.JButton();
+        jButtonTabletView = new javax.swing.JButton();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -473,9 +476,139 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonLoanWorkWiseModule.setText("WW-Loan");
         
+        jButtonMobileViewRes.setText("Mob-View");
+        
+        jButtonTabletView.setText("Tablet-View");
+        
         //jButtonSave
        //****************************************************************************************************************************************************************************************************
+      //Tablet view
+        jButtonTabletView.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		 
+        	             	jTextArea1.setText("");
+        	             	// Call your test case methods here
+        	             	responsivness_Test testClass2 = new responsivness_Test();
+        	                 getterMethodTextFile text = new getterMethodTextFile();
+        	                 testResult tst = new testResult();
+        	              // Break the string into multiple lines using newline character
+        	                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+        	                 // Create a new string with line breaks
+        	                 String formattedTravelDetails = String.join("\n", lines);
+        	                 jTextArea2.setText(formattedTravelDetails);
+        	                 try {
+        	                 	
+        	                 	// int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+        	                 	
+        	     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+        	                 	   if (jLabelWelcomName.getText().equals("abc")) {
+        	                            // If yes, pass additional parameters
+        	                            boolean result = testClass2.responsiveTestTablet(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+        	                            if (result) {
+        	                            	addCount();
+        	        		                // Test passed, change the button color to green
+        	                            	jButtonTabletView.setBackground(Color.GREEN);
+        	        		            } else {
+        	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
+        	        		            	jButtonTabletView.setBackground(Color.RED);
+        	        		            }
+        	                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+        	                      	  
+        	                      	  boolean result = testClass2.responsiveTestTablet( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+        	                            if (result) {
+        	                            	addCount();
+        	                            	updateProgressBar(20);
+        	         		                // Test passed, change the button color to green
+        	                            	jButtonTabletView.setBackground(Color.GREEN);
+        	         		            } else {
+        	         		            	subCount();
+        	         		                // Test failed, change the button color to red (or any other color)
+        	         		            	jButtonTabletView.setBackground(Color.RED);
+        	         		            	 updateResultLabel(result);
+        	                        }
+        	                        }
+        	     				
+        	     		            // Get the relevant information from ITestResult and update the JTextArea
+        	     			    
+        	    
+        	     			     jTextArea2.setText(tst.getuserTestDetails());
+        	     				//updateResultLabel(result);
+        	     				
+
+        	     			} catch (InterruptedException e1) {
+        	     				// TODO Auto-generated catch block
+        	     				e1.printStackTrace();
+        	     			}
+        	               
+        	             }
+        	        	
+        	        });
         
+        //Mobile view
+        jButtonMobileViewRes.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		 
+        	             	jTextArea1.setText("");
+        	             	// Call your test case methods here
+        	             	responsivness_Test testClass2 = new responsivness_Test();
+        	                 getterMethodTextFile text = new getterMethodTextFile();
+        	                 testResult tst = new testResult();
+        	              // Break the string into multiple lines using newline character
+        	                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+        	                 // Create a new string with line breaks
+        	                 String formattedTravelDetails = String.join("\n", lines);
+        	                 jTextArea2.setText(formattedTravelDetails);
+        	                 try {
+        	                 	
+        	                 	// int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+        	                 	
+        	     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+        	                 	   if (jLabelWelcomName.getText().equals("abc")) {
+        	                            // If yes, pass additional parameters
+        	                            boolean result = testClass2.responsiveTest(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+        	                            if (result) {
+        	                            	addCount();
+        	        		                // Test passed, change the button color to green
+        	                            	jButtonMobileViewRes.setBackground(Color.GREEN);
+        	        		            } else {
+        	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
+        	        		            	jButtonMobileViewRes.setBackground(Color.RED);
+        	        		            }
+        	                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+        	                      	  
+        	                      	  boolean result = testClass2.responsiveTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+        	                            if (result) {
+        	                            	addCount();
+        	                            	updateProgressBar(20);
+        	         		                // Test passed, change the button color to green
+        	                            	jButtonMobileViewRes.setBackground(Color.GREEN);
+        	         		            } else {
+        	         		            	subCount();
+        	         		                // Test failed, change the button color to red (or any other color)
+        	         		            	jButtonMobileViewRes.setBackground(Color.RED);
+        	         		            	 updateResultLabel(result);
+        	                        }
+        	                        }
+        	     				
+        	     		            // Get the relevant information from ITestResult and update the JTextArea
+        	     			    
+        	    
+        	     			     jTextArea2.setText(tst.getuserTestDetails());
+        	     				//updateResultLabel(result);
+        	     				
+
+        	     			} catch (InterruptedException e1) {
+        	     				// TODO Auto-generated catch block
+        	     				e1.printStackTrace();
+        	     			}
+        	               
+        	             }
+        	        	
+        	        });
         // save button 
         jButtonSave.addActionListener(new ActionListener() {
         	 @Override
@@ -2165,6 +2298,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         										.addComponent(jButtonGroupSummary,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										.addComponent(jButtonProject, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										.addComponent(jButtonAuctionBidding, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        										.addComponent(jButtonMobileViewRes, GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         										)
         									
         									
@@ -2195,6 +2329,7 @@ public class ApplicationNew extends javax.swing.JFrame {
 													.addComponent(jButtonGroupSettingFeature,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
 													.addComponent(jButtonPages,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
 													.addComponent(jButtonAuctionListVIew,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+													.addComponent(jButtonTabletView,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         											)))
         											)
         									
@@ -2303,6 +2438,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
         			
         				.addComponent(jButtonSearchMainModule)
+        				.addComponent(jButtonMobileViewRes)
+        				.addComponent(jButtonTabletView)
         				
         				)
         			// section 2 
@@ -3991,4 +4128,6 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonSearchHrModules;
     private JButton jButtonSearchMainModule;
     private JButton jButtonLoanWorkWiseModule;
+    private JButton jButtonMobileViewRes;
+    private JButton jButtonTabletView;
 }

@@ -42,7 +42,7 @@ public class localicationMethod extends Base_page{
 		  LangClick.click();
 		  WebElement LangCzech = wait.until(ExpectedConditions.visibilityOfElementLocated(lang));
 		  LangCzech.click();
-		  Thread.sleep(3000);
+		  Thread.sleep(3000); 
 		
 		  ModuleHunt();
 	}
@@ -51,7 +51,20 @@ public class localicationMethod extends Base_page{
 			 WebElement module = wait.until(ExpectedConditions.visibilityOfElementLocated(modules[i]));
 			 module.click();
 			 Thread.sleep(5000);
-		}
+		} 
+		
+	}
+	public void ModuleHuntresponsive () throws InterruptedException {
+		for (int i = 1 ; i <= 49;i++) {
+			 WebElement module = wait.until(ExpectedConditions.visibilityOfElementLocated(modules[i]));
+			 module.click();
+			 WebElement cross = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getmenuCross()));
+			 cross.click();
+			 Thread.sleep(3000);
+			 WebElement open = wait.until(ExpectedConditions.visibilityOfElementLocated(xpaths.getmenuOpen()));
+			 open.click();
+			 Thread.sleep(5000);
+		} 
 		
 	}
 
