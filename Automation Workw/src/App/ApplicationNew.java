@@ -272,6 +272,12 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButton49 = new javax.swing.JButton();
         jButton50 = new javax.swing.JButton();
         jButton51 = new javax.swing.JButton();
+        jButton1  = new javax.swing.JButton();
+        jButton2  = new javax.swing.JButton();
+        jButton3  = new javax.swing.JButton();
+        jButton4  = new javax.swing.JButton();
+        jButton5  = new javax.swing.JButton();
+        jButton6  = new javax.swing.JButton();
         jPanelCustomCases = new javax.swing.JPanel();
         jLabelHeadCUstom = new javax.swing.JLabel();
         jButtonSalaryBonus = new javax.swing.JButton();
@@ -614,7 +620,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         	 @Override
              public void actionPerformed(ActionEvent e) {
         		   String text = jTextArea1.getText();
-        		   String filePath = "C:\\Users\\user\\Downloadsoutput.txt";
+        		   String filePath = "C:\\Users\\payal\\Downloadsoutput.txt";
         		   // Save the text to a PDF file
         		   
         		   saveTextToPdf(text,filePath);
@@ -3466,49 +3472,131 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButton50.setText("Voucher");
 
         jButton51.setText("LedgerRe");
+        
+        jButton1.setText("Button 1");
+        
+        jButton2.setText("Button 2");
+        
+        jButton3.setText("Button 3");
+        
+        jButton4.setText("Button 4");
+        
+        jButton5.setText("Button 5");
+        
+        jButton6.setText("Button 6");
+        
 
         javax.swing.GroupLayout jPanelFinanceLayout = new javax.swing.GroupLayout(jPanelFinance);
         jPanelFinance.setLayout(jPanelFinanceLayout);
         jPanelFinanceLayout.setHorizontalGroup(
-            jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelFinanceLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanelFinanceLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelFinanceLayout.createSequentialGroup()
-                        .addComponent(jButton46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton50)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton48)
-                        .addContainerGap(86, Short.MAX_VALUE))
-                    .addGroup(jPanelFinanceLayout.createSequentialGroup()
-                        .addGroup(jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
+        jPanelFinanceLayout.createParallelGroup(Alignment.LEADING)
+        	            .addGroup(jPanelmainLayout.createSequentialGroup()
+        	            .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.LEADING)
+        	            		   .addGroup(jPanelFinanceLayout.createSequentialGroup()
+        	            				   .addContainerGap()
+//------------------------------------------First column-------------------------------------------------//
+        	                       	    .addComponent(jLabel4, GroupLayout.DEFAULT_SIZE, 396,Short.MAX_VALUE))
+        	   							.addGroup(jPanelFinanceLayout.createSequentialGroup()
+        	   									.addGap(1)
+        	   									.addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+        	   											.addGroup(jPanelFinanceLayout.createSequentialGroup()
+        	   							.addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+        	                               .addComponent(jButton46,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        	                               .addComponent(jButton49,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        	                               .addComponent(jButton1,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        	                             
+        	                     
+        	                             )  
+//      -----------------------------------------second column-----------------------------------------------------//
+        	                               .addGroup(jPanelFinanceLayout.createSequentialGroup()
+           	   									.addGap(1)
+        	                              
+        	                               .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+   	   											.addGroup(jPanelFinanceLayout.createSequentialGroup()
+   	   							.addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+   	                               .addComponent(jButton47,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+   	                               .addComponent(jButton50,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+   	                               .addComponent(jButton2,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+   	                              
+        	                              )
+//-----------------------------------------------third column---------------------------------------------------------   	   							
+   	   					  .addGroup(jPanelFinanceLayout.createSequentialGroup()
+	   									.addGap(1)
+                            
+                             .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+										.addGroup(jPanelFinanceLayout.createSequentialGroup()
+						.addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+                        .addComponent(jButton48,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton51,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                        
+                            )	
+        	                         )))
+//----------------------------------------------4TH cOL ----------------------------------------------------------
+   	   				  .addGroup(jPanelFinanceLayout.createSequentialGroup()
+									.addGap(1)
+                  
+                   .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+								.addGroup(jPanelFinanceLayout.createSequentialGroup()
+				.addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.CENTER)
+						  .addComponent(jButton4,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+						  .addComponent(jButton5,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+						  .addComponent(jButton6,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+						)	
+	                         )))
+        	                                )))
+        	  ))))))
+                     			;
+        
+        //------------------------------------------First row---------------------------------------------//
+        
         jPanelFinanceLayout.setVerticalGroup(
-            jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelFinanceLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton46)
-                    .addComponent(jButton50)
-                    .addComponent(jButton47)
-                    .addComponent(jButton48))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton51)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton49)
-                .addContainerGap())
-        );
+        		jPanelFinanceLayout.createParallelGroup(Alignment.LEADING)
+             
+                .addGroup(jPanelFinanceLayout.createSequentialGroup()
+                	.addGap(15)	
+                    .addComponent(jLabel4)
+                    .addGap(05)
+                    
+                    .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.BASELINE)
+
+                   
+                        .addComponent(jButton46)
+                        .addComponent(jButton47)
+                        .addComponent(jButton48)
+                        .addComponent(jButton4))
+                        
+                     
+                     .addPreferredGap(ComponentPlacement.RELATED) 
+                     
+                        .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.BASELINE)
+//                        		.addGroup(jPanelFinanceLayout.createSequentialGroup()
+                                .addComponent(jButton49)
+                                .addComponent(jButton50)
+                                .addComponent(jButton51)
+                                .addComponent(jButton5))
+                       
+//  ------------------------------------------------------------3rd row---------------------------------------//
+                        .addPreferredGap(ComponentPlacement.RELATED)    
+                        .addGroup(jPanelFinanceLayout.createParallelGroup(Alignment.BASELINE)
+                        		
+                                .addComponent(jButton1)
+                                .addComponent(jButton2)
+                                .addComponent(jButton3)
+                                .addComponent(jButton6))
+        
+//  ------------------------------------------------------4th row---------------------------------------------//
+                        .addPreferredGap(ComponentPlacement.RELATED)    
+                        .addGroup(jPanelFinanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        		
+                               
+                               
+                               
+                                
+                         )));   
+        
+        
+        
 
         jTabbedPane1.addTab("Finance", jPanelFinance);
 
@@ -4035,6 +4123,12 @@ public class ApplicationNew extends javax.swing.JFrame {
     private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton50;
     private javax.swing.JButton jButton51;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonAdminAlow;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonCareers;
