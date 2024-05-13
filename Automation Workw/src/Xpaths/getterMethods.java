@@ -1869,6 +1869,13 @@ public By getloanWorkwRadioButton() {
 public By getloanWorkwMaxAmmount() {
 	return loanMaxAmount ;
 }
+// ********************************menu buttons**************************************
+public By getmenuCross() {
+	return menuCrossButton;
+}
+public By getmenuOpen() {
+	return menuOpenButton;
+}
     
 
 }

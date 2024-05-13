@@ -5,8 +5,8 @@ public class adminUsers {
 String	adminEmail = "sabeehnoshad@gmail.com";
 String  adminPassword ="Naase630@";
 
-String	SuperadminEmail = "amir@miletap.com";
-String  SuperadminPassword ="Localhost@12";
+String	SuperadminEmail = "owais@miltap.com";
+String  SuperadminPassword ="string";
 
 String	employeeEmail ="amir@miletap.com";
 String	employeePassword ="Localhost@12";
@@ -19,8 +19,9 @@ String webUrl = "https://www.workw.com";
 String adminWorkWiseEmail = "sabeeh@miletap.com";
 String adminWorkWisePassword = "string";
 
-String approverWorkWiseEmail = "amir@miletap.com";
-String approverWorkWisePassword = "Localhost@12";
+//main owais shaikh id 
+String approverWorkWiseEmail = "owais@miletap.com";
+String approverWorkWisePassword = "string";
 
 String newCompanyUserEmail = "u807816@gmail.com";
 String newCompanyUserPasswprd = "Naase630@";

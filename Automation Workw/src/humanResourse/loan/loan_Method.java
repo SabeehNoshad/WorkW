@@ -2,6 +2,7 @@ package humanResourse.loan;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,6 +34,7 @@ public class loan_Method extends Base_page {
 		  WebElement loanOptionClick   = wait.until(ExpectedConditions.visibilityOfElementLocated(loan.getLoanNavBar()));
 		  loanOptionClick .click();
 		  loanWorkWCreateCOmposer();
+		
 	}
 	public void loanCreation(String options , Integer i ) throws InterruptedException {
 		
