@@ -20,8 +20,8 @@ String adminWorkWiseEmail = "sabeeh@miletap.com";
 String adminWorkWisePassword = "string";
 
 //main owais shaikh id 
-String approverWorkWiseEmail = "owais@miletap.com";
-String approverWorkWisePassword = "string";
+String approverWorkWiseEmail = "sabeeh@miletap.com";
+String approverWorkWisePassword = "Naase630@";
 
 String newCompanyUserEmail = "u807816@gmail.com";
 String newCompanyUserPasswprd = "Naase630@";

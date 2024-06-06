@@ -19,7 +19,7 @@ public class Xpaths {
 	By Phone_Number_field 			 = By.xpath("//form[@id='quickAdd']/div/div[5]/div/div[2]/div/div/input");
 	By add_Button					 = By.xpath("//form[@id='quickAdd']/div[2]/div/div/div/div/div/button");
 	By Submitt_Button 				 = By.xpath("//span[contains(.,'Submit')]");
-    
+      
 	//  Lead manager
 	By Lead_Manager_opt 				 = By.xpath("//div[@id='root']/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[5]/a/p");
 	By Create_lead_group_option			 = By.xpath("//div[@id='section1']/div/div/div[2]/div/div/button/span");
@@ -634,4 +634,17 @@ public class Xpaths {
    //******************************************MENU CROSS BUTTON**************************************************************************************************
     By menuCrossButton						= By.xpath("//div[@id='root']/div/div[2]/div/div[2]/img");
     By menuOpenButton						= By.xpath("//img[@alt='mobileMenuButton']");
+    //*******************************************Notification**********************************************************************************************************
+    By settingOptionforProfile				= By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div[2]/ul/li[2]/a/p");
+    By notificatioOptionClick				= By.xpath("//a[contains(text(),'Notifications')]");
+    By enableCheckBoxOfFirst				= By.cssSelector(".ant-table-cell-row-hover:nth-child(2) .ant-checkbox-input");
+    By saveButtonOfTheNotidication			= By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/div/div/div/div[2]/button/span");
+    By signatureMarkingLIne					= By.xpath("");
+    By DocumentSignatureOption				= By.xpath("//a[contains(text(),'Document Signature')]");
+    By signatureSaveButtonn					= By.xpath("//div[@id='section1']/div/div[2]/div/div[2]/div/div[2]/button/span");
+    //------------------------------------------QUICK ADD TASK---------------------------------------------------------------------------------------------------------
+    By taskCreateQuickTaskOption			= By.xpath("//div[@id='dropdown-container']/button/span");
+    By taskEnterQuickTask					= By.xpath("//div[@id='dropdown-container']/div/div/div/div[2]/div/div/form/div/div/div/div/div/input");
+    //*******************************************Dark mode Module ******************************************************************************************************
+    By darkModeOption						= By.xpath("//div[@id='root']/div/div[2]/div[2]/div[2]/div/ul/li/img");
 }
