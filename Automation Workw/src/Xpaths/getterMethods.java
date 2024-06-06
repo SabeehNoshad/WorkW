@@ -1876,7 +1876,37 @@ public By getmenuCross() {
 public By getmenuOpen() {
 	return menuOpenButton;
 }
-    
+//********************************NotificationButton************************************************
+public By getSettingProfileOption() {
+	return settingOptionforProfile;
+}
+public By getNotificationOPtionCLick() {
+	return notificatioOptionClick;
+}
+public By getEnableCheckBox() {
+	return enableCheckBoxOfFirst ;
+}
+public By getSaveButtonNotification() {
+	return saveButtonOfTheNotidication;
+}
+//******************************SignatureDocument************************************************************
+public By getdocumentSignatureOption() {
+	return DocumentSignatureOption ;
+}
+public By getSignatureSaveButton() {
+	return  DocumentSignatureOption ;
+}
+//********************************quick add task ********************************************************************
+public By getquickAddTaskOptionUnderTask() {
+	return taskCreateQuickTaskOption ;
+}
+public By gettaskEntertextFieldOfQuickTask() {
+	return  taskEnterQuickTask;
+}
+//*******************************Dark Mode **********************************************************************
+public By getdarModeModuleButtonOnWorkWise() {
+	return darkModeOption;
+}
 
 }
 

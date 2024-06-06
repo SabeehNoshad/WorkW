@@ -18,6 +18,7 @@ import careers.careersTest;
 import clockInClockOut.clockIn_Test;
 import coments.commentTest;
 import customApproval.customApprovalTest;
+import documentSignature.signatureTest;
 import expense.expenseCreateFeed_Test;
 import form.formTest;
 import group.groupCreateTest;
@@ -48,9 +49,12 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.Timer;
 import javax.swing.JToggleButton;
 
 import Localization.localizationTest;
+import NotificationEnable.notification_Test;
+import QuickTest.quickTaskTest;
 import SearchHrModule.seachHrTest;
 import SearchMainModule.searchMainTest;
 import Xpaths.getterMethods;
@@ -64,6 +68,9 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
+import com.beust.ah.A;
+
+import DarkMode.darkModeTest;
 import Employee.employeeTest;
 
 import javax.swing.JPanel;
@@ -205,6 +212,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         initComponents();
         showPane();
         settiingDate();
+        timer.start();
     }
 
     /**
@@ -307,7 +315,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         btnHindi = new JButton("Hindi");
         btnNewButton_1 = new JButton("Arabic");
         btnNewButton_2 = new JButton("Urdu");
-        jButtonPoll = new javax.swing.JButton();
+        jButtonPoll = new javax.swing.JButton();  
         jButtonPoll.setToolTipText("enter the loop count and also the tag value ");
         jButtonGroupSettingFeature = new javax.swing.JButton();
         jButtonGroupSummary = new javax.swing.JButton();
@@ -322,6 +330,10 @@ public class ApplicationNew extends javax.swing.JFrame {
         jButtonLoanWorkWiseModule = new javax.swing.JButton();
         jButtonMobileViewRes = new javax.swing.JButton();
         jButtonTabletView = new javax.swing.JButton();
+        jButtonnotification = new javax.swing.JButton();
+        jButtonSignature = new javax.swing.JButton();
+        jButtonQuickTask = new javax.swing.JButton();
+        jButtonDarkModeModule = new javax.swing.JButton();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       
@@ -350,11 +362,11 @@ public class ApplicationNew extends javax.swing.JFrame {
             }
         });
         jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox4.setText("owais@miletap.com");
+        jCheckBox4.setText("sabeeh@miletap.com");
         jCheckBox4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 if (jCheckBox4.isSelected()) {
-                	jLabelWelcomName.setText("Owais Shaikh");
+                	jLabelWelcomName.setText("Sabeeh Noshad");
                    
                 } else {
                     // Checkbox is unchecked, perform another action if needed
@@ -480,9 +492,211 @@ public class ApplicationNew extends javax.swing.JFrame {
         
         jButtonTabletView.setText("Tablet-View");
         
+        jButtonnotification.setText("Notication-Enable");
+        
+        jButtonSignature.setText("Signature");
+        
+        jButtonQuickTask.setText("QuickTask");
+        
+        jButtonDarkModeModule.setText("Dark-Module");
+        
         //jButtonSave
        //****************************************************************************************************************************************************************************************************
-      //Tablet view
+        //Dark Mode Module view
+        jButtonDarkModeModule.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		 
+        	             	jTextArea1.setText("");
+        	             	// Call your test case methods here
+        	             	darkModeTest testClass2 = new darkModeTest();
+        	                 getterMethodTextFile text = new getterMethodTextFile();
+        	                 testResult tst = new testResult();
+        	              // Break the string into multiple lines using newline character
+        	                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+        	                 // Create a new string with line breaks
+        	                 String formattedTravelDetails = String.join("\n", lines);
+        	                 jTextArea2.setText(formattedTravelDetails);
+        	                 try {
+        	                 	
+        	                 	// int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+        	                 	
+        	     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+        	                 	   if (jLabelWelcomName.getText().equals("abc")) {
+        	                            // If yes, pass additional parameters
+        	                            boolean result = testClass2.DarkModeTest(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+        	                            if (result) {
+        	                            	addCount();
+        	        		                // Test passed, change the button color to green
+        	                            	jButtonDarkModeModule.setBackground(Color.GREEN);
+        	        		            } else {
+        	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
+        	        		            	jButtonDarkModeModule.setBackground(Color.RED);
+        	        		            }
+        	                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
+        	                      	  
+        	                      	  boolean result = testClass2.DarkModeTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+        	                            if (result) {
+        	                            	addCount();
+        	                            	updateProgressBar(20);
+        	         		                // Test passed, change the button color to green
+        	                            	jButtonDarkModeModule.setBackground(Color.GREEN);
+        	         		            } else {
+        	         		            	subCount();
+        	         		                // Test failed, change the button color to red (or any other color)
+        	         		            	jButtonDarkModeModule.setBackground(Color.RED);
+        	         		            	 updateResultLabel(result);
+        	                        }
+        	                        }
+        	     				
+        	     		            // Get the relevant information from ITestResult and update the JTextArea
+        	     			    
+        	    
+        	     			     jTextArea2.setText(tst.getuserTestDetails());
+        	     				//updateResultLabel(result);
+        	     				
+
+        	     			} catch (InterruptedException e1) {
+        	     				// TODO Auto-generated catch block
+        	     				e1.printStackTrace();
+        	     			}
+        	               
+        	             }
+        	        	
+        	        });
+        
+        
+        //Quick Task view
+        jButtonQuickTask.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		 
+        	             	jTextArea1.setText("");
+        	             	// Call your test case methods here
+        	             	quickTaskTest testClass2 = new quickTaskTest();
+        	                 getterMethodTextFile text = new getterMethodTextFile();
+        	                 testResult tst = new testResult();
+        	              // Break the string into multiple lines using newline character
+        	                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+        	                 // Create a new string with line breaks
+        	                 String formattedTravelDetails = String.join("\n", lines);
+        	                 jTextArea2.setText(formattedTravelDetails);
+        	                 try {
+        	                 	
+        	                 	 int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+        	                 	
+        	     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+        	                 	   if (jLabelWelcomName.getText().equals("abc")) {
+        	                            // If yes, pass additional parameters
+        	                            boolean result = testClass2.quickTask_Test(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+        	                            if (result) {
+        	                            	addCount();
+        	        		                // Test passed, change the button color to green
+        	                            	jButtonQuickTask.setBackground(Color.GREEN);
+        	        		            } else {
+        	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
+        	        		            	jButtonQuickTask.setBackground(Color.RED);
+        	        		            }
+        	                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
+        	                      	  
+        	                      	  boolean result = testClass2.quickTask_Test(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+        	                            if (result) {
+        	                            	addCount();
+        	                            	updateProgressBar(20);
+        	         		                // Test passed, change the button color to green
+        	                            	jButtonQuickTask.setBackground(Color.GREEN);
+        	         		            } else {
+        	         		            	subCount();
+        	         		                // Test failed, change the button color to red (or any other color)
+        	         		            	jButtonQuickTask.setBackground(Color.RED);
+        	         		            	 updateResultLabel(result);
+        	                        }
+        	                        }
+        	     				
+        	     		            // Get the relevant information from ITestResult and update the JTextArea
+        	     			    
+        	    
+        	     			     jTextArea2.setText(tst.getuserTestDetails());
+        	     				//updateResultLabel(result);
+        	     				
+
+        	     			} catch (InterruptedException e1) {
+        	     				// TODO Auto-generated catch block
+        	     				e1.printStackTrace();
+        	     			}
+        	               
+        	             }
+        	        	
+        	        });
+        
+        
+        //Signature view
+        jButtonSignature.addActionListener(new ActionListener() {
+        	 @Override
+             public void actionPerformed(ActionEvent e) {
+        		 
+        	             	jTextArea1.setText("");
+        	             	// Call your test case methods here
+        	             	signatureTest testClass2 = new signatureTest();
+        	                 getterMethodTextFile text = new getterMethodTextFile();
+        	                 testResult tst = new testResult();
+        	              // Break the string into multiple lines using newline character
+        	                 String[] lines = text.getcommenttestingdesc().split("\\*\\*\\*");
+
+        	                 // Create a new string with line breaks
+        	                 String formattedTravelDetails = String.join("\n", lines);
+        	                 jTextArea2.setText(formattedTravelDetails);
+        	                 try {
+        	                 	
+        	                 	// int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+        	                 	
+        	     				//Boolean result = testClass2.travelCreateTest(inputValue1);
+        	                 	   if (jLabelWelcomName.getText().equals("abc")) {
+        	                            // If yes, pass additional parameters
+        	                            boolean result = testClass2.SignatureTestMethod(defaults.getrmployeeEmail(),defaults.getemployeepassword());
+        	                            if (result) {
+        	                            	addCount();
+        	        		                // Test passed, change the button color to green
+        	                            	jButtonSignature.setBackground(Color.GREEN);
+        	        		            } else {
+        	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
+        	        		            	jButtonSignature.setBackground(Color.RED);
+        	        		            }
+        	                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
+        	                      	  
+        	                      	  boolean result = testClass2.SignatureTestMethod( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+        	                            if (result) {
+        	                            	addCount();
+        	                            	updateProgressBar(20);
+        	         		                // Test passed, change the button color to green
+        	                            	jButtonSignature.setBackground(Color.GREEN);
+        	         		            } else {
+        	         		            	subCount();
+        	         		                // Test failed, change the button color to red (or any other color)
+        	         		            	jButtonSignature.setBackground(Color.RED);
+        	         		            	 updateResultLabel(result);
+        	                        }
+        	                        }
+        	     				
+        	     		            // Get the relevant information from ITestResult and update the JTextArea
+        	     			    
+        	    
+        	     			     jTextArea2.setText(tst.getuserTestDetails());
+        	     				//updateResultLabel(result);
+        	     				
+
+        	     			} catch (InterruptedException e1) {
+        	     				// TODO Auto-generated catch block
+        	     				e1.printStackTrace();
+        	     			}
+        	               
+        	             }
+        	        	
+        	        });
+        
+        //Tablet view
         jButtonTabletView.addActionListener(new ActionListener() {
         	 @Override
              public void actionPerformed(ActionEvent e) {
@@ -514,7 +728,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
         	        		            	jButtonTabletView.setBackground(Color.RED);
         	        		            }
-        	                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+        	                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
         	                      	  
         	                      	  boolean result = testClass2.responsiveTestTablet( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
         	                            if (result) {
@@ -578,7 +792,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         	        		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
         	        		            	jButtonMobileViewRes.setBackground(Color.RED);
         	        		            }
-        	                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+        	                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
         	                      	  
         	                      	  boolean result = testClass2.responsiveTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
         	                            if (result) {
@@ -655,7 +869,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		            	subCount(); 		                // Test failed, change the button color to red (or any other color)
         		            	jButtonSearchMainModule.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.searchMainTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -719,7 +933,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuctionListVIew.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.auctionListViewTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -785,7 +999,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuctionBidding.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.auctionBiddingTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -850,7 +1064,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonPages.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.pagesMethodTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -915,7 +1129,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonAuction.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.auctionTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -980,7 +1194,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonPages.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.pagesMethodTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1047,7 +1261,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test faled, change the button color to red (or any other color)
        		            	jButtonGroupSettingFeature.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1111,7 +1325,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonGroupSummary.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1175,7 +1389,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test failed, change the button color to red (or any other color)
        		            	comment.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.commentsTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1240,7 +1454,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            }
                        
                   	   updateResultLabel(result);
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                   	  
                   	  boolean result = testClass1.form1Test( inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                         if (result) {
@@ -1294,7 +1508,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonSchedule.setBackground(Color.RED);
      		            }
                   	   updateResultLabel(result);
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                   	  
                   	  boolean result = testClass1.scheduleCreateTest( inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                         if (result) {
@@ -1354,7 +1568,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            }
                   	   updateResultLabel(result);
                   	 
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                   	  
                   	  boolean result = testClass1.clockInMessageTest(  defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                         if (result) {
@@ -1412,7 +1626,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            	jButtonPost.setBackground(Color.RED);
        		            }
                     	   updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                     	  
                     	  boolean result = testClass1.newsFeedCreateTest(inputValue1, inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
@@ -1467,7 +1681,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            	jButtonPoll.setBackground(Color.RED);
        		            }
                     	   updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                     	  
                     	  boolean result = testClass1.newsFeedPoll(inputValue1, inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
@@ -1521,7 +1735,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonTravel.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.travelCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1575,7 +1789,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            	jButtonExpenses.setBackground(Color.RED);
        		            }
                            updateResultLabel(result);
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.expenseCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1628,7 +1842,7 @@ public class ApplicationNew extends javax.swing.JFrame {
       		            	jButtonWOrkBoard.setBackground(Color.RED);
       		            }
                           updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.workBoardCreateAndSectionAndTodos(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                             if (result) {
@@ -1680,7 +1894,7 @@ public class ApplicationNew extends javax.swing.JFrame {
       		            	jButtonGroup.setBackground(Color.RED);
       		            }
                           updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.groupCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1732,7 +1946,7 @@ public class ApplicationNew extends javax.swing.JFrame {
       		            	jButtonProject.setBackground(Color.RED);
       		            }
                           updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.projectCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1785,7 +1999,7 @@ public class ApplicationNew extends javax.swing.JFrame {
       		            	jButtonLeadMana.setBackground(Color.RED);
       		            }
                           updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.leadManagerCreate(inputValue1,inputValue2, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1832,7 +2046,7 @@ public class ApplicationNew extends javax.swing.JFrame {
       		            	jButtonCustomAp.setBackground(Color.RED);
       		            }
                           updateResultLabel(result);
-                      } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                      } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass1.CustomApprovalCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -1879,7 +2093,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonLead.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.LeadCreateTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1927,7 +2141,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonTask.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.testCreateTestCond1(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -1979,7 +2193,7 @@ public class ApplicationNew extends javax.swing.JFrame {
  		            	JButtonLeadComent.setBackground(Color.RED);
  		            }
                      updateResultLabel(result);
-                 } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                 } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                  	  
                  	  boolean result = testClass1.commentLeadManagerTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                        if (result) {
@@ -2031,7 +2245,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	JButtonCzeck.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getlangCzech(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2083,7 +2297,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	btnNewButton_2.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.geturduLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2134,7 +2348,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	btnHindi.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.gethindiLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2185,7 +2399,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	btnTurkish.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getturkishLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2235,7 +2449,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	btnNewButton_1.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.localicationlangTest(xpaths.getarabicLanguage(), defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2286,7 +2500,8 @@ public class ApplicationNew extends javax.swing.JFrame {
         																								.addComponent(jButtonTravel,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonAuction,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
         																								.addComponent(jButtonSearchMainModule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
-        																								)
+        																								.addComponent(jButtonQuickTask,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+        																								)   
         							.addGroup(jPanelmainLayout.createParallelGroup(Alignment.LEADING)
         								.addGroup(jPanelmainLayout.createSequentialGroup()
         									.addGap(1)
@@ -2442,6 +2657,14 @@ public class ApplicationNew extends javax.swing.JFrame {
         				.addComponent(jButtonTabletView)
         				
         				)
+        			//row 9
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
+        			
+        				.addComponent(jButtonQuickTask)
+        			
+        				
+        				)
         			// section 2 
         			.addGap(150)
         			.addGroup(jPanelmainLayout.createParallelGroup(Alignment.BASELINE)
@@ -2539,7 +2762,7 @@ public class ApplicationNew extends javax.swing.JFrame {
           		                // Test failed, change the button color to red (or any other color)
           		            	jButtonLoanWorkWiseModule.setBackground(Color.RED);
           		            }
-                          } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                          } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                         	  
                         	  boolean result = testClass2.workWiseLoan( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                               if (result) {
@@ -2606,7 +2829,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonCareers.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.careersTestRun( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2670,7 +2893,7 @@ public class ApplicationNew extends javax.swing.JFrame {
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonEmployeeUpdate.setBackground(Color.RED);
        		            }
-                       } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                       } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass2.EmployeeTestUpdate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                            if (result) {
@@ -2733,7 +2956,7 @@ public class ApplicationNew extends javax.swing.JFrame {
         		                // Test failed, change the button color to red (or any other color)
         		            	jButtonSearchHrModules.setBackground(Color.RED);
         		            }
-                        } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                        } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                       	  
                       	  boolean result = testClass2.seachHrTst( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                             if (result) {
@@ -2791,7 +3014,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonQuick.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.quickAddEmployee(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -2841,7 +3064,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonAppraisal.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.appraisalCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"Mile Tap");
                            if (result) {
@@ -2893,7 +3116,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonPromotion.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.createPromotionTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -2944,7 +3167,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonwarning.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.createWarning(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -2994,7 +3217,7 @@ public class ApplicationNew extends javax.swing.JFrame {
  		            	jButtonBonus.setBackground(Color.RED);
  		            }
                      updateResultLabel(result);
-                 } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                 } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                  	  
                  	  boolean result = testClass1.BonusCreation(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                        if (result) {
@@ -3044,7 +3267,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonComplain.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.CreateComplainOff(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -3094,7 +3317,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonReward.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.createRewardTest(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -3144,7 +3367,7 @@ public class ApplicationNew extends javax.swing.JFrame {
      		            	jButtonLeaves.setBackground(Color.RED);
      		            }
                          updateResultLabel(result);
-                     } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                     } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                      	  
                      	  boolean result = testClass1.LeaveCreationcasual(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                            if (result) {
@@ -3198,7 +3421,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     		            	jButtonSalary.setBackground(Color.RED);
     		            }
                         updateResultLabel(result);
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                     	  
                     	  boolean result = testClass1.createSalaryTest( defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword(),"miletap");
                           if (result) {
@@ -3250,7 +3473,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     		            	jButtonLoan.setBackground(Color.RED);
     		            }
                         updateResultLabel(result);
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                     	  
                     	  boolean result = testClass1.loanCreate(inputValue1, defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                           if (result) {
@@ -3303,7 +3526,7 @@ public class ApplicationNew extends javax.swing.JFrame {
     		            	jButtonResignation.setBackground(Color.RED);
     		            }
                         updateResultLabel(result);
-                    } else if (jLabelWelcomName.getText().equals("Owais Shaikh")) {
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
                     	  
                     	  boolean result = testClass1.createResignationTest( inputValue1,defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
                           if (result) {
@@ -3315,6 +3538,58 @@ public class ApplicationNew extends javax.swing.JFrame {
        		            	subCount();
        		                // Test failed, change the button color to red (or any other color)
        		            	jButtonResignation.setBackground(Color.RED);
+       		             updateResultLabel(result);
+                      }
+                      }
+                	
+
+    			} catch (InterruptedException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+              
+            }
+        });
+        // NOtification enable 
+       jButtonnotification.addActionListener(new ActionListener() {
+        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	// Call your test case methods here
+            	jTextArea1.setText("");
+
+            	notification_Test testClass1 = new notification_Test();
+            	 getterMethodTextFile text = new getterMethodTextFile();
+               
+                try {
+                	int inputValue1 = Integer.parseInt(jTextFieldLoopValue.getText());
+                	//boolean result=testClass1.loanCreate(inputValue1);
+                	if (jLabelWelcomName.getText().equals("Wise Work")) {
+                        // If yes, pass additional parameters
+                        boolean result = testClass1.notificationTest(inputValue1,defaults.getrmployeeEmail(),defaults.getemployeepassword());
+                        if (result) {
+                        	addCount();
+                        	updateProgressBar(20);
+    		                // Test passed, change the button color to green
+                        	jButtonnotification.setBackground(Color.GREEN);
+    		            } else {
+    		            	subCount();
+    		                // Test failed, change the button color to red (or any other color)
+    		            	jButtonnotification.setBackground(Color.RED);
+    		            }
+                        updateResultLabel(result);
+                    } else if (jLabelWelcomName.getText().equals("Sabeeh Noshad")) {
+                    	  
+                    	  boolean result = testClass1.notificationTest( inputValue1,defaults.getapproverWorkWiseEmail(),defaults.getapproverWorkWisePassword());
+                          if (result) {
+                        	  addCount();
+                        	  updateProgressBar(20);
+       		                // Test passed, change the button color to green
+                        	  jButtonnotification.setBackground(Color.GREEN);
+       		            } else {
+       		            	subCount();
+       		                // Test failed, change the button color to red (or any other color)
+       		            	jButtonnotification.setBackground(Color.RED);
        		             updateResultLabel(result);
                       }
                       }
@@ -3382,12 +3657,15 @@ public class ApplicationNew extends javax.swing.JFrame {
                                 .addComponent(jButtonLoanWorkWiseModule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
 
                                )))
+                            //-----------------------------4th colume ----------------------------------------------------------------------------------
                             .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
                                     .addGroup(jPanelHRLayout.createSequentialGroup()
                                     		.addGap(1)
                                         .addGroup(jPanelHRLayout.createParallelGroup(Alignment.LEADING)
                                     	.addComponent(jButtonSearchHrModules,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
-                                        
+                                    	.addComponent(jButtonnotification,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                    	.addComponent(jButtonSignature,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonDarkModeModule,GroupLayout.PREFERRED_SIZE,85, GroupLayout.PREFERRED_SIZE)
 
                                        )))
               
@@ -3414,20 +3692,23 @@ public class ApplicationNew extends javax.swing.JFrame {
                     .addComponent(jButtonQuick)
                     .addComponent(jButtonPromotion)
                     .addComponent(jButtonEmployee)
-                    .addComponent(jButtonSearchHrModules))
+                    .addComponent(jButtonSearchHrModules)
+                  )
             	//*************************************2ND ROW****************************************************************************************
             .addPreferredGap(ComponentPlacement.RELATED)    
             .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonComplain)
                     .addComponent(jButtonReward)
-                    .addComponent(jButtonCareers))
+                    .addComponent(jButtonCareers)
+                    .addComponent(jButtonnotification))
 
             	//*********************************************3RD ROW***********************************************************************************
             .addPreferredGap(ComponentPlacement.RELATED) 
                 .addGroup(jPanelHRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalary)
                     .addComponent(jButtonLoan)
-                    .addComponent(jButtonResignation))
+                    .addComponent(jButtonResignation)
+                	.addComponent(jButtonSignature))
                 //**************************************************4TH ROW***********************************************************************************
 
                 .addPreferredGap(ComponentPlacement.RELATED) 
@@ -3435,6 +3716,7 @@ public class ApplicationNew extends javax.swing.JFrame {
                 .addComponent(jButtonLeaves)
                 .addComponent(jButtonwarning)
                 .addComponent(jButtonBonus)
+                .addComponent(jButtonDarkModeModule)
                 )
                 // **************************************************5TH ROW ***********************************************************************************
 
@@ -4024,6 +4306,12 @@ public class ApplicationNew extends javax.swing.JFrame {
         // Set the formatted date and time to the JLabel
         jLabelDateField.setText(formattedDateTime);
     }
+    Timer timer = new Timer(300000, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settiingDate();
+        }
+    });
     // error log handling
  
 // 
@@ -4069,7 +4357,6 @@ public class ApplicationNew extends javax.swing.JFrame {
     private javax.swing.JButton jButtonwarning;
     private javax.swing.JButton jButtonBonus;
     private javax.swing.JButton jButtonAppraisal;
-
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox4;
@@ -4130,4 +4417,8 @@ public class ApplicationNew extends javax.swing.JFrame {
     private JButton jButtonLoanWorkWiseModule;
     private JButton jButtonMobileViewRes;
     private JButton jButtonTabletView;
+    private JButton jButtonnotification;
+    private JButton jButtonSignature;
+    private JButton jButtonQuickTask;
+    private JButton jButtonDarkModeModule;
 }

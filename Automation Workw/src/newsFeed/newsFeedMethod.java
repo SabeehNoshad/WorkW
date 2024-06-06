@@ -23,7 +23,7 @@ public class newsFeedMethod extends Base_page {
 		// TODO Auto-generated constructor stub
 	} 
 	public void createPostComposer() {
-		driver.findElement(xpaths.getnewsFeedCreateComposer()).click();
+		driver.findElement(xpaths.getnewsFeedCreateComposer()).click();  
 	}
 	public void createPost(Integer j,Integer l,String company) throws InterruptedException {
 	
